@@ -49,6 +49,7 @@ INTRO_STATUSES = ("pending", "accepted", "declined", "expired")
 MATCH_SOURCES = ("local", "bridge")
 CIRCUIT_STATUSES = ("proposed", "active", "completed", "dissolved")
 CONSENT_STATES = ("pending", "accepted", "declined")
+CLAIM_STATUSES = ("pending", "approved", "rejected")
 
 
 def _in(column: str, values: tuple[str, ...]) -> str:
@@ -135,6 +136,47 @@ class StartupMember(Base):
         UUID(as_uuid=True), ForeignKey("members.id", ondelete="CASCADE"), primary_key=True
     )
     title: Mapped[str | None] = mapped_column(String(120))
+
+
+class StartupClaim(Base):
+    """A member asking to be recognised as the owner of a startup profile.
+
+    A partner_admin reviews the evidence and approves or rejects it. On approval
+    the member becomes `startups.claimed_by_member_id` and joins the team.
+    """
+
+    __tablename__ = "startup_claims"
+    __table_args__ = (
+        CheckConstraint(_in("status", CLAIM_STATUSES), name="ck_startup_claims_status"),
+        Index("ix_startup_claims_status_created", "status", "created_at"),
+        # At most one open claim per member per startup.
+        Index(
+            "uq_startup_claims_one_pending",
+            "startup_id",
+            "member_id",
+            unique=True,
+            postgresql_where=sql_text("status = 'pending'"),
+        ),
+    )
+
+    id: Mapped[uuid.UUID] = mapped_column(UUID(as_uuid=True), primary_key=True, default=uuid.uuid4)
+    startup_id: Mapped[uuid.UUID] = mapped_column(
+        UUID(as_uuid=True), ForeignKey("startups.id", ondelete="CASCADE"), nullable=False
+    )
+    member_id: Mapped[uuid.UUID] = mapped_column(
+        UUID(as_uuid=True), ForeignKey("members.id", ondelete="CASCADE"), nullable=False
+    )
+    title: Mapped[str | None] = mapped_column(String(120))
+    evidence: Mapped[str | None] = mapped_column(Text)
+    status: Mapped[str] = mapped_column(String(10), nullable=False, server_default="pending")
+    decided_by: Mapped[uuid.UUID | None] = mapped_column(
+        UUID(as_uuid=True), ForeignKey("members.id", ondelete="SET NULL")
+    )
+    decision_note: Mapped[str | None] = mapped_column(Text)
+    created_at: Mapped[datetime] = mapped_column(
+        DateTime(timezone=True), server_default=func.now(), nullable=False
+    )
+    decided_at: Mapped[datetime | None] = mapped_column(DateTime(timezone=True))
 
 
 class Capability(Base):

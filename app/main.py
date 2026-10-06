@@ -4,12 +4,14 @@ from collections.abc import AsyncIterator
 from contextlib import asynccontextmanager
 
 import structlog
-from fastapi import FastAPI
+from fastapi import FastAPI, Request
+from fastapi.responses import JSONResponse
 
-from app.api import health
+from app.api import auth, health, members, needs, reference, startups
 from app.config import get_settings
 from app.logging import RequestLoggingMiddleware, configure_logging
 from app.resources import Resources
+from app.services.errors import ServiceError
 
 log = structlog.get_logger("circuit")
 
@@ -37,7 +39,19 @@ def create_app() -> FastAPI:
         lifespan=lifespan,
     )
     app.add_middleware(RequestLoggingMiddleware)
+
+    @app.exception_handler(ServiceError)
+    async def service_error(_: Request, exc: ServiceError) -> JSONResponse:
+        return JSONResponse(status_code=exc.status_code, content={"detail": exc.detail})
+
     app.include_router(health.router)
+    app.include_router(auth.router)
+    if settings.dev_auth:  # config validation already refused this in production
+        app.include_router(auth.dev_router)
+    app.include_router(reference.router)
+    app.include_router(members.router)
+    app.include_router(needs.router)
+    app.include_router(startups.router)
     return app
 
 

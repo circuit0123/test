@@ -62,3 +62,26 @@ def test_unhandled_exception_logged_with_trace_and_request_id(app, caplog, reque
     assert errors[0].msg["request_id"] == request_id
     assert errors[0].exc_info is not None  # stack trace attached
     assert request_logs()[0]["status"] == 500
+
+
+def test_exception_logs_never_contain_tokens_or_locals(app, capsys):
+    """Crash while a bearer token is in the request: the JSON log line must not contain it."""
+    import json as _json
+
+    from app.logging import configure_logging
+
+    configure_logging("INFO")  # handler bound to the current (captured) stdout
+
+    @app.get("/boom-token-test")
+    async def boom():
+        secret_local = "should-not-appear"  # noqa: F841
+        raise RuntimeError("kaboom")
+
+    with TestClient(app, raise_server_exceptions=False) as client:
+        client.get("/boom-token-test", headers={"Authorization": "Bearer super.secret.token"})
+
+    out = capsys.readouterr().out
+    error_lines = [_json.loads(line) for line in out.splitlines() if '"unhandled_exception"' in line]
+    assert error_lines and error_lines[0]["exception"]  # trace is still there
+    assert "super.secret.token" not in out
+    assert "should-not-appear" not in out

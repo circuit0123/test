@@ -5,6 +5,7 @@ Backend for Circuit, a startup ecosystem platform. It has two parts: a map where
 **Status:**
 - Phase 0 (scaffold): done.
 - Phase 1 (data model, migrations, seed data): done.
+- Phase 2 (auth, members, startups, needs/offers, claiming): done.
 
 ## Prerequisites
 
@@ -53,6 +54,36 @@ Integration tests use a separate `circuit_test` database. They wipe it and rebui
 | Redis    | `redis:7-alpine`                        | Cache for match results. Safe to wipe                  |
 
 The Postgres image is `postgres:16-bookworm` with `postgresql-16-postgis-3` and `postgresql-16-pgvector` installed from the PGDG apt repository. `docker/postgres/initdb/` runs only the first time the data volume is created. It enables both extensions and creates a separate `circuit_test` database. To start from a clean slate, run `docker compose down -v`, which deletes all local data.
+
+## Authentication
+
+The API accepts `Authorization: Bearer <JWT>` tokens. A token carries the claims `sub` (the member id), `role`, `verification_level`, `token_version` and `exp`.
+
+- **Production:** tokens are checked against your identity provider's public keys at `JWKS_URL`, plus `JWT_ISSUER` and `JWT_AUDIENCE` when set. Switching between Clerk and Supabase only changes these settings.
+- **Local development (`DEV_AUTH=true`):** `POST /auth/dev/token` issues a token for any seeded member. The app refuses to start with `DEV_AUTH=true` when `ENV=production`.
+
+```bash
+curl -X POST localhost:8000/auth/dev/token -H 'content-type: application/json' -d '{"role": "founder"}'
+# or {"member_id": "<uuid>"}; then click "Authorize" on /docs and paste the access_token
+```
+
+Access rules:
+
+| Who | Can |
+|---|---|
+| Level 1 (every member) | Browse members and startups. Edit their own profile, traits, needs and offers |
+| Level 2 | Add a startup, claim a startup (and get matches, from Phase 4) |
+| Level 3 | Request intros (Phase 5) |
+| `partner_admin` | Create members, set verification levels, review startup claims |
+| Startup team / claimer | Edit the startup and its needs |
+
+Role and level are always read fresh from the database. When an admin changes someone's level, or someone calls `POST /members/me/revoke-tokens`, their `token_version` goes up. Every token they already hold then stops working.
+
+**Claiming a startup:**
+
+1. A level 2+ member sends `POST /startups/{id}/claims` with evidence that they work there.
+2. A `partner_admin` reviews it under `GET /startups/claims`.
+3. The admin approves or rejects it. Approval makes the member the owner and adds them to the team. Any other pending claims for that startup are rejected.
 
 ## Database and migrations
 
@@ -105,6 +136,7 @@ app/
   db/            engine, sessions, ORM models, Redis client
   embeddings/    EmbeddingProvider interface, fastembed + fake implementations
   ingestion/     seed file schemas + idempotent loader
+  api/deps.py    auth dependencies: get_current_member, require_level, require_role
   graph/ matching/ circuits/ jobs/   (later phases)
 migrations/      Alembic migrations
 seed/            reference lists, generator, generated data
