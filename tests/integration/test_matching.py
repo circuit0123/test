@@ -4,7 +4,7 @@ import uuid
 
 import pytest
 from redis.asyncio import Redis
-from sqlalchemy import insert, select
+from sqlalchemy import insert, select, text
 
 from app.config import MatchingSettings
 from app.db import models as m
@@ -176,3 +176,43 @@ def test_scheduler_registers_the_match_job(api_settings):
     job = scheduler.get_job("compute_all_matches")
     assert job.trigger.interval.total_seconds() == api_settings.matching.job_interval_hours * 3600
     assert job.max_instances == 1
+
+
+async def test_recommendations_shown_are_logged(api, factory, world, engine):
+    h = await factory.headers(world.ids["A"])
+    body = (await api.get("/matches", headers=h)).json()
+    async with engine.connect() as conn:
+        logged = (await conn.execute(text(
+            "SELECT target_id, payload FROM events WHERE type = 'recommendation_shown' ORDER BY id"))).all()
+    assert [r.target_id for r in logged] == [i["member"]["id"] for i in body["items"]]
+    assert logged[0].payload["rank"] == 1 and logged[0].payload["served_from"] == "computed"
+
+
+async def names_in_matches(api, headers, ids) -> set[str]:
+    body = (await api.get("/matches", headers=headers, params={"refresh": "true"})).json()
+    found = {i["member"]["id"] for i in body["items"]}
+    return {n for n, i in ids.items() if str(i) in found}
+
+
+async def test_feedback_hides_people_already_in_motion(api, factory, world, engine):
+    """The feedback loop: intros and dismissals change who is suggested next."""
+    a = world.ids["A"]
+    h = await factory.headers(a)
+    assert await names_in_matches(api, h, world.ids) == {"B", "C", "H"}
+
+    # A dismisses H's card.
+    await api.post("/events", headers=h, json={"type": "match_dismissed", "target_type": "member",
+                                               "target_id": str(world.ids["H"])})
+    # A has a pending intro with B; C declined A recently.
+    async with engine.begin() as conn:
+        await conn.execute(insert(m.IntroRequest).values(id=uuid.uuid4(), from_member=a, to_member=world.ids["B"],
+                                                         reason="x", status="pending"))
+        await conn.execute(text(
+            "INSERT INTO intro_requests (id, from_member, to_member, reason, status, responded_at) "
+            "VALUES (gen_random_uuid(), :a, :c, 'x', 'declined', now())"), {"a": a, "c": world.ids["C"]})
+    assert await names_in_matches(api, h, world.ids) == set()
+
+
+def test_scheduler_registers_the_intro_expiry_job(api_settings):
+    scheduler = create_scheduler(resources=None, settings=api_settings)  # type: ignore[arg-type]
+    assert scheduler.get_job("expire_intros").trigger.interval.total_seconds() == 3600

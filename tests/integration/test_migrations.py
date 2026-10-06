@@ -70,3 +70,19 @@ async def test_connections_must_be_stored_in_order(engine):
             await conn.execute(
                 text("INSERT INTO connections (member_a, member_b, source) VALUES (:a, :b, 'mutual')"), {"a": hi, "b": lo}
             )
+
+
+def test_check_constraints_match_the_models(migrated_db):
+    """Autogenerate can't see CHECK constraints, so compare their names directly."""
+    from sqlalchemy import CheckConstraint
+
+    expected = {(t.name, c.name) for t in Base.metadata.tables.values()
+                for c in t.constraints if isinstance(c, CheckConstraint)}
+    engine = create_sync_engine(migrated_db)
+    with engine.connect() as conn:
+        actual = set(conn.execute(text(
+            "SELECT conrelid::regclass::text, conname FROM pg_constraint "
+            "WHERE contype = 'c' AND connamespace = 'public'::regnamespace "
+            "AND conrelid::regclass::text <> 'spatial_ref_sys'")).all())
+    engine.dispose()
+    assert actual == expected

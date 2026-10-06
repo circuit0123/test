@@ -44,7 +44,7 @@ async def update_me(body: MemberUpdate, me: CurrentMember = Depends(browse),
 @router.delete("/me", status_code=status.HTTP_204_NO_CONTENT, summary="Delete my account",
                description="Permanently deletes your member record and everything that belongs to it.")
 async def delete_me(me: CurrentMember = Depends(browse), session: AsyncSession = Depends(get_session)) -> Response:
-    await members.delete_member(session, me.id)
+    await members.delete_member(session, me.id, actor_id=me.id)
     return Response(status_code=status.HTTP_204_NO_CONTENT)
 
 
@@ -73,7 +73,7 @@ async def my_needs(me: CurrentMember = Depends(browse), session: AsyncSession = 
 async def add_need(body: NeedCreate, me: CurrentMember = Depends(browse),
                    session: AsyncSession = Depends(get_session),
                    resources: Resources = Depends(get_resources)) -> NeedOut:
-    return await needs.create_need(session, resources.embedder, "member", me.id, body)
+    return await needs.create_need(session, resources.embedder, "member", me.id, body, actor_id=me.id)
 
 
 @router.get("/me/offers", response_model=list[OfferOut], summary="My offers",
@@ -114,9 +114,9 @@ async def list_members(
 
 @router.post("", response_model=MemberMe, status_code=status.HTTP_201_CREATED, summary="Create a member (admin)",
              description="partner_admin only. Creates a member record, e.g. when onboarding a cohort.")
-async def create_member(body: MemberCreate, _: CurrentMember = Depends(require_admin),
+async def create_member(body: MemberCreate, admin: CurrentMember = Depends(require_admin),
                         session: AsyncSession = Depends(get_session)) -> MemberMe:
-    return await members.create_member(session, body)
+    return await members.create_member(session, body, actor_id=admin.id)
 
 
 @router.get("/{member_id}", response_model=MemberProfile, summary="Member profile",
@@ -128,18 +128,18 @@ async def get_member(member_id: uuid.UUID, _: CurrentMember = Depends(browse),
 
 @router.delete("/{member_id}", status_code=status.HTTP_204_NO_CONTENT, summary="Delete a member (admin)",
                description="partner_admin only. Permanently deletes a member.")
-async def delete_member(member_id: uuid.UUID, _: CurrentMember = Depends(require_admin),
+async def delete_member(member_id: uuid.UUID, admin: CurrentMember = Depends(require_admin),
                         session: AsyncSession = Depends(get_session)) -> Response:
-    await members.delete_member(session, member_id)
+    await members.delete_member(session, member_id, actor_id=admin.id)
     return Response(status_code=status.HTTP_204_NO_CONTENT)
 
 
 @router.put("/{member_id}/verification", response_model=MemberSummary, summary="Set verification level (admin)",
             description="partner_admin only. Changes a member's level and revokes their existing tokens.")
 async def set_verification(member_id: uuid.UUID, body: VerificationUpdate,
-                           _: CurrentMember = Depends(require_admin),
+                           admin: CurrentMember = Depends(require_admin),
                            session: AsyncSession = Depends(get_session)) -> MemberSummary:
-    return await members.set_verification(session, member_id, body.verification_level)
+    return await members.set_verification(session, member_id, body.verification_level, actor_id=admin.id)
 
 
 @router.put("/{member_id}/auth-subject", status_code=status.HTTP_204_NO_CONTENT,
@@ -148,7 +148,7 @@ async def set_verification(member_id: uuid.UUID, body: VerificationUpdate,
                         "this member, or unlinks it with null. Revokes the member's existing tokens. "
                         "409 if that account is already linked to someone else.")
 async def set_auth_subject(member_id: uuid.UUID, body: AuthSubjectUpdate,
-                           _: CurrentMember = Depends(require_admin),
+                           admin: CurrentMember = Depends(require_admin),
                            session: AsyncSession = Depends(get_session)) -> Response:
-    await members.set_auth_subject(session, member_id, body.auth_subject)
+    await members.set_auth_subject(session, member_id, body.auth_subject, actor_id=admin.id)
     return Response(status_code=status.HTTP_204_NO_CONTENT)

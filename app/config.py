@@ -38,9 +38,23 @@ class MatchingSettings(BaseModel):
     role_cap_share: float = 0.5  # at most this share of results from one role
     max_appearances_per_candidate: int = 40  # stops one popular person flooding every list
     bridge_neighbours_per_need: int = 10  # nearest offers by embedding, per need
+    # Feedback: never suggest people you already have a pending/accepted intro with,
+    # and hide people who declined you, or whom you dismissed, for this many days.
+    hide_declined_days: int = 30
+    hide_dismissed_days: int = 30
 
     cache_ttl_hours: float = 12
     job_interval_hours: float = 4
+
+
+class IntroSettings(BaseModel):
+    """Intro request limits. Override in .env as INTROS__<NAME>."""
+
+    max_pending_outgoing: int = 5  # open requests a member may have waiting at once
+    max_requests_per_week: int = 10  # requests a member may send in any 7 days
+    expire_after_days: int = 14  # unanswered requests expire
+    decline_cooldown_days: int = 30  # after a decline, wait this long to ask the same person again
+    connection_strength: float = 0.5  # strength of the connection an accepted intro creates
 
 
 class Settings(BaseSettings):
@@ -77,6 +91,7 @@ class Settings(BaseSettings):
     nearby_max_radius_km: float = 200.0
 
     matching: MatchingSettings = MatchingSettings()
+    intros: IntroSettings = IntroSettings()
     # Background jobs (APScheduler) run inside the API process. Off in tests.
     scheduler_enabled: bool = True
     match_job_on_startup: bool = False  # also compute matches right after startup

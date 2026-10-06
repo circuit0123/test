@@ -7,7 +7,7 @@ from app.api.deps import LEVEL_MATCHES, CurrentMember, get_resources, require_ad
 from app.db.session import get_session
 from app.resources import Resources
 from app.schemas.matches import MatchesResponse, RecomputeResult
-from app.services import matching
+from app.services import events, matching
 
 router = APIRouter(prefix="/matches", tags=["matches"])
 
@@ -36,9 +36,11 @@ async def my_matches(
         rows = await matching.compute_for_member(session, me.id, settings, now=computed_at)
         await matching.store(session, me.id, rows, computed_at)
         await matching.cache(resources.redis, me.id, rows, computed_at, settings.cache_ttl_hours)
+        events.record(session, "matches_refreshed", actor_id=me.id, payload={"results": len(rows)})
     response = await matching.get_matches(session, resources.redis, me.id, settings, limit)
     if refresh:
         response.served_from = "computed"
+    await matching.record_shown(session, me.id, response)  # also commits the refresh event
     return response
 
 
@@ -49,7 +51,8 @@ async def my_matches(
     description="partner_admin only. Runs the background match job now for every member and waits for it.",
 )
 async def recompute(
-    _: CurrentMember = Depends(require_admin),
+    admin: CurrentMember = Depends(require_admin),
     resources: Resources = Depends(get_resources),
 ) -> RecomputeResult:
-    return await matching.recompute_all(resources.sessionmaker, resources.redis, resources.settings.matching)
+    return await matching.recompute_all(resources.sessionmaker, resources.redis, resources.settings.matching,
+                                        actor_id=admin.id)

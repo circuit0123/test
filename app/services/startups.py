@@ -28,6 +28,7 @@ from app.schemas.startups import (
     TeamMemberOut,
 )
 from app.services.auth import CurrentMember
+from app.services import events
 from app.services.errors import Conflict, Forbidden, Invalid, NotFound
 from app.services.needs import create_need, list_needs
 from app.services.permissions import can_edit_startup
@@ -104,6 +105,8 @@ async def create_startup(session: AsyncSession, me: CurrentMember, data: Startup
         await session.rollback()
         raise Conflict(f"a startup with domain {data.website_domain} already exists") from exc
     session.add(StartupMember(startup_id=s.id, member_id=me.id, title=data.title))
+    events.record(session, "startup_created", actor_id=me.id, target_type="startup", target_id=s.id,
+                  payload={"source": "user", "sector": data.sector})
     await session.commit()
     await session.refresh(s)  # reload what the database stored (location, timestamps)
     return await get_detail(session, s.id)
@@ -119,10 +122,13 @@ async def update_startup(
     for key in _NOT_NULL & changes.keys():
         if changes[key] is None:
             raise Invalid(f"{key} cannot be null")
+    fields = sorted({"location" if k in ("lat", "lng") else k for k in changes})
     if "lat" in changes or "lng" in changes:
         s.location = to_point(changes.pop("lat", None), changes.pop("lng", None))
     for key, value in changes.items():
         setattr(s, key, value)
+    events.record(session, "startup_updated", actor_id=me.id, target_type="startup", target_id=startup_id,
+                  payload={"fields": fields})
     await session.commit()
     await session.refresh(s)
     return await get_detail(session, startup_id)
@@ -132,6 +138,8 @@ async def delete_startup(session: AsyncSession, me: CurrentMember, startup_id: u
     s = await _get(session, startup_id)
     if not (me.is_admin or s.claimed_by_member_id == me.id):
         raise Forbidden("only the claimer or a partner_admin can delete a startup")
+    events.record(session, "startup_deleted", actor_id=me.id, target_type="startup", target_id=startup_id,
+                  payload={"source": s.source})
     await session.delete(s)
     await session.commit()
 
@@ -142,7 +150,7 @@ async def add_need(
     await _get(session, startup_id)
     if not await can_edit_startup(session, me, startup_id):
         raise Forbidden("only the startup's team can add its needs")
-    return await create_need(session, embedder, "startup", startup_id, data)
+    return await create_need(session, embedder, "startup", startup_id, data, actor_id=me.id)
 
 
 # ---------- claiming ----------
@@ -157,8 +165,10 @@ async def create_claim(session: AsyncSession, me: CurrentMember, startup_id: uui
     s = await _get(session, startup_id)
     if s.claimed_by_member_id is not None:
         raise Conflict("this startup has already been claimed")
-    claim = StartupClaim(startup_id=s.id, member_id=me.id, title=data.title, evidence=data.evidence)
+    claim = StartupClaim(id=uuid.uuid4(), startup_id=s.id, member_id=me.id, title=data.title, evidence=data.evidence)
     session.add(claim)
+    events.record(session, "claim_created", actor_id=me.id, target_type="startup", target_id=s.id,
+                  payload={"claim_id": str(claim.id)})
     try:
         await session.commit()
     except IntegrityError as exc:  # the partial unique index: one pending claim per member
@@ -212,6 +222,8 @@ async def decide_claim(
                     decision_note="another claim for this startup was approved")
         )
     claim.status = "approved" if approve else "rejected"
+    events.record(session, f"claim_{claim.status}", actor_id=admin.id, target_type="startup",
+                  target_id=startup.id, payload={"claim_id": str(claim.id), "claimant_id": str(claim.member_id)})
     claim.decided_by, claim.decided_at, claim.decision_note = admin.id, now, note
     await session.commit()
     return _claim_out(claim, startup.name)
