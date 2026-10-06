@@ -1,0 +1,2639 @@
+[
+  {
+    "website_domain": "helixgrid.example",
+    "stage": "seed",
+    "traits": [
+      "b2b",
+      "first-generation-graduate",
+      "deep-tech"
+    ],
+    "needs": [
+      {
+        "id": "c9ef6c9d-d2b4-5cd3-b13f-3b735c22f9b7",
+        "capability": "regulatory-compliance",
+        "text": "Seeking guidance on regulatory compliance as we plan to raise our next round within six months."
+      },
+      {
+        "id": "e1a40f85-a51d-5fce-abb9-653f3285b685",
+        "capability": "backend-development",
+        "text": "Seeking guidance on backend development as we are scaling our fintech product to new cities."
+      }
+    ],
+    "team": [
+      {
+        "member_id": "0e035d0f-774b-5bec-8873-f846ca2f10e0",
+        "title": "CEO & Co-founder"
+      },
+      {
+        "member_id": "8d1fd9f7-d268-5a4d-b5cd-43701e81e19d",
+        "title": "COO & Co-founder"
+      }
+    ]
+  },
+  {
+    "website_domain": "kestrelfarm.example",
+    "stage": "series-a",
+    "traits": [
+      "b2c",
+      "technical"
+    ],
+    "needs": [
+      {
+        "id": "66f25ce9-cf30-5d7c-a6c7-5e28557b504e",
+        "capability": "healthcare-domain",
+        "text": "We need someone experienced in healthcare domain expertise because our healthtech pilot is turning into paying customers."
+      },
+      {
+        "id": "925ff2f4-5c82-5c4a-b104-0f1daf3c81ee",
+        "capability": "mobile-development",
+        "text": "Seeking guidance on mobile development as we plan to raise our next round within six months."
+      },
+      {
+        "id": "e0351022-55f2-589e-a965-0b0c211eb958",
+        "capability": "data-privacy",
+        "text": "Seeking guidance on data privacy as our healthtech pilot is turning into paying customers."
+      }
+    ],
+    "team": [
+      {
+        "member_id": "b5a9cf73-c70b-5179-a21b-e34c57136832",
+        "title": "CEO & Co-founder"
+      }
+    ]
+  },
+  {
+    "website_domain": "fablebio.example",
+    "stage": "series-b",
+    "traits": [
+      "b2c",
+      "women-led"
+    ],
+    "needs": [
+      {
+        "id": "c034a25f-e799-5235-aabe-8b55b378ddc8",
+        "capability": "biotech-lab",
+        "text": "We need someone experienced in biotech lab & research because we are scaling our biotech product to new cities."
+      }
+    ],
+    "team": [
+      {
+        "member_id": "e617c24b-9038-51d9-a41a-9848fe1ac2fb",
+        "title": "CEO & Co-founder"
+      }
+    ]
+  },
+  {
+    "website_domain": "quantalabs.example",
+    "stage": "pre-seed",
+    "traits": [
+      "b2c",
+      "design-minded"
+    ],
+    "needs": [
+      {
+        "id": "900e5bd8-9a29-54f5-8f45-30769fadb5d3",
+        "capability": "content-marketing",
+        "text": "We need someone experienced in content marketing because our edtech pilot is turning into paying customers."
+      },
+      {
+        "id": "5fa50aa2-82c7-59b7-a048-d5ed78354969",
+        "capability": "ux-design",
+        "text": "Looking for help with ux research & design: we are scaling our edtech product to new cities."
+      }
+    ],
+    "team": [
+      {
+        "member_id": "c1eab824-b2d2-563c-9b65-b36d2f02cf3a",
+        "title": "CEO & Co-founder"
+      },
+      {
+        "member_id": "99787b40-b6d7-5390-bce1-c0e982ffaecd",
+        "title": "COO & Co-founder"
+      }
+    ]
+  },
+  {
+    "website_domain": "cedargrow.example",
+    "stage": "series-b",
+    "traits": [
+      "b2c",
+      "social-impact"
+    ],
+    "needs": [
+      {
+        "id": "1ec8cfce-72cc-5f67-9145-516090d0212a",
+        "capability": "supply-chain",
+        "text": "Seeking guidance on supply chain & logistics as our agritech pilot is turning into paying customers."
+      },
+      {
+        "id": "0178f320-7f01-5279-8531-b452e7d99bba",
+        "capability": "fundraising",
+        "text": "Seeking guidance on fundraising as our agritech pilot is turning into paying customers."
+      }
+    ],
+    "team": [
+      {
+        "member_id": "1c4f33ec-b6d3-560d-836c-4d65579baede",
+        "title": "CEO & Co-founder"
+      }
+    ]
+  },
+  {
+    "website_domain": "nimbuscart.example",
+    "stage": "series-b",
+    "traits": [
+      "b2c",
+      "vernacular-first"
+    ],
+    "needs": [
+      {
+        "id": "6e4d35fe-194c-53ee-af07-ddfb11f95ada",
+        "capability": "climate-energy",
+        "text": "We need someone experienced in climate & energy expertise because we are scaling our climate product to new cities."
+      },
+      {
+        "id": "22efac05-7250-538a-b5ee-52e0fa92222f",
+        "capability": "grant-writing",
+        "text": "Seeking guidance on grant writing as our climate pilot is turning into paying customers."
+      }
+    ],
+    "team": [
+      {
+        "member_id": "6f0beb80-9a54-51b8-9bed-2075ffc29f49",
+        "title": "CEO & Co-founder"
+      }
+    ]
+  },
+  {
+    "website_domain": "boltsystems.example",
+    "stage": "series-a",
+    "traits": [
+      "b2c",
+      "first-generation-graduate"
+    ],
+    "needs": [
+      {
+        "id": "c081311e-0190-5c39-9f0b-c79efef3dec8",
+        "capability": "embedded-hardware",
+        "text": "Looking for help with embedded systems & hardware: we are scaling our deeptech product to new cities."
+      },
+      {
+        "id": "520e3b5a-8228-54ba-afd0-e11d80107509",
+        "capability": "technical-architecture",
+        "text": "We need someone experienced in technical architecture because we plan to raise our next round within six months."
+      }
+    ],
+    "team": [
+      {
+        "member_id": "acdca14d-44d4-50bc-a7d9-cbb02dd0bb3e",
+        "title": "CEO & Co-founder"
+      }
+    ]
+  },
+  {
+    "website_domain": "cedarpay.example",
+    "stage": "pre-seed",
+    "traits": [
+      "b2b",
+      "vernacular-first",
+      "rural-markets"
+    ],
+    "needs": [
+      {
+        "id": "90e519f0-1bb1-55d6-a668-eec69120447d",
+        "capability": "b2b-sales",
+        "text": "Seeking guidance on b2b sales as we plan to raise our next round within six months."
+      },
+      {
+        "id": "8981b26b-9fae-58fa-a43e-797d7c0340ff",
+        "capability": "pricing-strategy",
+        "text": "Seeking guidance on pricing strategy as we plan to raise our next round within six months."
+      },
+      {
+        "id": "b6014f3c-140f-5c98-93e3-aa36ec481d56",
+        "capability": "customer-success",
+        "text": "We need someone experienced in customer success because our saas pilot is turning into paying customers."
+      }
+    ],
+    "team": [
+      {
+        "member_id": "33ccd576-4d8a-542b-9c98-82de5a5bd1da",
+        "title": "CEO & Co-founder"
+      }
+    ]
+  },
+  {
+    "website_domain": "umbraworks.example",
+    "stage": "series-b",
+    "traits": [
+      "b2c",
+      "deep-tech",
+      "first-time-founder"
+    ],
+    "needs": [
+      {
+        "id": "89bde2e7-e09f-5967-aaaf-342508b208db",
+        "capability": "growth-marketing",
+        "text": "Looking for help with growth marketing: we plan to raise our next round within six months."
+      },
+      {
+        "id": "a7f836d1-5940-5e2b-aa6a-016fc162ed8d",
+        "capability": "retail-ecommerce",
+        "text": "We need someone experienced in retail & e-commerce because we plan to raise our next round within six months."
+      },
+      {
+        "id": "a52093e8-b7f6-5b5d-b9d0-9981d011d3ea",
+        "capability": "social-media",
+        "text": "Looking for help with social media: we plan to raise our next round within six months."
+      }
+    ],
+    "team": [
+      {
+        "member_id": "496a2359-39e2-5a95-a8b4-c89cf5e20f14",
+        "title": "CEO & Co-founder"
+      }
+    ]
+  },
+  {
+    "website_domain": "tidalcart.example",
+    "stage": "pre-seed",
+    "traits": [
+      "b2b",
+      "public-speaker",
+      "vc-backed"
+    ],
+    "needs": [
+      {
+        "id": "2457c202-d89c-5c42-a1d0-fd0f9b10c879",
+        "capability": "partnerships",
+        "text": "Seeking guidance on partnerships & business development as we are scaling our logistics product to new cities."
+      }
+    ],
+    "team": [
+      {
+        "member_id": "849a5eb8-89a6-50ac-af6b-6be26bfb8114",
+        "title": "CEO & Co-founder"
+      }
+    ]
+  },
+  {
+    "website_domain": "monsoonmobility.example",
+    "stage": "idea",
+    "traits": [
+      "b2c",
+      "climate-focused"
+    ],
+    "needs": [
+      {
+        "id": "92e99138-9364-5031-9c74-230263951cb9",
+        "capability": "government-relations",
+        "text": "Looking for help with government relations: we are scaling our mobility product to new cities."
+      },
+      {
+        "id": "57054396-24e3-5be4-8010-35710dfbfe2e",
+        "capability": "mobility-domain",
+        "text": "Seeking guidance on mobility domain expertise as we are scaling our mobility product to new cities."
+      }
+    ],
+    "team": [
+      {
+        "member_id": "ae5898ca-5390-5ff4-a018-36f7ad13e3a8",
+        "title": "CEO & Co-founder"
+      }
+    ]
+  },
+  {
+    "website_domain": "embersystems.example",
+    "stage": "pre-seed",
+    "traits": [
+      "b2c",
+      "data-driven",
+      "social-impact"
+    ],
+    "needs": [
+      {
+        "id": "1813ef34-f965-5b09-bd39-9f2ce02d5f6f",
+        "capability": "ui-visual-design",
+        "text": "We need someone experienced in ui & visual design because our gaming pilot is turning into paying customers."
+      },
+      {
+        "id": "a19e2ea2-00a6-5230-84ad-aa24f82866a0",
+        "capability": "backend-development",
+        "text": "Looking for help with backend development: we plan to raise our next round within six months."
+      },
+      {
+        "id": "d78ddd17-4306-5e0c-87e2-e6506e1f1df8",
+        "capability": "growth-marketing",
+        "text": "Looking for help with growth marketing: our gaming pilot is turning into paying customers."
+      }
+    ],
+    "team": [
+      {
+        "member_id": "14d52b25-336f-51a2-b176-ca95e674cc34",
+        "title": "CEO & Co-founder"
+      }
+    ]
+  },
+  {
+    "website_domain": "willowai.example",
+    "stage": "series-a",
+    "traits": [
+      "b2b",
+      "open-source",
+      "climate-focused"
+    ],
+    "needs": [
+      {
+        "id": "3bd7e7fc-4108-5418-92c4-65c1e96ad1bb",
+        "capability": "backend-development",
+        "text": "Looking for help with backend development: we are scaling our fintech product to new cities."
+      },
+      {
+        "id": "6c29d685-4381-51ce-a671-bd373a123794",
+        "capability": "b2b-sales",
+        "text": "We need someone experienced in b2b sales because our fintech pilot is turning into paying customers."
+      },
+      {
+        "id": "3ffaa9e9-c85e-5501-ad19-b4014bb5e7b0",
+        "capability": "cybersecurity",
+        "text": "We need someone experienced in cybersecurity because we are scaling our fintech product to new cities."
+      }
+    ],
+    "team": [
+      {
+        "member_id": "13a5acb8-dab0-5aa8-8b7c-0f67b53a0843",
+        "title": "CEO & Co-founder"
+      }
+    ]
+  },
+  {
+    "website_domain": "boltpay.example",
+    "stage": "idea",
+    "traits": [
+      "b2c",
+      "non-technical"
+    ],
+    "needs": [
+      {
+        "id": "e1e833f4-cc98-5bb8-b8e5-418ec0ce6788",
+        "capability": "growth-marketing",
+        "text": "Looking for help with growth marketing: we are scaling our healthtech product to new cities."
+      },
+      {
+        "id": "b73ef2af-0292-5e20-a284-2e68a90432be",
+        "capability": "healthcare-domain",
+        "text": "Seeking guidance on healthcare domain expertise as we plan to raise our next round within six months."
+      }
+    ],
+    "team": [
+      {
+        "member_id": "78322dd5-47bc-5aff-b1f6-4fa2ba347bb3",
+        "title": "CEO & Co-founder"
+      }
+    ]
+  },
+  {
+    "website_domain": "helixsystems.example",
+    "stage": "seed",
+    "traits": [
+      "b2c",
+      "rural-markets"
+    ],
+    "needs": [
+      {
+        "id": "296e8300-06fd-5f4e-832b-50125b9183ce",
+        "capability": "ip-patents",
+        "text": "We need someone experienced in ip & patents because we are scaling our biotech product to new cities."
+      },
+      {
+        "id": "c47a159c-c12e-5dca-8478-11f8da937005",
+        "capability": "clinical-trials",
+        "text": "Looking for help with clinical trials: we plan to raise our next round within six months."
+      },
+      {
+        "id": "225c88a5-c752-58c5-88bb-6fd50df77158",
+        "capability": "biotech-lab",
+        "text": "We need someone experienced in biotech lab & research because we are scaling our biotech product to new cities."
+      }
+    ],
+    "team": [
+      {
+        "member_id": "fcbb71d5-4229-59e6-a753-7a22ecb924e1",
+        "title": "CEO & Co-founder"
+      }
+    ]
+  },
+  {
+    "website_domain": "vertexcart.example",
+    "stage": "series-b",
+    "traits": [
+      "b2c",
+      "data-driven"
+    ],
+    "needs": [
+      {
+        "id": "000b9154-faed-5679-b8fd-e57c49e473bb",
+        "capability": "ux-design",
+        "text": "We need someone experienced in ux research & design because we are scaling our edtech product to new cities."
+      },
+      {
+        "id": "2235ee7c-1310-5e3c-8e24-d5d7badad63c",
+        "capability": "frontend-development",
+        "text": "Seeking guidance on frontend development as we are scaling our edtech product to new cities."
+      },
+      {
+        "id": "7a2b52a8-6181-5700-b061-3d88c6c74f29",
+        "capability": "content-marketing",
+        "text": "Looking for help with content marketing: we are scaling our edtech product to new cities."
+      }
+    ],
+    "team": [
+      {
+        "member_id": "4672916f-56f3-56bc-9379-07a99d6194f3",
+        "title": "CEO & Co-founder"
+      }
+    ]
+  },
+  {
+    "website_domain": "pebblehealth.example",
+    "stage": "series-b",
+    "traits": [
+      "b2c",
+      "first-generation-graduate"
+    ],
+    "needs": [
+      {
+        "id": "7719f53d-d813-50c5-860f-525134651125",
+        "capability": "fundraising",
+        "text": "We need someone experienced in fundraising because we plan to raise our next round within six months."
+      },
+      {
+        "id": "c618a103-c582-56ff-8a6a-1854779be8d3",
+        "capability": "government-relations",
+        "text": "Looking for help with government relations: we are scaling our agritech product to new cities."
+      },
+      {
+        "id": "065b2621-ec5f-59dc-a873-41bf133f8079",
+        "capability": "supply-chain",
+        "text": "Looking for help with supply chain & logistics: we plan to raise our next round within six months."
+      }
+    ],
+    "team": [
+      {
+        "member_id": "14abd33f-c375-5b45-8c4d-575f463d390c",
+        "title": "CEO & Co-founder"
+      }
+    ]
+  },
+  {
+    "website_domain": "emberfarm.example",
+    "stage": "series-b",
+    "traits": [
+      "b2c",
+      "open-source",
+      "non-technical"
+    ],
+    "needs": [
+      {
+        "id": "da5e4fae-14ee-5e87-b5ed-7253b166eaa9",
+        "capability": "grant-writing",
+        "text": "Seeking guidance on grant writing as our climate pilot is turning into paying customers."
+      }
+    ],
+    "team": [
+      {
+        "member_id": "b43308a1-6169-54d2-a70f-60a8986c7e93",
+        "title": "CEO & Co-founder"
+      }
+    ]
+  },
+  {
+    "website_domain": "quantacart.example",
+    "stage": "series-b",
+    "traits": [
+      "b2c",
+      "hackathon-regular"
+    ],
+    "needs": [
+      {
+        "id": "02e8dffb-cfce-550c-9277-886c87a65232",
+        "capability": "technical-architecture",
+        "text": "Looking for help with technical architecture: our deeptech pilot is turning into paying customers."
+      },
+      {
+        "id": "aaf56d83-8bc1-5389-8572-00001bcbc3af",
+        "capability": "ip-patents",
+        "text": "Looking for help with ip & patents: we plan to raise our next round within six months."
+      }
+    ],
+    "team": [
+      {
+        "member_id": "2b5fbc6f-9470-5929-bb10-de9a08cb6492",
+        "title": "CEO & Co-founder"
+      }
+    ]
+  },
+  {
+    "website_domain": "vertexbio.example",
+    "stage": "series-a",
+    "traits": [
+      "b2b",
+      "climate-focused",
+      "hackathon-regular"
+    ],
+    "needs": [
+      {
+        "id": "ff55d111-4476-5cc4-b78e-c56734d7ffb8",
+        "capability": "customer-success",
+        "text": "We need someone experienced in customer success because we are scaling our saas product to new cities."
+      },
+      {
+        "id": "c9fb775e-3017-5c5e-9b9d-a8d808f257ff",
+        "capability": "devops-cloud",
+        "text": "Looking for help with devops & cloud infrastructure: we are scaling our saas product to new cities."
+      }
+    ],
+    "team": [
+      {
+        "member_id": "e991df87-2ba3-5d68-abdc-0ed952a0880b",
+        "title": "CEO & Co-founder"
+      },
+      {
+        "member_id": "9bc520ce-649c-5428-a25a-37d169f19dbc",
+        "title": "CTO & Co-founder"
+      }
+    ]
+  },
+  {
+    "website_domain": "kestrelmobility.example",
+    "stage": "seed",
+    "traits": [
+      "b2c",
+      "non-technical",
+      "tier-2-3-college"
+    ],
+    "needs": [
+      {
+        "id": "b421aab5-d277-53b1-ba0e-54fc966bb08c",
+        "capability": "social-media",
+        "text": "We need someone experienced in social media because we plan to raise our next round within six months."
+      },
+      {
+        "id": "0215d16d-662e-5835-85c8-fec35c1dc46b",
+        "capability": "supply-chain",
+        "text": "We need someone experienced in supply chain & logistics because we are scaling our ecommerce product to new cities."
+      }
+    ],
+    "team": [
+      {
+        "member_id": "1af39b73-0bb5-5876-b0c5-0759a74a4c0f",
+        "title": "CEO & Co-founder"
+      }
+    ]
+  },
+  {
+    "website_domain": "tidalmobility.example",
+    "stage": "series-b",
+    "traits": [
+      "b2b",
+      "research-background",
+      "open-source"
+    ],
+    "needs": [
+      {
+        "id": "d0a58a8c-894a-564b-b521-bdd0d4cdb949",
+        "capability": "partnerships",
+        "text": "Looking for help with partnerships & business development: our logistics pilot is turning into paying customers."
+      },
+      {
+        "id": "d56a3820-5dca-507f-a333-306279d8b376",
+        "capability": "operations",
+        "text": "Seeking guidance on operations as our logistics pilot is turning into paying customers."
+      },
+      {
+        "id": "4c5f33e8-92bc-5e64-9696-ac67c9b1796e",
+        "capability": "supply-chain",
+        "text": "Seeking guidance on supply chain & logistics as our logistics pilot is turning into paying customers."
+      }
+    ],
+    "team": [
+      {
+        "member_id": "daa17abd-a56b-59fe-b477-fba92ffc0437",
+        "title": "CEO & Co-founder"
+      },
+      {
+        "member_id": "7faceeba-788a-5375-8e72-87f9183e231f",
+        "title": "COO & Co-founder"
+      }
+    ]
+  },
+  {
+    "website_domain": "cobalthealth.example",
+    "stage": "series-b",
+    "traits": [
+      "b2c",
+      "public-speaker"
+    ],
+    "needs": [
+      {
+        "id": "8d41a2c6-8c83-513a-95b8-da28c04b2bb6",
+        "capability": "fundraising",
+        "text": "We need someone experienced in fundraising because we plan to raise our next round within six months."
+      }
+    ],
+    "team": [
+      {
+        "member_id": "fab5cee4-cec3-5bbb-a40f-6a51f9bb18f9",
+        "title": "CEO & Co-founder"
+      }
+    ]
+  },
+  {
+    "website_domain": "saffronenergy.example",
+    "stage": "series-a",
+    "traits": [
+      "b2c",
+      "hardware",
+      "vc-backed"
+    ],
+    "needs": [
+      {
+        "id": "a55a7e19-1925-5c57-910a-c7c71b2027ad",
+        "capability": "growth-marketing",
+        "text": "Seeking guidance on growth marketing as we are scaling our gaming product to new cities."
+      },
+      {
+        "id": "ce7ba04c-041e-521c-afd1-82af2412cd5d",
+        "capability": "social-media",
+        "text": "Looking for help with social media: we are scaling our gaming product to new cities."
+      },
+      {
+        "id": "a5f3ae4a-1f5d-58f6-a439-cf3a81edefdb",
+        "capability": "community-building",
+        "text": "Looking for help with community building: our gaming pilot is turning into paying customers."
+      }
+    ],
+    "team": [
+      {
+        "member_id": "7010c90c-7621-53bb-9a2f-64935a2ab83e",
+        "title": "CEO & Co-founder"
+      }
+    ]
+  },
+  {
+    "website_domain": "prismgrid.example",
+    "stage": "seed",
+    "traits": [
+      "b2b",
+      "first-time-founder",
+      "social-impact"
+    ],
+    "needs": [
+      {
+        "id": "2a3e6023-1c97-51be-878b-9403c13633f8",
+        "capability": "b2b-sales",
+        "text": "We need someone experienced in b2b sales because we are scaling our fintech product to new cities."
+      },
+      {
+        "id": "33f1578c-d827-5563-87b1-77cf5a9580bf",
+        "capability": "regulatory-compliance",
+        "text": "Seeking guidance on regulatory compliance as we plan to raise our next round within six months."
+      }
+    ],
+    "team": [
+      {
+        "member_id": "903a31a5-c5c8-5fdd-89cf-bcbac03e5a79",
+        "title": "CEO & Co-founder"
+      }
+    ]
+  },
+  {
+    "website_domain": "deltacart.example",
+    "stage": "idea",
+    "traits": [
+      "b2c",
+      "early-adopter",
+      "hardware"
+    ],
+    "needs": [
+      {
+        "id": "3ed50748-b7e4-586c-acb3-cd5b7e4d8b12",
+        "capability": "mobile-development",
+        "text": "We need someone experienced in mobile development because we plan to raise our next round within six months."
+      },
+      {
+        "id": "7c0a01bd-ae50-59f2-9d1e-1d2c6e98ec3a",
+        "capability": "data-privacy",
+        "text": "Seeking guidance on data privacy as we are scaling our healthtech product to new cities."
+      }
+    ],
+    "team": [
+      {
+        "member_id": "e8a66221-8d56-5e80-9a83-f8aeed57c927",
+        "title": "CEO & Co-founder"
+      }
+    ]
+  },
+  {
+    "website_domain": "sutrasystems.example",
+    "stage": "idea",
+    "traits": [
+      "b2c",
+      "non-technical",
+      "b2b"
+    ],
+    "needs": [
+      {
+        "id": "1dcd36c6-cd3d-564a-ba17-0342d31bd5d2",
+        "capability": "biotech-lab",
+        "text": "We need someone experienced in biotech lab & research because we are scaling our biotech product to new cities."
+      }
+    ],
+    "team": [
+      {
+        "member_id": "0d920e9c-1935-5dc9-b7f1-93d874e3ec4d",
+        "title": "CEO & Co-founder"
+      }
+    ]
+  },
+  {
+    "website_domain": "umbragrow.example",
+    "stage": "idea",
+    "traits": [
+      "b2c",
+      "hackathon-regular",
+      "deep-tech"
+    ],
+    "needs": [
+      {
+        "id": "50f6b981-c072-57e4-b59c-f8890742cfe7",
+        "capability": "growth-marketing",
+        "text": "We need someone experienced in growth marketing because our edtech pilot is turning into paying customers."
+      }
+    ],
+    "team": [
+      {
+        "member_id": "bbd56c8f-cd1f-5165-9765-d8ffbad37115",
+        "title": "CEO & Co-founder"
+      }
+    ]
+  },
+  {
+    "website_domain": "xenonenergy.example",
+    "stage": "series-a",
+    "traits": [
+      "b2c",
+      "public-speaker"
+    ],
+    "needs": [
+      {
+        "id": "90257ed5-d882-57ef-be4f-de55f82766b9",
+        "capability": "supply-chain",
+        "text": "Seeking guidance on supply chain & logistics as our agritech pilot is turning into paying customers."
+      },
+      {
+        "id": "aafe0d4f-60de-52d9-88e7-4d6bd8eccc8d",
+        "capability": "agriculture-domain",
+        "text": "We need someone experienced in agriculture domain expertise because we plan to raise our next round within six months."
+      }
+    ],
+    "team": [
+      {
+        "member_id": "89a92e78-760f-5a83-957f-61c9c4f14e49",
+        "title": "CEO & Co-founder"
+      }
+    ]
+  },
+  {
+    "website_domain": "kestrellearn.example",
+    "stage": "series-b",
+    "traits": [
+      "b2c",
+      "data-driven"
+    ],
+    "needs": [
+      {
+        "id": "fa7b27cc-61c1-563d-897a-7011177c989b",
+        "capability": "grant-writing",
+        "text": "We need someone experienced in grant writing because we are scaling our climate product to new cities."
+      }
+    ],
+    "team": [
+      {
+        "member_id": "0913ea48-c3b9-58f5-9f6e-d80efec00eaa",
+        "title": "CEO & Co-founder"
+      },
+      {
+        "member_id": "0266f44c-6419-554e-bb8f-9a9c37a3abd2",
+        "title": "CTO & Co-founder"
+      }
+    ]
+  },
+  {
+    "website_domain": "granitegrid.example",
+    "stage": "series-a",
+    "traits": [
+      "b2c",
+      "vernacular-first",
+      "social-impact"
+    ],
+    "needs": [
+      {
+        "id": "6fe3645a-4aa9-5daa-b130-db945ec0926f",
+        "capability": "ip-patents",
+        "text": "We need someone experienced in ip & patents because our deeptech pilot is turning into paying customers."
+      }
+    ],
+    "team": [
+      {
+        "member_id": "b5c76597-8761-5ba4-9f21-4a6722d83b86",
+        "title": "CEO & Co-founder"
+      },
+      {
+        "member_id": "3d077c96-e1f1-5d9b-a4dc-bee6b978b425",
+        "title": "CTO & Co-founder"
+      }
+    ]
+  },
+  {
+    "website_domain": "yonderlearn.example",
+    "stage": "seed",
+    "traits": [
+      "b2b",
+      "first-time-founder",
+      "hackathon-regular"
+    ],
+    "needs": [
+      {
+        "id": "41d8ca0b-4669-52f6-8362-f3c5d736f915",
+        "capability": "pricing-strategy",
+        "text": "Seeking guidance on pricing strategy as our saas pilot is turning into paying customers."
+      },
+      {
+        "id": "8e460c4d-e9fb-50ac-b99e-6d2d774047a2",
+        "capability": "devops-cloud",
+        "text": "Seeking guidance on devops & cloud infrastructure as our saas pilot is turning into paying customers."
+      },
+      {
+        "id": "d797ca09-36ca-5578-8df5-aea83080c2ad",
+        "capability": "customer-success",
+        "text": "We need someone experienced in customer success because our saas pilot is turning into paying customers."
+      }
+    ],
+    "team": [
+      {
+        "member_id": "1ecef840-76cd-5503-985b-9d6faba1e502",
+        "title": "CEO & Co-founder"
+      }
+    ]
+  },
+  {
+    "website_domain": "ripplehealth.example",
+    "stage": "seed",
+    "traits": [
+      "b2c",
+      "research-background"
+    ],
+    "needs": [
+      {
+        "id": "39b67053-c2fe-52d9-9df3-73cf453f7bb7",
+        "capability": "social-media",
+        "text": "We need someone experienced in social media because we plan to raise our next round within six months."
+      }
+    ],
+    "team": [
+      {
+        "member_id": "7bdb5699-a415-5234-943e-d2394245a0e6",
+        "title": "CEO & Co-founder"
+      },
+      {
+        "member_id": "fb1a12fb-6fed-51db-9a49-4b46ee4b43bb",
+        "title": "CTO & Co-founder"
+      }
+    ]
+  },
+  {
+    "website_domain": "saffronsystems.example",
+    "stage": "pre-seed",
+    "traits": [
+      "b2b",
+      "b2c",
+      "remote-friendly"
+    ],
+    "needs": [
+      {
+        "id": "239f7db1-35f8-51c6-8410-927937efe8d2",
+        "capability": "supply-chain",
+        "text": "Seeking guidance on supply chain & logistics as we plan to raise our next round within six months."
+      }
+    ],
+    "team": [
+      {
+        "member_id": "8bc64dfa-e474-5d25-b3d2-02650f75a75b",
+        "title": "CEO & Co-founder"
+      }
+    ]
+  },
+  {
+    "website_domain": "novalabs.example",
+    "stage": "series-a",
+    "traits": [
+      "b2c",
+      "technical",
+      "tier-2-3-college"
+    ],
+    "needs": [
+      {
+        "id": "f474f304-1638-5400-a71a-9e1ace8b3cd8",
+        "capability": "mobility-domain",
+        "text": "Looking for help with mobility domain expertise: we are scaling our mobility product to new cities."
+      },
+      {
+        "id": "976d2f70-faa7-532e-9ccd-65e2d1502709",
+        "capability": "embedded-hardware",
+        "text": "Looking for help with embedded systems & hardware: we are scaling our mobility product to new cities."
+      }
+    ],
+    "team": [
+      {
+        "member_id": "91d4d92c-ae25-508f-9fb1-a8bdd5ef2a04",
+        "title": "CEO & Co-founder"
+      },
+      {
+        "member_id": "72c6ed74-bdf1-5749-bcc9-1b5910ec3c6e",
+        "title": "CTO & Co-founder"
+      }
+    ]
+  },
+  {
+    "website_domain": "prismlearn.example",
+    "stage": "idea",
+    "traits": [
+      "b2c",
+      "rural-markets",
+      "vc-backed"
+    ],
+    "needs": [
+      {
+        "id": "8305db99-5213-5a3e-a432-1995ee1573f7",
+        "capability": "backend-development",
+        "text": "Looking for help with backend development: our gaming pilot is turning into paying customers."
+      }
+    ],
+    "team": [
+      {
+        "member_id": "ff63247f-3405-5eca-a02f-6dc23fe7a617",
+        "title": "CEO & Co-founder"
+      }
+    ]
+  },
+  {
+    "website_domain": "onyxlabs.example",
+    "stage": "pre-seed",
+    "traits": [
+      "b2b",
+      "tier-2-3-college"
+    ],
+    "needs": [
+      {
+        "id": "a6b80917-f741-54da-83bf-7a1fd6c3b8f2",
+        "capability": "fundraising",
+        "text": "Looking for help with fundraising: our fintech pilot is turning into paying customers."
+      },
+      {
+        "id": "82beab5b-7196-5d58-ac34-09e99229ff10",
+        "capability": "backend-development",
+        "text": "We need someone experienced in backend development because our fintech pilot is turning into paying customers."
+      },
+      {
+        "id": "158675e2-1cd4-5137-ba5b-419a22d2dd65",
+        "capability": "regulatory-compliance",
+        "text": "Seeking guidance on regulatory compliance as we plan to raise our next round within six months."
+      }
+    ],
+    "team": [
+      {
+        "member_id": "2f911710-3d8d-50d1-a535-cf71da5c9b89",
+        "title": "CEO & Co-founder"
+      },
+      {
+        "member_id": "3b34608b-0d84-5c92-b18e-55e61682458b",
+        "title": "CTO & Co-founder"
+      }
+    ]
+  },
+  {
+    "website_domain": "rangolilogic.example",
+    "stage": "seed",
+    "traits": [
+      "b2c",
+      "open-source"
+    ],
+    "needs": [
+      {
+        "id": "f877c44a-7160-592f-87d6-f28aef9abf88",
+        "capability": "data-privacy",
+        "text": "Seeking guidance on data privacy as we are scaling our healthtech product to new cities."
+      },
+      {
+        "id": "38dc8019-6199-54ed-bc9a-88a7a1b96858",
+        "capability": "growth-marketing",
+        "text": "Looking for help with growth marketing: we are scaling our healthtech product to new cities."
+      }
+    ],
+    "team": [
+      {
+        "member_id": "93432201-1d9e-5257-bf49-e5c86c464fdc",
+        "title": "CEO & Co-founder"
+      },
+      {
+        "member_id": "7548cee5-db1a-58eb-a775-c21fd8aefd15",
+        "title": "CTO & Co-founder"
+      }
+    ]
+  },
+  {
+    "website_domain": "helixai.example",
+    "stage": "idea",
+    "traits": [
+      "b2c",
+      "research-background"
+    ],
+    "needs": [
+      {
+        "id": "f8700f26-ccb7-58ae-9ea9-0350ea5c563f",
+        "capability": "clinical-trials",
+        "text": "Looking for help with clinical trials: our biotech pilot is turning into paying customers."
+      },
+      {
+        "id": "d234a352-63ed-53e9-954e-092d9101421c",
+        "capability": "ip-patents",
+        "text": "Seeking guidance on ip & patents as we are scaling our biotech product to new cities."
+      }
+    ],
+    "team": [
+      {
+        "member_id": "624b16b4-5466-509b-9d83-8b564306618e",
+        "title": "CEO & Co-founder"
+      }
+    ]
+  },
+  {
+    "website_domain": "pebblelogic.example",
+    "stage": "seed",
+    "traits": [
+      "b2c",
+      "rural-markets"
+    ],
+    "needs": [
+      {
+        "id": "3298bb5b-33c0-59a5-bb8a-6a46aa957587",
+        "capability": "frontend-development",
+        "text": "Seeking guidance on frontend development as we are scaling our edtech product to new cities."
+      },
+      {
+        "id": "43a67f94-6164-55a2-9b40-e15fc61f26c0",
+        "capability": "education-domain",
+        "text": "Looking for help with education domain expertise: we plan to raise our next round within six months."
+      },
+      {
+        "id": "650e7523-8666-5d25-a072-9d6ddafe38b6",
+        "capability": "growth-marketing",
+        "text": "Looking for help with growth marketing: our edtech pilot is turning into paying customers."
+      }
+    ],
+    "team": [
+      {
+        "member_id": "f9882afd-4f97-52d7-9b87-412aa7aaf2ef",
+        "title": "CEO & Co-founder"
+      },
+      {
+        "member_id": "fbe5aa32-64ef-5be8-a99c-68a24561606f",
+        "title": "COO & Co-founder"
+      }
+    ]
+  },
+  {
+    "website_domain": "yonderlogic.example",
+    "stage": "series-b",
+    "traits": [
+      "b2c",
+      "first-time-founder",
+      "data-driven"
+    ],
+    "needs": [
+      {
+        "id": "dad85259-e52e-5c51-8e2e-1efc2ace6098",
+        "capability": "government-relations",
+        "text": "Looking for help with government relations: we plan to raise our next round within six months."
+      }
+    ],
+    "team": [
+      {
+        "member_id": "b4b4be22-83a7-5a02-a66a-f830bc217d5a",
+        "title": "CEO & Co-founder"
+      }
+    ]
+  },
+  {
+    "website_domain": "nimbusmobility.example",
+    "stage": "series-a",
+    "traits": [
+      "b2c",
+      "repeat-founder"
+    ],
+    "needs": [
+      {
+        "id": "d0f53219-5da9-52df-bb28-9072e6f6e636",
+        "capability": "climate-energy",
+        "text": "Seeking guidance on climate & energy expertise as we plan to raise our next round within six months."
+      },
+      {
+        "id": "c5a2c385-a8d1-5f94-b754-b2d913f47219",
+        "capability": "grant-writing",
+        "text": "We need someone experienced in grant writing because we are scaling our climate product to new cities."
+      }
+    ],
+    "team": [
+      {
+        "member_id": "960bd5c8-5285-5c5a-b0ec-c2f062b298f8",
+        "title": "CEO & Co-founder"
+      }
+    ]
+  },
+  {
+    "website_domain": "novapay.example",
+    "stage": "series-b",
+    "traits": [
+      "b2c",
+      "tier-2-3-college",
+      "rural-markets"
+    ],
+    "needs": [
+      {
+        "id": "329eae00-4392-56db-b526-c94b0831a9a3",
+        "capability": "venture-capital",
+        "text": "Looking for help with venture capital: our deeptech pilot is turning into paying customers."
+      },
+      {
+        "id": "d5195d15-d08d-5a08-974d-c5e32a31d21a",
+        "capability": "machine-learning",
+        "text": "Looking for help with machine learning: we are scaling our deeptech product to new cities."
+      }
+    ],
+    "team": [
+      {
+        "member_id": "6b89aa5b-b0e5-5795-8acb-0e330e0f911a",
+        "title": "CEO & Co-founder"
+      }
+    ]
+  },
+  {
+    "website_domain": "zenithworks.example",
+    "stage": "series-a",
+    "traits": [
+      "b2b",
+      "first-generation-graduate",
+      "early-adopter"
+    ],
+    "needs": [
+      {
+        "id": "6a38a17d-f954-53f7-861a-98397883b550",
+        "capability": "devops-cloud",
+        "text": "We need someone experienced in devops & cloud infrastructure because we plan to raise our next round within six months."
+      },
+      {
+        "id": "0245e6b9-af3b-5bd0-9b18-7be3ca60e252",
+        "capability": "seo",
+        "text": "Seeking guidance on seo as we plan to raise our next round within six months."
+      }
+    ],
+    "team": [
+      {
+        "member_id": "45f38d69-9dcf-53b2-8e40-32f520eb4443",
+        "title": "CEO & Co-founder"
+      }
+    ]
+  },
+  {
+    "website_domain": "kitelabs.example",
+    "stage": "idea",
+    "traits": [
+      "b2c",
+      "design-minded",
+      "deep-tech"
+    ],
+    "needs": [
+      {
+        "id": "92f67aac-7f8c-5029-b898-2b345e76006c",
+        "capability": "social-media",
+        "text": "Seeking guidance on social media as we are scaling our ecommerce product to new cities."
+      }
+    ],
+    "team": [
+      {
+        "member_id": "b8f56922-1115-5769-8563-bdcd80171523",
+        "title": "CEO & Co-founder"
+      }
+    ]
+  },
+  {
+    "website_domain": "zenithenergy.example",
+    "stage": "pre-seed",
+    "traits": [
+      "b2b",
+      "vc-backed",
+      "non-technical"
+    ],
+    "needs": [
+      {
+        "id": "c600f86c-e195-505a-830e-64d5cb2fecb3",
+        "capability": "partnerships",
+        "text": "Seeking guidance on partnerships & business development as we plan to raise our next round within six months."
+      },
+      {
+        "id": "55602e47-a9c4-59ad-b073-d3455be75e83",
+        "capability": "mobile-development",
+        "text": "Looking for help with mobile development: we are scaling our logistics product to new cities."
+      },
+      {
+        "id": "ff5fb4db-725f-5038-aa49-f20286d3e834",
+        "capability": "supply-chain",
+        "text": "Seeking guidance on supply chain & logistics as we are scaling our logistics product to new cities."
+      }
+    ],
+    "team": [
+      {
+        "member_id": "5b5491d2-6a40-5969-ab0d-f3eea2ccec93",
+        "title": "CEO & Co-founder"
+      },
+      {
+        "member_id": "12f91669-d012-5a43-b058-d98c8a66e0d6",
+        "title": "CTO & Co-founder"
+      }
+    ]
+  },
+  {
+    "website_domain": "deltapay.example",
+    "stage": "seed",
+    "traits": [
+      "b2c",
+      "women-led",
+      "first-time-founder"
+    ],
+    "needs": [
+      {
+        "id": "aac06749-fc26-51d2-ad0b-aba79017e08a",
+        "capability": "government-relations",
+        "text": "Looking for help with government relations: we plan to raise our next round within six months."
+      },
+      {
+        "id": "a82074c7-5323-5222-bb03-515050a8ccdc",
+        "capability": "mobility-domain",
+        "text": "Seeking guidance on mobility domain expertise as we plan to raise our next round within six months."
+      }
+    ],
+    "team": [
+      {
+        "member_id": "997e0654-2959-58cb-8f8f-8103d6eb2434",
+        "title": "CEO & Co-founder"
+      }
+    ]
+  },
+  {
+    "website_domain": "indigocart.example",
+    "stage": "seed",
+    "traits": [
+      "b2c",
+      "women-led"
+    ],
+    "needs": [
+      {
+        "id": "53637236-0cd6-526c-9575-6a3883580d7a",
+        "capability": "community-building",
+        "text": "Looking for help with community building: our gaming pilot is turning into paying customers."
+      },
+      {
+        "id": "3b4aa109-ffe2-555e-b961-afa7faf0ec94",
+        "capability": "backend-development",
+        "text": "We need someone experienced in backend development because we are scaling our gaming product to new cities."
+      }
+    ],
+    "team": [
+      {
+        "member_id": "70857633-f605-51d1-a3a8-3c5d3b41395b",
+        "title": "CEO & Co-founder"
+      }
+    ]
+  },
+  {
+    "website_domain": "cedarbio.example",
+    "stage": "series-a",
+    "traits": [
+      "b2b",
+      "remote-friendly",
+      "bootstrapped"
+    ],
+    "needs": [
+      {
+        "id": "8a4ad159-6fb3-5b9b-8eec-6bced8b762f9",
+        "capability": "regulatory-compliance",
+        "text": "Looking for help with regulatory compliance: we are scaling our fintech product to new cities."
+      }
+    ],
+    "team": [
+      {
+        "member_id": "6c0b3570-256d-507b-94cc-d511dd76f7b1",
+        "title": "CEO & Co-founder"
+      },
+      {
+        "member_id": "16f05be1-a14c-59b1-827c-4e7ecec3cd0b",
+        "title": "COO & Co-founder"
+      }
+    ]
+  },
+  {
+    "website_domain": "graniteworks.example",
+    "stage": "pre-seed",
+    "traits": [
+      "b2c",
+      "bootstrapped",
+      "design-minded"
+    ],
+    "needs": [
+      {
+        "id": "4f4b519e-ac8b-57c2-b0b3-0c55a6f4896c",
+        "capability": "data-privacy",
+        "text": "Seeking guidance on data privacy as we plan to raise our next round within six months."
+      },
+      {
+        "id": "fa241651-1336-5c1a-9037-1e8ca3a13d7a",
+        "capability": "mobile-development",
+        "text": "Looking for help with mobile development: we are scaling our healthtech product to new cities."
+      }
+    ],
+    "team": [
+      {
+        "member_id": "598dd45f-2e7d-5487-80b8-25c30864d914",
+        "title": "CEO & Co-founder"
+      }
+    ]
+  },
+  {
+    "website_domain": "lotushealth.example",
+    "stage": "series-a",
+    "traits": [
+      "b2c",
+      "open-source"
+    ],
+    "needs": [
+      {
+        "id": "f4765b77-d5fc-56e1-96b8-3ad7ac7db740",
+        "capability": "fundraising",
+        "text": "We need someone experienced in fundraising because we plan to raise our next round within six months."
+      },
+      {
+        "id": "e1aed5b8-e78c-5c8c-b0a8-100a9413d3ed",
+        "capability": "biotech-lab",
+        "text": "Seeking guidance on biotech lab & research as we plan to raise our next round within six months."
+      }
+    ],
+    "team": [
+      {
+        "member_id": "b33e252c-e49c-5170-9480-1bd43b95918a",
+        "title": "CEO & Co-founder"
+      }
+    ]
+  },
+  {
+    "website_domain": "nimbusenergy.example",
+    "stage": "seed",
+    "traits": [
+      "b2c",
+      "rural-markets"
+    ],
+    "needs": [
+      {
+        "id": "bb5fe1a3-7ea3-5bc4-ad54-01a2690488d9",
+        "capability": "frontend-development",
+        "text": "Looking for help with frontend development: we plan to raise our next round within six months."
+      }
+    ],
+    "team": [
+      {
+        "member_id": "ed8d18c9-5053-5a16-9f70-61d1b14b5e50",
+        "title": "CEO & Co-founder"
+      },
+      {
+        "member_id": "0368e544-66b0-593d-8118-11774f451a08",
+        "title": "COO & Co-founder"
+      }
+    ]
+  },
+  {
+    "website_domain": "willowgrid.example",
+    "stage": "seed",
+    "traits": [
+      "b2c",
+      "climate-focused"
+    ],
+    "needs": [
+      {
+        "id": "c149e182-5990-518d-9a77-6dc46b170ad1",
+        "capability": "fundraising",
+        "text": "We need someone experienced in fundraising because our agritech pilot is turning into paying customers."
+      },
+      {
+        "id": "e309eb4f-00e2-59dd-8eaa-5ebe15db5d64",
+        "capability": "supply-chain",
+        "text": "We need someone experienced in supply chain & logistics because our agritech pilot is turning into paying customers."
+      }
+    ],
+    "team": [
+      {
+        "member_id": "4d1769c6-7dc8-5372-93db-067c005818c0",
+        "title": "CEO & Co-founder"
+      }
+    ]
+  },
+  {
+    "website_domain": "xenonhealth.example",
+    "stage": "pre-seed",
+    "traits": [
+      "b2c",
+      "rural-markets"
+    ],
+    "needs": [
+      {
+        "id": "955dd132-f469-5ca4-80ce-fbe9a50fbfb4",
+        "capability": "financial-modelling",
+        "text": "We need someone experienced in financial modelling because we are scaling our climate product to new cities."
+      },
+      {
+        "id": "8a5cc962-9cc0-5818-b615-7b3749f9e576",
+        "capability": "partnerships",
+        "text": "Seeking guidance on partnerships & business development as our climate pilot is turning into paying customers."
+      }
+    ],
+    "team": [
+      {
+        "member_id": "7df34ee6-f2b5-5d72-9458-741c66e8ebcd",
+        "title": "CEO & Co-founder"
+      }
+    ]
+  },
+  {
+    "website_domain": "banyanbio.example",
+    "stage": "pre-seed",
+    "traits": [
+      "b2c",
+      "technical",
+      "hardware"
+    ],
+    "needs": [
+      {
+        "id": "e340529d-b310-5614-b0bf-46288160880e",
+        "capability": "technical-architecture",
+        "text": "We need someone experienced in technical architecture because we plan to raise our next round within six months."
+      }
+    ],
+    "team": [
+      {
+        "member_id": "2cea77ef-548e-5bb8-9b21-ab0191b5a5b2",
+        "title": "CEO & Co-founder"
+      },
+      {
+        "member_id": "f73319e7-22ea-5721-9840-61c2e02c0d0d",
+        "title": "CTO & Co-founder"
+      }
+    ]
+  },
+  {
+    "website_domain": "kestrelhealth.example",
+    "stage": "idea",
+    "traits": [
+      "b2b",
+      "social-impact",
+      "technical"
+    ],
+    "needs": [],
+    "team": []
+  },
+  {
+    "website_domain": "willowbio.example",
+    "stage": "series-b",
+    "traits": [
+      "b2c",
+      "repeat-founder"
+    ],
+    "needs": [],
+    "team": []
+  },
+  {
+    "website_domain": "sutraworks.example",
+    "stage": "seed",
+    "traits": [
+      "b2b",
+      "tier-2-3-college",
+      "first-generation-graduate"
+    ],
+    "needs": [],
+    "team": []
+  },
+  {
+    "website_domain": "quillenergy.example",
+    "stage": "seed",
+    "traits": [
+      "b2c",
+      "climate-focused"
+    ],
+    "needs": [],
+    "team": []
+  },
+  {
+    "website_domain": "willowcart.example",
+    "stage": "pre-seed",
+    "traits": [
+      "b2c",
+      "research-background"
+    ],
+    "needs": [],
+    "team": []
+  },
+  {
+    "website_domain": "deltalabs.example",
+    "stage": "seed",
+    "traits": [
+      "b2b",
+      "b2c"
+    ],
+    "needs": [],
+    "team": []
+  },
+  {
+    "website_domain": "ripplegrow.example",
+    "stage": "series-a",
+    "traits": [
+      "b2c",
+      "first-generation-graduate"
+    ],
+    "needs": [],
+    "team": []
+  },
+  {
+    "website_domain": "xenonworks.example",
+    "stage": "series-b",
+    "traits": [
+      "b2c",
+      "open-source",
+      "social-impact"
+    ],
+    "needs": [],
+    "team": []
+  },
+  {
+    "website_domain": "vertexworks.example",
+    "stage": "seed",
+    "traits": [
+      "b2c",
+      "data-driven"
+    ],
+    "needs": [],
+    "team": []
+  },
+  {
+    "website_domain": "granitelabs.example",
+    "stage": "seed",
+    "traits": [
+      "b2c",
+      "tier-2-3-college"
+    ],
+    "needs": [],
+    "team": []
+  },
+  {
+    "website_domain": "cobaltbio.example",
+    "stage": "seed",
+    "traits": [
+      "b2c",
+      "public-speaker",
+      "design-minded"
+    ],
+    "needs": [],
+    "team": []
+  },
+  {
+    "website_domain": "boltlabs.example",
+    "stage": "idea",
+    "traits": [
+      "b2c",
+      "vc-backed",
+      "social-impact"
+    ],
+    "needs": [],
+    "team": []
+  },
+  {
+    "website_domain": "saffronfarm.example",
+    "stage": "seed",
+    "traits": [
+      "b2b",
+      "first-time-founder",
+      "rural-markets"
+    ],
+    "needs": [],
+    "team": []
+  },
+  {
+    "website_domain": "yondergrid.example",
+    "stage": "series-a",
+    "traits": [
+      "b2c",
+      "remote-friendly",
+      "early-adopter"
+    ],
+    "needs": [],
+    "team": []
+  },
+  {
+    "website_domain": "dhruvalearn.example",
+    "stage": "pre-seed",
+    "traits": [
+      "b2b",
+      "public-speaker",
+      "hardware"
+    ],
+    "needs": [],
+    "team": []
+  },
+  {
+    "website_domain": "xenonsystems.example",
+    "stage": "idea",
+    "traits": [
+      "b2c",
+      "social-impact",
+      "b2b"
+    ],
+    "needs": [],
+    "team": []
+  },
+  {
+    "website_domain": "kestrellogic.example",
+    "stage": "series-a",
+    "traits": [
+      "b2c",
+      "data-driven",
+      "hardware"
+    ],
+    "needs": [],
+    "team": []
+  },
+  {
+    "website_domain": "monsoonworks.example",
+    "stage": "idea",
+    "traits": [
+      "b2b",
+      "hackathon-regular",
+      "social-impact"
+    ],
+    "needs": [],
+    "team": []
+  },
+  {
+    "website_domain": "nimbuslearn.example",
+    "stage": "series-a",
+    "traits": [
+      "b2c",
+      "b2b",
+      "early-adopter"
+    ],
+    "needs": [],
+    "team": []
+  },
+  {
+    "website_domain": "rangoligrid.example",
+    "stage": "seed",
+    "traits": [
+      "b2c",
+      "tier-2-3-college",
+      "vernacular-first"
+    ],
+    "needs": [],
+    "team": []
+  },
+  {
+    "website_domain": "kitebio.example",
+    "stage": "pre-seed",
+    "traits": [
+      "b2c",
+      "first-time-founder"
+    ],
+    "needs": [],
+    "team": []
+  },
+  {
+    "website_domain": "willowlogic.example",
+    "stage": "pre-seed",
+    "traits": [
+      "b2c",
+      "design-minded"
+    ],
+    "needs": [],
+    "team": []
+  },
+  {
+    "website_domain": "zenithlabs.example",
+    "stage": "seed",
+    "traits": [
+      "b2c",
+      "non-technical"
+    ],
+    "needs": [],
+    "team": []
+  },
+  {
+    "website_domain": "cobaltfarm.example",
+    "stage": "series-a",
+    "traits": [
+      "b2c",
+      "first-generation-graduate",
+      "vernacular-first"
+    ],
+    "needs": [],
+    "team": []
+  },
+  {
+    "website_domain": "monsoonsystems.example",
+    "stage": "series-b",
+    "traits": [
+      "b2b",
+      "social-impact"
+    ],
+    "needs": [],
+    "team": []
+  },
+  {
+    "website_domain": "granitesystems.example",
+    "stage": "seed",
+    "traits": [
+      "b2c",
+      "b2b"
+    ],
+    "needs": [],
+    "team": []
+  },
+  {
+    "website_domain": "lumencart.example",
+    "stage": "pre-seed",
+    "traits": [
+      "b2b",
+      "rural-markets",
+      "research-background"
+    ],
+    "needs": [],
+    "team": []
+  },
+  {
+    "website_domain": "novafarm.example",
+    "stage": "series-a",
+    "traits": [
+      "b2c",
+      "bootstrapped",
+      "climate-focused"
+    ],
+    "needs": [],
+    "team": []
+  },
+  {
+    "website_domain": "cedarworks.example",
+    "stage": "seed",
+    "traits": [
+      "b2c",
+      "vc-backed",
+      "design-minded"
+    ],
+    "needs": [],
+    "team": []
+  },
+  {
+    "website_domain": "dhruvabio.example",
+    "stage": "pre-seed",
+    "traits": [
+      "b2b",
+      "b2c",
+      "open-source"
+    ],
+    "needs": [],
+    "team": []
+  },
+  {
+    "website_domain": "boltenergy.example",
+    "stage": "series-b",
+    "traits": [
+      "b2c",
+      "non-technical"
+    ],
+    "needs": [],
+    "team": []
+  },
+  {
+    "website_domain": "quilllogic.example",
+    "stage": "series-b",
+    "traits": [
+      "b2c",
+      "technical",
+      "tier-2-3-college"
+    ],
+    "needs": [],
+    "team": []
+  },
+  {
+    "website_domain": "tidalsystems.example",
+    "stage": "series-b",
+    "traits": [
+      "b2c",
+      "b2b",
+      "repeat-founder"
+    ],
+    "needs": [],
+    "team": []
+  },
+  {
+    "website_domain": "kitegrow.example",
+    "stage": "series-a",
+    "traits": [
+      "b2c",
+      "vernacular-first",
+      "climate-focused"
+    ],
+    "needs": [],
+    "team": []
+  },
+  {
+    "website_domain": "cobaltcart.example",
+    "stage": "series-b",
+    "traits": [
+      "b2c",
+      "data-driven",
+      "b2b"
+    ],
+    "needs": [],
+    "team": []
+  },
+  {
+    "website_domain": "vertexlearn.example",
+    "stage": "seed",
+    "traits": [
+      "b2c",
+      "design-minded",
+      "first-generation-graduate"
+    ],
+    "needs": [],
+    "team": []
+  },
+  {
+    "website_domain": "lotuspay.example",
+    "stage": "series-b",
+    "traits": [
+      "b2b",
+      "climate-focused",
+      "data-driven"
+    ],
+    "needs": [],
+    "team": []
+  },
+  {
+    "website_domain": "saffronlogic.example",
+    "stage": "series-b",
+    "traits": [
+      "b2c",
+      "vc-backed",
+      "social-impact"
+    ],
+    "needs": [],
+    "team": []
+  },
+  {
+    "website_domain": "emberlearn.example",
+    "stage": "pre-seed",
+    "traits": [
+      "b2b",
+      "repeat-founder",
+      "social-impact"
+    ],
+    "needs": [],
+    "team": []
+  },
+  {
+    "website_domain": "granitefarm.example",
+    "stage": "seed",
+    "traits": [
+      "b2c",
+      "non-technical"
+    ],
+    "needs": [],
+    "team": []
+  },
+  {
+    "website_domain": "helixgrow.example",
+    "stage": "idea",
+    "traits": [
+      "b2c",
+      "first-generation-graduate"
+    ],
+    "needs": [],
+    "team": []
+  },
+  {
+    "website_domain": "willowlabs.example",
+    "stage": "series-b",
+    "traits": [
+      "b2b",
+      "data-driven"
+    ],
+    "needs": [],
+    "team": []
+  },
+  {
+    "website_domain": "quantamobility.example",
+    "stage": "series-b",
+    "traits": [
+      "b2c",
+      "climate-focused"
+    ],
+    "needs": [],
+    "team": []
+  },
+  {
+    "website_domain": "quantahealth.example",
+    "stage": "seed",
+    "traits": [
+      "b2c",
+      "first-time-founder"
+    ],
+    "needs": [],
+    "team": []
+  },
+  {
+    "website_domain": "pebbleenergy.example",
+    "stage": "pre-seed",
+    "traits": [
+      "b2c",
+      "hardware"
+    ],
+    "needs": [],
+    "team": []
+  },
+  {
+    "website_domain": "rippleai.example",
+    "stage": "idea",
+    "traits": [
+      "b2c",
+      "open-source"
+    ],
+    "needs": [],
+    "team": []
+  },
+  {
+    "website_domain": "xenonlearn.example",
+    "stage": "series-a",
+    "traits": [
+      "b2c",
+      "open-source"
+    ],
+    "needs": [],
+    "team": []
+  },
+  {
+    "website_domain": "prismlogic.example",
+    "stage": "idea",
+    "traits": [
+      "b2c",
+      "repeat-founder"
+    ],
+    "needs": [],
+    "team": []
+  },
+  {
+    "website_domain": "quillfarm.example",
+    "stage": "idea",
+    "traits": [
+      "b2b",
+      "design-minded",
+      "b2c"
+    ],
+    "needs": [],
+    "team": []
+  },
+  {
+    "website_domain": "fablelabs.example",
+    "stage": "series-b",
+    "traits": [
+      "b2c",
+      "technical"
+    ],
+    "needs": [],
+    "team": []
+  },
+  {
+    "website_domain": "dhruvalabs.example",
+    "stage": "series-b",
+    "traits": [
+      "b2b",
+      "research-background"
+    ],
+    "needs": [],
+    "team": []
+  },
+  {
+    "website_domain": "saffronworks.example",
+    "stage": "series-b",
+    "traits": [
+      "b2c",
+      "vc-backed",
+      "open-source"
+    ],
+    "needs": [],
+    "team": []
+  },
+  {
+    "website_domain": "prismmobility.example",
+    "stage": "pre-seed",
+    "traits": [
+      "b2c",
+      "non-technical"
+    ],
+    "needs": [],
+    "team": []
+  },
+  {
+    "website_domain": "umbraai.example",
+    "stage": "pre-seed",
+    "traits": [
+      "b2b",
+      "vernacular-first",
+      "rural-markets"
+    ],
+    "needs": [],
+    "team": []
+  },
+  {
+    "website_domain": "emberlogic.example",
+    "stage": "series-b",
+    "traits": [
+      "b2c",
+      "research-background"
+    ],
+    "needs": [],
+    "team": []
+  },
+  {
+    "website_domain": "pebblecart.example",
+    "stage": "pre-seed",
+    "traits": [
+      "b2c",
+      "vc-backed",
+      "social-impact"
+    ],
+    "needs": [],
+    "team": []
+  },
+  {
+    "website_domain": "cobaltpay.example",
+    "stage": "seed",
+    "traits": [
+      "b2c",
+      "open-source"
+    ],
+    "needs": [],
+    "team": []
+  },
+  {
+    "website_domain": "kitegrid.example",
+    "stage": "pre-seed",
+    "traits": [
+      "b2c",
+      "social-impact",
+      "first-time-founder"
+    ],
+    "needs": [],
+    "team": []
+  },
+  {
+    "website_domain": "willowpay.example",
+    "stage": "series-a",
+    "traits": [
+      "b2c",
+      "deep-tech",
+      "research-background"
+    ],
+    "needs": [],
+    "team": []
+  },
+  {
+    "website_domain": "quantasystems.example",
+    "stage": "series-a",
+    "traits": [
+      "b2c",
+      "vernacular-first"
+    ],
+    "needs": [],
+    "team": []
+  },
+  {
+    "website_domain": "lotusbio.example",
+    "stage": "pre-seed",
+    "traits": [
+      "b2b",
+      "vernacular-first",
+      "vc-backed"
+    ],
+    "needs": [],
+    "team": []
+  },
+  {
+    "website_domain": "kestrelbio.example",
+    "stage": "pre-seed",
+    "traits": [
+      "b2c",
+      "b2b"
+    ],
+    "needs": [],
+    "team": []
+  },
+  {
+    "website_domain": "vayusystems.example",
+    "stage": "pre-seed",
+    "traits": [
+      "b2b",
+      "bootstrapped"
+    ],
+    "needs": [],
+    "team": []
+  },
+  {
+    "website_domain": "kitelogic.example",
+    "stage": "idea",
+    "traits": [
+      "b2c",
+      "deep-tech",
+      "social-impact"
+    ],
+    "needs": [],
+    "team": []
+  },
+  {
+    "website_domain": "zenithfarm.example",
+    "stage": "series-b",
+    "traits": [
+      "b2c",
+      "women-led",
+      "remote-friendly"
+    ],
+    "needs": [],
+    "team": []
+  },
+  {
+    "website_domain": "cedarlabs.example",
+    "stage": "series-a",
+    "traits": [
+      "b2b",
+      "repeat-founder",
+      "research-background"
+    ],
+    "needs": [],
+    "team": []
+  },
+  {
+    "website_domain": "boltmobility.example",
+    "stage": "seed",
+    "traits": [
+      "b2c",
+      "technical"
+    ],
+    "needs": [],
+    "team": []
+  },
+  {
+    "website_domain": "juniperlabs.example",
+    "stage": "pre-seed",
+    "traits": [
+      "b2c",
+      "technical",
+      "social-impact"
+    ],
+    "needs": [],
+    "team": []
+  },
+  {
+    "website_domain": "junipercart.example",
+    "stage": "pre-seed",
+    "traits": [
+      "b2c",
+      "climate-focused"
+    ],
+    "needs": [],
+    "team": []
+  },
+  {
+    "website_domain": "monsoonlogic.example",
+    "stage": "idea",
+    "traits": [
+      "b2c",
+      "vc-backed",
+      "public-speaker"
+    ],
+    "needs": [],
+    "team": []
+  },
+  {
+    "website_domain": "graniteenergy.example",
+    "stage": "series-a",
+    "traits": [
+      "b2c",
+      "remote-friendly",
+      "non-technical"
+    ],
+    "needs": [],
+    "team": []
+  },
+  {
+    "website_domain": "cobaltgrow.example",
+    "stage": "series-b",
+    "traits": [
+      "b2c",
+      "rural-markets"
+    ],
+    "needs": [],
+    "team": []
+  },
+  {
+    "website_domain": "lotuslogic.example",
+    "stage": "pre-seed",
+    "traits": [
+      "b2b",
+      "remote-friendly"
+    ],
+    "needs": [],
+    "team": []
+  },
+  {
+    "website_domain": "quantaworks.example",
+    "stage": "series-b",
+    "traits": [
+      "b2c",
+      "open-source"
+    ],
+    "needs": [],
+    "team": []
+  },
+  {
+    "website_domain": "rangolipay.example",
+    "stage": "seed",
+    "traits": [
+      "b2b",
+      "tier-2-3-college"
+    ],
+    "needs": [],
+    "team": []
+  },
+  {
+    "website_domain": "prismlabs.example",
+    "stage": "series-b",
+    "traits": [
+      "b2c",
+      "hackathon-regular"
+    ],
+    "needs": [],
+    "team": []
+  },
+  {
+    "website_domain": "umbrafarm.example",
+    "stage": "seed",
+    "traits": [
+      "b2c",
+      "remote-friendly"
+    ],
+    "needs": [],
+    "team": []
+  },
+  {
+    "website_domain": "granitelearn.example",
+    "stage": "idea",
+    "traits": [
+      "b2b",
+      "hackathon-regular"
+    ],
+    "needs": [],
+    "team": []
+  },
+  {
+    "website_domain": "emberworks.example",
+    "stage": "seed",
+    "traits": [
+      "b2c",
+      "b2b"
+    ],
+    "needs": [],
+    "team": []
+  },
+  {
+    "website_domain": "dhruvacart.example",
+    "stage": "seed",
+    "traits": [
+      "b2c",
+      "technical",
+      "non-technical"
+    ],
+    "needs": [],
+    "team": []
+  },
+  {
+    "website_domain": "novalogic.example",
+    "stage": "series-a",
+    "traits": [
+      "b2c",
+      "technical",
+      "social-impact"
+    ],
+    "needs": [],
+    "team": []
+  },
+  {
+    "website_domain": "juniperlogic.example",
+    "stage": "series-b",
+    "traits": [
+      "b2c",
+      "open-source",
+      "vc-backed"
+    ],
+    "needs": [],
+    "team": []
+  },
+  {
+    "website_domain": "novaenergy.example",
+    "stage": "series-a",
+    "traits": [
+      "b2c",
+      "first-time-founder",
+      "public-speaker"
+    ],
+    "needs": [],
+    "team": []
+  },
+  {
+    "website_domain": "terragrow.example",
+    "stage": "series-a",
+    "traits": [
+      "b2c",
+      "remote-friendly"
+    ],
+    "needs": [],
+    "team": []
+  },
+  {
+    "website_domain": "fablecart.example",
+    "stage": "seed",
+    "traits": [
+      "b2b",
+      "hackathon-regular"
+    ],
+    "needs": [],
+    "team": []
+  },
+  {
+    "website_domain": "terracart.example",
+    "stage": "series-b",
+    "traits": [
+      "b2c",
+      "deep-tech"
+    ],
+    "needs": [],
+    "team": []
+  },
+  {
+    "website_domain": "terraworks.example",
+    "stage": "series-a",
+    "traits": [
+      "b2b",
+      "public-speaker",
+      "open-source"
+    ],
+    "needs": [],
+    "team": []
+  },
+  {
+    "website_domain": "deltabio.example",
+    "stage": "pre-seed",
+    "traits": [
+      "b2c",
+      "vernacular-first",
+      "early-adopter"
+    ],
+    "needs": [],
+    "team": []
+  },
+  {
+    "website_domain": "zephyrlearn.example",
+    "stage": "series-a",
+    "traits": [
+      "b2c",
+      "early-adopter"
+    ],
+    "needs": [],
+    "team": []
+  },
+  {
+    "website_domain": "yonderlabs.example",
+    "stage": "pre-seed",
+    "traits": [
+      "b2b",
+      "early-adopter"
+    ],
+    "needs": [],
+    "team": []
+  },
+  {
+    "website_domain": "xenongrow.example",
+    "stage": "series-b",
+    "traits": [
+      "b2c",
+      "rural-markets",
+      "deep-tech"
+    ],
+    "needs": [],
+    "team": []
+  },
+  {
+    "website_domain": "zenithgrid.example",
+    "stage": "pre-seed",
+    "traits": [
+      "b2c",
+      "vc-backed"
+    ],
+    "needs": [],
+    "team": []
+  },
+  {
+    "website_domain": "quantafarm.example",
+    "stage": "series-b",
+    "traits": [
+      "b2c",
+      "public-speaker",
+      "women-led"
+    ],
+    "needs": [],
+    "team": []
+  },
+  {
+    "website_domain": "willowgrow.example",
+    "stage": "series-a",
+    "traits": [
+      "b2c",
+      "hardware"
+    ],
+    "needs": [],
+    "team": []
+  },
+  {
+    "website_domain": "novasystems.example",
+    "stage": "series-a",
+    "traits": [
+      "b2c",
+      "first-time-founder",
+      "first-generation-graduate"
+    ],
+    "needs": [],
+    "team": []
+  },
+  {
+    "website_domain": "helixgenomics.example",
+    "stage": "idea",
+    "traits": [
+      "b2c",
+      "non-technical"
+    ],
+    "needs": [
+      {
+        "id": "eca39b37-e790-54a7-9d52-1e392289fd2e",
+        "capability": "marketing-strategy",
+        "text": "We need a marketing strategy to explain our gene-sequencing kits to hospital buyers who are not scientists."
+      }
+    ],
+    "team": [
+      {
+        "member_id": "c858b433-5d18-56bd-ba6e-58da1071b9c7",
+        "title": "CEO & Co-founder"
+      }
+    ]
+  },
+  {
+    "website_domain": "monsoonfields.example",
+    "stage": "seed",
+    "traits": [
+      "b2c",
+      "rural-markets",
+      "hackathon-regular"
+    ],
+    "needs": [
+      {
+        "id": "ea1844c8-1e99-52fa-9a65-15b2e985caee",
+        "capability": "machine-learning",
+        "text": "We need machine learning to predict crop yield and credit risk for smallholder farmers from sparse data."
+      }
+    ],
+    "team": [
+      {
+        "member_id": "1a2ea664-288a-5815-9286-9f6b672982dc",
+        "title": "CEO & Co-founder"
+      }
+    ]
+  },
+  {
+    "website_domain": "saffroncare.example",
+    "stage": "idea",
+    "traits": [
+      "b2c",
+      "hackathon-regular",
+      "deep-tech"
+    ],
+    "needs": [
+      {
+        "id": "9715ca6b-36d5-597e-977a-54bc9b0004c5",
+        "capability": "regulatory-compliance",
+        "text": "We need help with regulatory compliance and licensing before our patient-data platform can go live."
+      }
+    ],
+    "team": [
+      {
+        "member_id": "70f2d671-437a-56b7-89f1-2a3a215f9a7b",
+        "title": "CEO & Co-founder"
+      }
+    ]
+  },
+  {
+    "website_domain": "tidewaterenergy.example",
+    "stage": "series-b",
+    "traits": [
+      "b2c",
+      "research-background"
+    ],
+    "needs": [
+      {
+        "id": "4c4c9d65-7e66-587c-9488-862896032e6f",
+        "capability": "b2b-sales",
+        "text": "We need to build a B2B sales process to sell energy monitoring to factories and commercial buildings."
+      }
+    ],
+    "team": [
+      {
+        "member_id": "b8e3aaa2-5651-5b6d-af9a-12299fc7da15",
+        "title": "CEO & Co-founder"
+      }
+    ]
+  },
+  {
+    "website_domain": "rangoliacademy.example",
+    "stage": "series-a",
+    "traits": [
+      "b2c",
+      "climate-focused",
+      "women-led"
+    ],
+    "needs": [
+      {
+        "id": "002d3b64-a959-5a16-90f0-b5a480eb80ea",
+        "capability": "community-building",
+        "text": "We need to grow an engaged learner community so students keep coming back between courses."
+      }
+    ],
+    "team": [
+      {
+        "member_id": "a0ea2331-96e0-5122-9118-7e215cf8c9b8",
+        "title": "CEO & Co-founder"
+      }
+    ]
+  },
+  {
+    "website_domain": "vayuvegamotors.example",
+    "stage": "idea",
+    "traits": [
+      "b2c",
+      "design-minded",
+      "public-speaker"
+    ],
+    "needs": [
+      {
+        "id": "679a4d2b-3db8-51c1-88f0-56784cbeadf9",
+        "capability": "supply-chain",
+        "text": "We need supply chain expertise to source battery packs and spare parts reliably for our EV fleet."
+      }
+    ],
+    "team": [
+      {
+        "member_id": "3e4d64a8-4550-56ca-b139-4c6725bbee92",
+        "title": "CEO & Co-founder"
+      }
+    ]
+  }
+]

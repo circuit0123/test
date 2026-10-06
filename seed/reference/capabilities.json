@@ -1,0 +1,302 @@
+[
+  {
+    "slug": "frontend-development",
+    "name": "Frontend development",
+    "description": "Building web interfaces with modern JavaScript frameworks."
+  },
+  {
+    "slug": "backend-development",
+    "name": "Backend development",
+    "description": "Designing APIs, services and databases."
+  },
+  {
+    "slug": "mobile-development",
+    "name": "Mobile development",
+    "description": "Building iOS and Android apps."
+  },
+  {
+    "slug": "devops-cloud",
+    "name": "DevOps & cloud infrastructure",
+    "description": "CI/CD, cloud hosting, reliability and cost control."
+  },
+  {
+    "slug": "data-engineering",
+    "name": "Data engineering",
+    "description": "Pipelines, warehouses and data quality."
+  },
+  {
+    "slug": "machine-learning",
+    "name": "Machine learning",
+    "description": "Training, evaluating and deploying ML models."
+  },
+  {
+    "slug": "computer-vision",
+    "name": "Computer vision",
+    "description": "Image and video understanding models."
+  },
+  {
+    "slug": "nlp-llm",
+    "name": "NLP & LLM applications",
+    "description": "Language models, search and text automation."
+  },
+  {
+    "slug": "embedded-hardware",
+    "name": "Embedded systems & hardware",
+    "description": "Firmware, electronics and hardware prototyping."
+  },
+  {
+    "slug": "cybersecurity",
+    "name": "Cybersecurity",
+    "description": "Security reviews, threat modelling and compliance controls."
+  },
+  {
+    "slug": "blockchain",
+    "name": "Blockchain development",
+    "description": "Smart contracts and distributed ledgers."
+  },
+  {
+    "slug": "qa-testing",
+    "name": "QA & testing",
+    "description": "Test strategy, automation and release quality."
+  },
+  {
+    "slug": "product-management",
+    "name": "Product management",
+    "description": "Roadmaps, discovery and prioritisation."
+  },
+  {
+    "slug": "ux-design",
+    "name": "UX research & design",
+    "description": "User research, interaction design and usability testing."
+  },
+  {
+    "slug": "ui-visual-design",
+    "name": "UI & visual design",
+    "description": "Visual identity, interface polish and design systems."
+  },
+  {
+    "slug": "technical-architecture",
+    "name": "Technical architecture",
+    "description": "System design and scaling decisions."
+  },
+  {
+    "slug": "marketing-strategy",
+    "name": "Marketing strategy",
+    "description": "Positioning, messaging and go-to-market planning."
+  },
+  {
+    "slug": "growth-marketing",
+    "name": "Growth marketing",
+    "description": "Acquisition funnels, experiments and paid channels."
+  },
+  {
+    "slug": "content-marketing",
+    "name": "Content marketing",
+    "description": "Blogs, newsletters and thought leadership."
+  },
+  {
+    "slug": "social-media",
+    "name": "Social media",
+    "description": "Community building on social platforms."
+  },
+  {
+    "slug": "seo",
+    "name": "SEO",
+    "description": "Search engine optimisation and organic traffic."
+  },
+  {
+    "slug": "brand-design",
+    "name": "Brand design",
+    "description": "Logos, brand guidelines and identity."
+  },
+  {
+    "slug": "public-relations",
+    "name": "Public relations",
+    "description": "Press coverage and media relationships."
+  },
+  {
+    "slug": "b2b-sales",
+    "name": "B2B sales",
+    "description": "Enterprise and SMB sales processes."
+  },
+  {
+    "slug": "partnerships",
+    "name": "Partnerships & business development",
+    "description": "Channel and strategic partnerships."
+  },
+  {
+    "slug": "customer-success",
+    "name": "Customer success",
+    "description": "Onboarding, retention and support operations."
+  },
+  {
+    "slug": "community-building",
+    "name": "Community building",
+    "description": "Running user and developer communities."
+  },
+  {
+    "slug": "pricing-strategy",
+    "name": "Pricing strategy",
+    "description": "Packaging, pricing models and monetisation."
+  },
+  {
+    "slug": "fundraising",
+    "name": "Fundraising",
+    "description": "Pitch decks, investor outreach and closing rounds."
+  },
+  {
+    "slug": "angel-investment",
+    "name": "Angel investment",
+    "description": "Early-stage capital from individual investors."
+  },
+  {
+    "slug": "venture-capital",
+    "name": "Venture capital",
+    "description": "Institutional seed and series funding."
+  },
+  {
+    "slug": "financial-modelling",
+    "name": "Financial modelling",
+    "description": "Forecasts, unit economics and budgeting."
+  },
+  {
+    "slug": "accounting-tax",
+    "name": "Accounting & tax",
+    "description": "Bookkeeping, tax filings and audits."
+  },
+  {
+    "slug": "grant-writing",
+    "name": "Grant writing",
+    "description": "Government and foundation grant applications."
+  },
+  {
+    "slug": "legal-incorporation",
+    "name": "Company incorporation & legal",
+    "description": "Entity setup, founder agreements and contracts."
+  },
+  {
+    "slug": "ip-patents",
+    "name": "IP & patents",
+    "description": "Patent filing and intellectual property strategy."
+  },
+  {
+    "slug": "regulatory-compliance",
+    "name": "Regulatory compliance",
+    "description": "Licences, approvals and regulatory filings."
+  },
+  {
+    "slug": "data-privacy",
+    "name": "Data privacy",
+    "description": "Privacy law compliance and data protection."
+  },
+  {
+    "slug": "hr-recruiting",
+    "name": "Recruiting & HR",
+    "description": "Hiring pipelines, employer brand and HR policy."
+  },
+  {
+    "slug": "operations",
+    "name": "Operations",
+    "description": "Processes, vendors and day-to-day execution."
+  },
+  {
+    "slug": "supply-chain",
+    "name": "Supply chain & logistics",
+    "description": "Sourcing, manufacturing and delivery."
+  },
+  {
+    "slug": "manufacturing",
+    "name": "Manufacturing",
+    "description": "Production scaling and quality control."
+  },
+  {
+    "slug": "healthcare-domain",
+    "name": "Healthcare domain expertise",
+    "description": "Clinical workflows, hospitals and payers."
+  },
+  {
+    "slug": "biotech-lab",
+    "name": "Biotech lab & research",
+    "description": "Wet-lab research and experimental design."
+  },
+  {
+    "slug": "clinical-trials",
+    "name": "Clinical trials",
+    "description": "Trial design, sites and approvals."
+  },
+  {
+    "slug": "fintech-domain",
+    "name": "Fintech domain expertise",
+    "description": "Payments, lending and banking rails."
+  },
+  {
+    "slug": "agriculture-domain",
+    "name": "Agriculture domain expertise",
+    "description": "Farming practices, agri supply chains and rural markets."
+  },
+  {
+    "slug": "climate-energy",
+    "name": "Climate & energy expertise",
+    "description": "Renewables, carbon accounting and energy markets."
+  },
+  {
+    "slug": "education-domain",
+    "name": "Education domain expertise",
+    "description": "Pedagogy, schools and learning outcomes."
+  },
+  {
+    "slug": "retail-ecommerce",
+    "name": "Retail & e-commerce",
+    "description": "Online stores, marketplaces and D2C brands."
+  },
+  {
+    "slug": "mobility-domain",
+    "name": "Mobility domain expertise",
+    "description": "Transport, EVs and fleet operations."
+  },
+  {
+    "slug": "government-relations",
+    "name": "Government relations",
+    "description": "Public sector sales and policy engagement."
+  },
+  {
+    "slug": "mentorship",
+    "name": "Mentorship",
+    "description": "Ongoing guidance from an experienced operator."
+  },
+  {
+    "slug": "career-guidance",
+    "name": "Career guidance",
+    "description": "Advice on career paths, CVs and interviews."
+  },
+  {
+    "slug": "internships",
+    "name": "Internships",
+    "description": "Short-term work opportunities for students."
+  },
+  {
+    "slug": "leadership-coaching",
+    "name": "Leadership coaching",
+    "description": "Management skills and founder wellbeing."
+  },
+  {
+    "slug": "pitch-coaching",
+    "name": "Pitch coaching",
+    "description": "Storytelling and presentation practice."
+  },
+  {
+    "slug": "market-research",
+    "name": "Market research",
+    "description": "Customer interviews, sizing and competitive analysis."
+  },
+  {
+    "slug": "user-testing",
+    "name": "User testing",
+    "description": "Recruiting testers and running usability sessions."
+  },
+  {
+    "slug": "international-expansion",
+    "name": "International expansion",
+    "description": "Entering new countries and markets."
+  }
+]

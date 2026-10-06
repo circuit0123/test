@@ -37,6 +37,11 @@ class Settings(BaseSettings):
     city_center_lng: float = 77.5946
     city_name: str = "Bengaluru"
 
+    # Embeddings: "fastembed" (real local model) or "fake" (deterministic, for tests).
+    embedding_provider: Literal["fastembed", "fake"] = "fastembed"
+    embedding_model: str = "BAAI/bge-small-en-v1.5"
+    embedding_cache_dir: str | None = None  # default: fastembed's own cache folder
+
     # Local-only test JWT issuer (built in Phase 2). Never allowed in production.
     dev_auth: bool = False
 

@@ -1,0 +1,50 @@
+[
+  {
+    "members": [
+      "5428c64a-e0ca-5de3-b0d1-09d9b421a923",
+      "c2f54fbc-2ce5-5b83-b435-4bebd88a8de7",
+      "cf4475c9-4311-5abb-83fc-70e0a6748580"
+    ],
+    "legs": [
+      {
+        "giver_id": "5428c64a-e0ca-5de3-b0d1-09d9b421a923",
+        "receiver_id": "c2f54fbc-2ce5-5b83-b435-4bebd88a8de7",
+        "capability": "ux-design"
+      },
+      {
+        "giver_id": "c2f54fbc-2ce5-5b83-b435-4bebd88a8de7",
+        "receiver_id": "cf4475c9-4311-5abb-83fc-70e0a6748580",
+        "capability": "fundraising"
+      },
+      {
+        "giver_id": "cf4475c9-4311-5abb-83fc-70e0a6748580",
+        "receiver_id": "5428c64a-e0ca-5de3-b0d1-09d9b421a923",
+        "capability": "market-research"
+      }
+    ]
+  },
+  {
+    "members": [
+      "f1fb2329-3978-5ea8-9ff5-65aca7cffe5e",
+      "58534cbc-cb36-559a-acd3-aea77b59f57d",
+      "b7c21bec-0a2f-555e-b64e-331453615143"
+    ],
+    "legs": [
+      {
+        "giver_id": "f1fb2329-3978-5ea8-9ff5-65aca7cffe5e",
+        "receiver_id": "58534cbc-cb36-559a-acd3-aea77b59f57d",
+        "capability": "legal-incorporation"
+      },
+      {
+        "giver_id": "58534cbc-cb36-559a-acd3-aea77b59f57d",
+        "receiver_id": "b7c21bec-0a2f-555e-b64e-331453615143",
+        "capability": "growth-marketing"
+      },
+      {
+        "giver_id": "b7c21bec-0a2f-555e-b64e-331453615143",
+        "receiver_id": "f1fb2329-3978-5ea8-9ff5-65aca7cffe5e",
+        "capability": "technical-architecture"
+      }
+    ]
+  }
+]

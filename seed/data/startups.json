@@ -1,0 +1,2849 @@
+[
+  {
+    "name": "Helix Grid",
+    "website_domain": "helixgrid.example",
+    "description": "Helix Grid is a fintech startup building tools for customers in Bengaluru.",
+    "sector": "fintech",
+    "address": "150 Main Road, Old Town, Bengaluru",
+    "lat": 13.005747,
+    "lng": 77.624144,
+    "hiring": false,
+    "open_roles": [],
+    "tech_stack": [
+      "Kafka",
+      "React",
+      "Python",
+      "Go"
+    ],
+    "source": "seed"
+  },
+  {
+    "name": "Kestrel Farm",
+    "website_domain": "kestrelfarm.example",
+    "description": "Kestrel Farm is a healthtech startup building tools for customers in Bengaluru.",
+    "sector": "healthtech",
+    "address": "125 Station Road, Cantonment, Bengaluru",
+    "lat": 12.969465,
+    "lng": 77.609948,
+    "hiring": true,
+    "open_roles": [
+      "Data Analyst",
+      "Clinical Ops Associate"
+    ],
+    "tech_stack": [
+      "Swift",
+      "PostgreSQL",
+      "Kotlin",
+      "Node.js"
+    ],
+    "source": "seed"
+  },
+  {
+    "name": "Fable Bio",
+    "website_domain": "fablebio.example",
+    "description": "Fable Bio is a biotech startup building tools for customers in Bengaluru.",
+    "sector": "biotech",
+    "address": "117 Ring Road, Industrial Estate, Bengaluru",
+    "lat": 12.973718,
+    "lng": 77.615453,
+    "hiring": true,
+    "open_roles": [
+      "Lab Technician",
+      "Bioinformatics Intern"
+    ],
+    "tech_stack": [
+      "Python",
+      "R",
+      "AWS"
+    ],
+    "source": "seed"
+  },
+  {
+    "name": "Quanta Labs",
+    "website_domain": "quantalabs.example",
+    "description": "Quanta Labs is a edtech startup building tools for customers in Bengaluru.",
+    "sector": "edtech",
+    "address": "194 Station Road, Riverside, Bengaluru",
+    "lat": 13.006875,
+    "lng": 77.593758,
+    "hiring": false,
+    "open_roles": [],
+    "tech_stack": [
+      "React",
+      "Firebase"
+    ],
+    "source": "seed"
+  },
+  {
+    "name": "Cedar Grow",
+    "website_domain": "cedargrow.example",
+    "description": "Cedar Grow is a agritech startup building tools for customers in Bengaluru.",
+    "sector": "agritech",
+    "address": "43 Hill Top Lane, East Gate, Bengaluru",
+    "lat": 13.002925,
+    "lng": 77.591656,
+    "hiring": false,
+    "open_roles": [],
+    "tech_stack": [
+      "Kotlin",
+      "IoT",
+      "Python",
+      "Django"
+    ],
+    "source": "seed"
+  },
+  {
+    "name": "Nimbus Cart",
+    "website_domain": "nimbuscart.example",
+    "description": "Nimbus Cart is a climate startup building tools for customers in Bengaluru.",
+    "sector": "climate",
+    "address": "20 Hill Top Lane, Riverside, Bengaluru",
+    "lat": 13.009745,
+    "lng": 77.622529,
+    "hiring": false,
+    "open_roles": [],
+    "tech_stack": [
+      "MQTT",
+      "Grafana"
+    ],
+    "source": "seed"
+  },
+  {
+    "name": "Bolt Systems",
+    "website_domain": "boltsystems.example",
+    "description": "Bolt Systems is a deeptech startup building tools for customers in Bengaluru.",
+    "sector": "deeptech",
+    "address": "130 Garden Road, Industrial Estate, Bengaluru",
+    "lat": 12.929473,
+    "lng": 77.615483,
+    "hiring": true,
+    "open_roles": [
+      "Research Engineer"
+    ],
+    "tech_stack": [
+      "Python",
+      "ROS",
+      "PyTorch"
+    ],
+    "source": "seed"
+  },
+  {
+    "name": "Cedar Pay",
+    "website_domain": "cedarpay.example",
+    "description": "Cedar Pay is a saas startup building tools for customers in Bengaluru.",
+    "sector": "saas",
+    "address": "212 Main Road, East Gate, Bengaluru",
+    "lat": 12.95744,
+    "lng": 77.535217,
+    "hiring": true,
+    "open_roles": [
+      "Sales Development Rep",
+      "Full Stack Developer"
+    ],
+    "tech_stack": [
+      "Node.js",
+      "PostgreSQL"
+    ],
+    "source": "seed"
+  },
+  {
+    "name": "Umbra Works",
+    "website_domain": "umbraworks.example",
+    "description": "Umbra Works is a ecommerce startup building tools for customers in Bengaluru.",
+    "sector": "ecommerce",
+    "address": "47 Church Street, Riverside, Bengaluru",
+    "lat": 12.97377,
+    "lng": 77.561816,
+    "hiring": false,
+    "open_roles": [],
+    "tech_stack": [
+      "Python",
+      "React",
+      "Google Analytics"
+    ],
+    "source": "seed"
+  },
+  {
+    "name": "Tidal Cart",
+    "website_domain": "tidalcart.example",
+    "description": "Tidal Cart is a logistics startup building tools for customers in Bengaluru.",
+    "sector": "logistics",
+    "address": "177 Church Street, Lakeside, Bengaluru",
+    "lat": 12.955665,
+    "lng": 77.610956,
+    "hiring": false,
+    "open_roles": [],
+    "tech_stack": [
+      "Java",
+      "Kotlin",
+      "Spring"
+    ],
+    "source": "seed"
+  },
+  {
+    "name": "Monsoon Mobility",
+    "website_domain": "monsoonmobility.example",
+    "description": "Monsoon Mobility is a mobility startup building tools for customers in Bengaluru.",
+    "sector": "mobility",
+    "address": "109 Main Road, Market District, Bengaluru",
+    "lat": 12.943096,
+    "lng": 77.56,
+    "hiring": true,
+    "open_roles": [
+      "Embedded Engineer",
+      "Backend Engineer"
+    ],
+    "tech_stack": [
+      "Go",
+      "Python",
+      "C"
+    ],
+    "source": "seed"
+  },
+  {
+    "name": "Ember Systems",
+    "website_domain": "embersystems.example",
+    "description": "Ember Systems is a gaming startup building tools for customers in Bengaluru.",
+    "sector": "gaming",
+    "address": "195 Canal Road, East Gate, Bengaluru",
+    "lat": 12.972769,
+    "lng": 77.617619,
+    "hiring": false,
+    "open_roles": [],
+    "tech_stack": [
+      "Unity",
+      "Redis",
+      "C#"
+    ],
+    "source": "seed"
+  },
+  {
+    "name": "Willow AI",
+    "website_domain": "willowai.example",
+    "description": "Willow AI is a fintech startup building tools for customers in Bengaluru.",
+    "sector": "fintech",
+    "address": "142 Temple Street, University Quarter, Bengaluru",
+    "lat": 12.970948,
+    "lng": 77.630491,
+    "hiring": false,
+    "open_roles": [],
+    "tech_stack": [
+      "Kafka",
+      "Python",
+      "React",
+      "Go"
+    ],
+    "source": "seed"
+  },
+  {
+    "name": "Bolt Pay",
+    "website_domain": "boltpay.example",
+    "description": "Bolt Pay is a healthtech startup building tools for customers in Bengaluru.",
+    "sector": "healthtech",
+    "address": "126 Market Street, East Gate, Bengaluru",
+    "lat": 13.005955,
+    "lng": 77.600416,
+    "hiring": true,
+    "open_roles": [
+      "Mobile Developer"
+    ],
+    "tech_stack": [
+      "FHIR",
+      "Node.js"
+    ],
+    "source": "seed"
+  },
+  {
+    "name": "Helix Systems",
+    "website_domain": "helixsystems.example",
+    "description": "Helix Systems is a biotech startup building tools for customers in Bengaluru.",
+    "sector": "biotech",
+    "address": "58 Canal Road, Cantonment, Bengaluru",
+    "lat": 12.991649,
+    "lng": 77.603196,
+    "hiring": false,
+    "open_roles": [],
+    "tech_stack": [
+      "AWS",
+      "R",
+      "Benchling"
+    ],
+    "source": "seed"
+  },
+  {
+    "name": "Vertex Cart",
+    "website_domain": "vertexcart.example",
+    "description": "Vertex Cart is a edtech startup building tools for customers in Bengaluru.",
+    "sector": "edtech",
+    "address": "68 Garden Road, Tech Park, Bengaluru",
+    "lat": 12.972669,
+    "lng": 77.580922,
+    "hiring": false,
+    "open_roles": [],
+    "tech_stack": [
+      "Next.js",
+      "React"
+    ],
+    "source": "seed"
+  },
+  {
+    "name": "Pebble Health",
+    "website_domain": "pebblehealth.example",
+    "description": "Pebble Health is a agritech startup building tools for customers in Bengaluru.",
+    "sector": "agritech",
+    "address": "73 Main Road, Lakeside, Bengaluru",
+    "lat": 13.018215,
+    "lng": 77.621415,
+    "hiring": true,
+    "open_roles": [
+      "Supply Chain Analyst"
+    ],
+    "tech_stack": [
+      "Django",
+      "IoT"
+    ],
+    "source": "seed"
+  },
+  {
+    "name": "Ember Farm",
+    "website_domain": "emberfarm.example",
+    "description": "Ember Farm is a climate startup building tools for customers in Bengaluru.",
+    "sector": "climate",
+    "address": "212 Lake View Road, Tech Park, Bengaluru",
+    "lat": 12.965631,
+    "lng": 77.598024,
+    "hiring": false,
+    "open_roles": [],
+    "tech_stack": [
+      "Python",
+      "Grafana"
+    ],
+    "source": "seed"
+  },
+  {
+    "name": "Quanta Cart",
+    "website_domain": "quantacart.example",
+    "description": "Quanta Cart is a deeptech startup building tools for customers in Bengaluru.",
+    "sector": "deeptech",
+    "address": "21 Hill Top Lane, Old Town, Bengaluru",
+    "lat": 12.94395,
+    "lng": 77.55808,
+    "hiring": true,
+    "open_roles": [
+      "Robotics Intern",
+      "Research Engineer"
+    ],
+    "tech_stack": [
+      "CUDA",
+      "Python",
+      "ROS",
+      "C++"
+    ],
+    "source": "seed"
+  },
+  {
+    "name": "Vertex Bio",
+    "website_domain": "vertexbio.example",
+    "description": "Vertex Bio is a saas startup building tools for customers in Bengaluru.",
+    "sector": "saas",
+    "address": "133 Garden Road, Lakeside, Bengaluru",
+    "lat": 12.977988,
+    "lng": 77.515189,
+    "hiring": true,
+    "open_roles": [
+      "Full Stack Developer",
+      "Sales Development Rep"
+    ],
+    "tech_stack": [
+      "PostgreSQL",
+      "TypeScript",
+      "React",
+      "Node.js"
+    ],
+    "source": "seed"
+  },
+  {
+    "name": "Kestrel Mobility",
+    "website_domain": "kestrelmobility.example",
+    "description": "Kestrel Mobility is a ecommerce startup building tools for customers in Bengaluru.",
+    "sector": "ecommerce",
+    "address": "74 Garden Road, Cantonment, Bengaluru",
+    "lat": 12.959361,
+    "lng": 77.637158,
+    "hiring": false,
+    "open_roles": [],
+    "tech_stack": [
+      "Shopify",
+      "React",
+      "Google Analytics",
+      "Python"
+    ],
+    "source": "seed"
+  },
+  {
+    "name": "Tidal Mobility",
+    "website_domain": "tidalmobility.example",
+    "description": "Tidal Mobility is a logistics startup building tools for customers in Bengaluru.",
+    "sector": "logistics",
+    "address": "119 Tech Park Avenue, Old Town, Bengaluru",
+    "lat": 13.082753,
+    "lng": 77.595425,
+    "hiring": false,
+    "open_roles": [],
+    "tech_stack": [
+      "Kotlin",
+      "PostgreSQL"
+    ],
+    "source": "seed"
+  },
+  {
+    "name": "Cobalt Health",
+    "website_domain": "cobalthealth.example",
+    "description": "Cobalt Health is a mobility startup building tools for customers in Bengaluru.",
+    "sector": "mobility",
+    "address": "113 Main Road, Lakeside, Bengaluru",
+    "lat": 12.945472,
+    "lng": 77.586033,
+    "hiring": false,
+    "open_roles": [],
+    "tech_stack": [
+      "C",
+      "Go"
+    ],
+    "source": "seed"
+  },
+  {
+    "name": "Saffron Energy",
+    "website_domain": "saffronenergy.example",
+    "description": "Saffron Energy is a gaming startup building tools for customers in Bengaluru.",
+    "sector": "gaming",
+    "address": "119 Market Street, University Quarter, Bengaluru",
+    "lat": 13.011276,
+    "lng": 77.599853,
+    "hiring": false,
+    "open_roles": [],
+    "tech_stack": [
+      "Node.js",
+      "Redis",
+      "C#"
+    ],
+    "source": "seed"
+  },
+  {
+    "name": "Prism Grid",
+    "website_domain": "prismgrid.example",
+    "description": "Prism Grid is a fintech startup building tools for customers in Bengaluru.",
+    "sector": "fintech",
+    "address": "131 Main Road, University Quarter, Bengaluru",
+    "lat": 12.972653,
+    "lng": 77.610914,
+    "hiring": false,
+    "open_roles": [],
+    "tech_stack": [
+      "PostgreSQL",
+      "Kafka"
+    ],
+    "source": "seed"
+  },
+  {
+    "name": "Delta Cart",
+    "website_domain": "deltacart.example",
+    "description": "Delta Cart is a healthtech startup building tools for customers in Bengaluru.",
+    "sector": "healthtech",
+    "address": "196 Canal Road, Cantonment, Bengaluru",
+    "lat": 13.003025,
+    "lng": 77.621214,
+    "hiring": true,
+    "open_roles": [
+      "Clinical Ops Associate",
+      "Mobile Developer"
+    ],
+    "tech_stack": [
+      "Swift",
+      "PostgreSQL",
+      "Kotlin",
+      "FHIR"
+    ],
+    "source": "seed"
+  },
+  {
+    "name": "Sutra Systems",
+    "website_domain": "sutrasystems.example",
+    "description": "Sutra Systems is a biotech startup building tools for customers in Bengaluru.",
+    "sector": "biotech",
+    "address": "211 Garden Road, University Quarter, Bengaluru",
+    "lat": 13.004405,
+    "lng": 77.627629,
+    "hiring": false,
+    "open_roles": [],
+    "tech_stack": [
+      "Python",
+      "AWS",
+      "R"
+    ],
+    "source": "seed"
+  },
+  {
+    "name": "Umbra Grow",
+    "website_domain": "umbragrow.example",
+    "description": "Umbra Grow is a edtech startup building tools for customers in Bengaluru.",
+    "sector": "edtech",
+    "address": "249 Lake View Road, Tech Park, Bengaluru",
+    "lat": 12.972876,
+    "lng": 77.59627,
+    "hiring": false,
+    "open_roles": [],
+    "tech_stack": [
+      "Firebase",
+      "Next.js",
+      "Python"
+    ],
+    "source": "seed"
+  },
+  {
+    "name": "Xenon Energy",
+    "website_domain": "xenonenergy.example",
+    "description": "Xenon Energy is a agritech startup building tools for customers in Bengaluru.",
+    "sector": "agritech",
+    "address": "159 Market Street, Riverside, Bengaluru",
+    "lat": 12.934326,
+    "lng": 77.559638,
+    "hiring": true,
+    "open_roles": [
+      "Field Operations Associate",
+      "Supply Chain Analyst"
+    ],
+    "tech_stack": [
+      "Kotlin",
+      "Django",
+      "IoT"
+    ],
+    "source": "seed"
+  },
+  {
+    "name": "Kestrel Learn",
+    "website_domain": "kestrellearn.example",
+    "description": "Kestrel Learn is a climate startup building tools for customers in Bengaluru.",
+    "sector": "climate",
+    "address": "76 Ring Road, Industrial Estate, Bengaluru",
+    "lat": 13.024943,
+    "lng": 77.606025,
+    "hiring": false,
+    "open_roles": [],
+    "tech_stack": [
+      "Python",
+      "C++",
+      "Grafana"
+    ],
+    "source": "seed"
+  },
+  {
+    "name": "Granite Grid",
+    "website_domain": "granitegrid.example",
+    "description": "Granite Grid is a deeptech startup building tools for customers in Bengaluru.",
+    "sector": "deeptech",
+    "address": "119 Garden Road, North Hills, Bengaluru",
+    "lat": 13.018925,
+    "lng": 77.616331,
+    "hiring": true,
+    "open_roles": [
+      "Research Engineer",
+      "ML Engineer"
+    ],
+    "tech_stack": [
+      "CUDA",
+      "PyTorch",
+      "Python"
+    ],
+    "source": "seed"
+  },
+  {
+    "name": "Yonder Learn",
+    "website_domain": "yonderlearn.example",
+    "description": "Yonder Learn is a saas startup building tools for customers in Bengaluru.",
+    "sector": "saas",
+    "address": "78 Old Mill Road, Cantonment, Bengaluru",
+    "lat": 13.010186,
+    "lng": 77.613708,
+    "hiring": true,
+    "open_roles": [
+      "Full Stack Developer",
+      "Customer Success Associate"
+    ],
+    "tech_stack": [
+      "AWS",
+      "Node.js",
+      "PostgreSQL"
+    ],
+    "source": "seed"
+  },
+  {
+    "name": "Ripple Health",
+    "website_domain": "ripplehealth.example",
+    "description": "Ripple Health is a ecommerce startup building tools for customers in Bengaluru.",
+    "sector": "ecommerce",
+    "address": "156 Main Road, Lakeside, Bengaluru",
+    "lat": 13.005011,
+    "lng": 77.580882,
+    "hiring": true,
+    "open_roles": [
+      "Growth Marketer",
+      "Category Associate"
+    ],
+    "tech_stack": [
+      "React",
+      "Python"
+    ],
+    "source": "seed"
+  },
+  {
+    "name": "Saffron Systems",
+    "website_domain": "saffronsystems.example",
+    "description": "Saffron Systems is a logistics startup building tools for customers in Bengaluru.",
+    "sector": "logistics",
+    "address": "149 Ring Road, University Quarter, Bengaluru",
+    "lat": 13.002653,
+    "lng": 77.608031,
+    "hiring": true,
+    "open_roles": [
+      "Data Engineer"
+    ],
+    "tech_stack": [
+      "Kafka",
+      "Spring",
+      "Java"
+    ],
+    "source": "seed"
+  },
+  {
+    "name": "Nova Labs",
+    "website_domain": "novalabs.example",
+    "description": "Nova Labs is a mobility startup building tools for customers in Bengaluru.",
+    "sector": "mobility",
+    "address": "207 Temple Street, Industrial Estate, Bengaluru",
+    "lat": 12.98726,
+    "lng": 77.562909,
+    "hiring": true,
+    "open_roles": [
+      "Embedded Engineer"
+    ],
+    "tech_stack": [
+      "Python",
+      "C"
+    ],
+    "source": "seed"
+  },
+  {
+    "name": "Prism Learn",
+    "website_domain": "prismlearn.example",
+    "description": "Prism Learn is a gaming startup building tools for customers in Bengaluru.",
+    "sector": "gaming",
+    "address": "211 Garden Road, Industrial Estate, Bengaluru",
+    "lat": 12.996575,
+    "lng": 77.582607,
+    "hiring": false,
+    "open_roles": [],
+    "tech_stack": [
+      "C#",
+      "Redis"
+    ],
+    "source": "seed"
+  },
+  {
+    "name": "Onyx Labs",
+    "website_domain": "onyxlabs.example",
+    "description": "Onyx Labs is a fintech startup building tools for customers in Bengaluru.",
+    "sector": "fintech",
+    "address": "105 Market Street, University Quarter, Bengaluru",
+    "lat": 13.017444,
+    "lng": 77.617111,
+    "hiring": true,
+    "open_roles": [
+      "Backend Engineer"
+    ],
+    "tech_stack": [
+      "Kafka",
+      "Python",
+      "React"
+    ],
+    "source": "seed"
+  },
+  {
+    "name": "Rangoli Logic",
+    "website_domain": "rangolilogic.example",
+    "description": "Rangoli Logic is a healthtech startup building tools for customers in Bengaluru.",
+    "sector": "healthtech",
+    "address": "214 Church Street, East Gate, Bengaluru",
+    "lat": 13.026608,
+    "lng": 77.607706,
+    "hiring": false,
+    "open_roles": [],
+    "tech_stack": [
+      "Node.js",
+      "Kotlin",
+      "FHIR"
+    ],
+    "source": "seed"
+  },
+  {
+    "name": "Helix AI",
+    "website_domain": "helixai.example",
+    "description": "Helix AI is a biotech startup building tools for customers in Bengaluru.",
+    "sector": "biotech",
+    "address": "176 Ring Road, Market District, Bengaluru",
+    "lat": 12.981046,
+    "lng": 77.600438,
+    "hiring": true,
+    "open_roles": [
+      "Research Associate",
+      "Lab Technician"
+    ],
+    "tech_stack": [
+      "R",
+      "Python",
+      "AWS"
+    ],
+    "source": "seed"
+  },
+  {
+    "name": "Pebble Logic",
+    "website_domain": "pebblelogic.example",
+    "description": "Pebble Logic is a edtech startup building tools for customers in Bengaluru.",
+    "sector": "edtech",
+    "address": "53 Market Street, Market District, Bengaluru",
+    "lat": 13.017142,
+    "lng": 77.599304,
+    "hiring": false,
+    "open_roles": [],
+    "tech_stack": [
+      "Next.js",
+      "React"
+    ],
+    "source": "seed"
+  },
+  {
+    "name": "Yonder Logic",
+    "website_domain": "yonderlogic.example",
+    "description": "Yonder Logic is a agritech startup building tools for customers in Bengaluru.",
+    "sector": "agritech",
+    "address": "205 Lake View Road, Tech Park, Bengaluru",
+    "lat": 12.977864,
+    "lng": 77.609292,
+    "hiring": true,
+    "open_roles": [
+      "Field Operations Associate"
+    ],
+    "tech_stack": [
+      "Django",
+      "Kotlin"
+    ],
+    "source": "seed"
+  },
+  {
+    "name": "Nimbus Mobility",
+    "website_domain": "nimbusmobility.example",
+    "description": "Nimbus Mobility is a climate startup building tools for customers in Bengaluru.",
+    "sector": "climate",
+    "address": "200 Ring Road, Market District, Bengaluru",
+    "lat": 12.97406,
+    "lng": 77.608718,
+    "hiring": true,
+    "open_roles": [
+      "Energy Analyst"
+    ],
+    "tech_stack": [
+      "Python",
+      "MQTT",
+      "C++",
+      "Grafana"
+    ],
+    "source": "seed"
+  },
+  {
+    "name": "Nova Pay",
+    "website_domain": "novapay.example",
+    "description": "Nova Pay is a deeptech startup building tools for customers in Bengaluru.",
+    "sector": "deeptech",
+    "address": "183 Church Street, Tech Park, Bengaluru",
+    "lat": 12.869462,
+    "lng": 77.646953,
+    "hiring": true,
+    "open_roles": [
+      "Research Engineer"
+    ],
+    "tech_stack": [
+      "PyTorch",
+      "Python",
+      "ROS",
+      "C++"
+    ],
+    "source": "seed"
+  },
+  {
+    "name": "Zenith Works",
+    "website_domain": "zenithworks.example",
+    "description": "Zenith Works is a saas startup building tools for customers in Bengaluru.",
+    "sector": "saas",
+    "address": "204 Main Road, Tech Park, Bengaluru",
+    "lat": 12.996254,
+    "lng": 77.619646,
+    "hiring": true,
+    "open_roles": [
+      "Sales Development Rep"
+    ],
+    "tech_stack": [
+      "React",
+      "PostgreSQL",
+      "AWS"
+    ],
+    "source": "seed"
+  },
+  {
+    "name": "Kite Labs",
+    "website_domain": "kitelabs.example",
+    "description": "Kite Labs is a ecommerce startup building tools for customers in Bengaluru.",
+    "sector": "ecommerce",
+    "address": "122 Market Street, Tech Park, Bengaluru",
+    "lat": 13.016479,
+    "lng": 77.619067,
+    "hiring": false,
+    "open_roles": [],
+    "tech_stack": [
+      "Shopify",
+      "React"
+    ],
+    "source": "seed"
+  },
+  {
+    "name": "Zenith Energy",
+    "website_domain": "zenithenergy.example",
+    "description": "Zenith Energy is a logistics startup building tools for customers in Bengaluru.",
+    "sector": "logistics",
+    "address": "224 Garden Road, Cantonment, Bengaluru",
+    "lat": 12.949358,
+    "lng": 77.549523,
+    "hiring": true,
+    "open_roles": [
+      "Data Engineer"
+    ],
+    "tech_stack": [
+      "PostgreSQL",
+      "Kotlin",
+      "Java",
+      "Kafka"
+    ],
+    "source": "seed"
+  },
+  {
+    "name": "Delta Pay",
+    "website_domain": "deltapay.example",
+    "description": "Delta Pay is a mobility startup building tools for customers in Bengaluru.",
+    "sector": "mobility",
+    "address": "144 Hill Top Lane, East Gate, Bengaluru",
+    "lat": 12.955178,
+    "lng": 77.566403,
+    "hiring": true,
+    "open_roles": [
+      "Backend Engineer"
+    ],
+    "tech_stack": [
+      "Go",
+      "C",
+      "PostgreSQL",
+      "Python"
+    ],
+    "source": "seed"
+  },
+  {
+    "name": "Indigo Cart",
+    "website_domain": "indigocart.example",
+    "description": "Indigo Cart is a gaming startup building tools for customers in Bengaluru.",
+    "sector": "gaming",
+    "address": "37 Main Road, Old Town, Bengaluru",
+    "lat": 12.967504,
+    "lng": 77.606608,
+    "hiring": true,
+    "open_roles": [
+      "Community Manager"
+    ],
+    "tech_stack": [
+      "C#",
+      "Redis",
+      "Node.js",
+      "Unity"
+    ],
+    "source": "seed"
+  },
+  {
+    "name": "Cedar Bio",
+    "website_domain": "cedarbio.example",
+    "description": "Cedar Bio is a fintech startup building tools for customers in Bengaluru.",
+    "sector": "fintech",
+    "address": "41 Hill Top Lane, Old Town, Bengaluru",
+    "lat": 12.956479,
+    "lng": 77.559639,
+    "hiring": true,
+    "open_roles": [
+      "Risk Analyst"
+    ],
+    "tech_stack": [
+      "Kafka",
+      "React",
+      "PostgreSQL"
+    ],
+    "source": "seed"
+  },
+  {
+    "name": "Granite Works",
+    "website_domain": "graniteworks.example",
+    "description": "Granite Works is a healthtech startup building tools for customers in Bengaluru.",
+    "sector": "healthtech",
+    "address": "174 Hill Top Lane, Lakeside, Bengaluru",
+    "lat": 12.957727,
+    "lng": 77.601309,
+    "hiring": true,
+    "open_roles": [
+      "Mobile Developer",
+      "Data Analyst"
+    ],
+    "tech_stack": [
+      "FHIR",
+      "Kotlin",
+      "PostgreSQL"
+    ],
+    "source": "seed"
+  },
+  {
+    "name": "Lotus Health",
+    "website_domain": "lotushealth.example",
+    "description": "Lotus Health is a biotech startup building tools for customers in Bengaluru.",
+    "sector": "biotech",
+    "address": "111 Lake View Road, University Quarter, Bengaluru",
+    "lat": 13.000034,
+    "lng": 77.621995,
+    "hiring": true,
+    "open_roles": [
+      "Bioinformatics Intern",
+      "Research Associate"
+    ],
+    "tech_stack": [
+      "Benchling",
+      "Python",
+      "R",
+      "AWS"
+    ],
+    "source": "seed"
+  },
+  {
+    "name": "Nimbus Energy",
+    "website_domain": "nimbusenergy.example",
+    "description": "Nimbus Energy is a edtech startup building tools for customers in Bengaluru.",
+    "sector": "edtech",
+    "address": "182 Garden Road, Cantonment, Bengaluru",
+    "lat": 12.868348,
+    "lng": 77.539974,
+    "hiring": false,
+    "open_roles": [],
+    "tech_stack": [
+      "React",
+      "Next.js",
+      "Python"
+    ],
+    "source": "seed"
+  },
+  {
+    "name": "Willow Grid",
+    "website_domain": "willowgrid.example",
+    "description": "Willow Grid is a agritech startup building tools for customers in Bengaluru.",
+    "sector": "agritech",
+    "address": "63 Tech Park Avenue, East Gate, Bengaluru",
+    "lat": 12.968589,
+    "lng": 77.567392,
+    "hiring": false,
+    "open_roles": [],
+    "tech_stack": [
+      "Kotlin",
+      "Python",
+      "Django"
+    ],
+    "source": "seed"
+  },
+  {
+    "name": "Xenon Health",
+    "website_domain": "xenonhealth.example",
+    "description": "Xenon Health is a climate startup building tools for customers in Bengaluru.",
+    "sector": "climate",
+    "address": "50 Ring Road, Industrial Estate, Bengaluru",
+    "lat": 12.964708,
+    "lng": 77.586756,
+    "hiring": true,
+    "open_roles": [
+      "Hardware Engineer"
+    ],
+    "tech_stack": [
+      "Python",
+      "Grafana"
+    ],
+    "source": "seed"
+  },
+  {
+    "name": "Banyan Bio",
+    "website_domain": "banyanbio.example",
+    "description": "Banyan Bio is a deeptech startup building tools for customers in Bengaluru.",
+    "sector": "deeptech",
+    "address": "195 Hill Top Lane, Lakeside, Bengaluru",
+    "lat": 12.995394,
+    "lng": 77.600524,
+    "hiring": false,
+    "open_roles": [],
+    "tech_stack": [
+      "C++",
+      "CUDA",
+      "ROS",
+      "PyTorch"
+    ],
+    "source": "seed"
+  },
+  {
+    "name": "Kestrel Health",
+    "website_domain": "kestrelhealth.example",
+    "description": "Kestrel Health is a saas startup building tools for customers in Bengaluru.",
+    "sector": "saas",
+    "address": "91 Canal Road, Tech Park, Bengaluru",
+    "lat": 12.959931,
+    "lng": 77.537654,
+    "hiring": false,
+    "open_roles": [],
+    "tech_stack": [
+      "PostgreSQL",
+      "AWS",
+      "TypeScript"
+    ],
+    "source": "seed"
+  },
+  {
+    "name": "Willow Bio",
+    "website_domain": "willowbio.example",
+    "description": "Willow Bio is a ecommerce startup building tools for customers in Bengaluru.",
+    "sector": "ecommerce",
+    "address": "203 Main Road, Old Town, Bengaluru",
+    "lat": 12.993947,
+    "lng": 77.602999,
+    "hiring": false,
+    "open_roles": [],
+    "tech_stack": [
+      "React",
+      "Google Analytics",
+      "Python"
+    ],
+    "source": "seed"
+  },
+  {
+    "name": "Sutra Works",
+    "website_domain": "sutraworks.example",
+    "description": "Sutra Works is a logistics startup building tools for customers in Bengaluru.",
+    "sector": "logistics",
+    "address": "166 Lake View Road, Old Town, Bengaluru",
+    "lat": 12.964493,
+    "lng": 77.556909,
+    "hiring": true,
+    "open_roles": [
+      "Android Developer"
+    ],
+    "tech_stack": [
+      "Kafka",
+      "Spring",
+      "Kotlin"
+    ],
+    "source": "seed"
+  },
+  {
+    "name": "Quill Energy",
+    "website_domain": "quillenergy.example",
+    "description": "Quill Energy is a mobility startup building tools for customers in Bengaluru.",
+    "sector": "mobility",
+    "address": "86 Market Street, Industrial Estate, Bengaluru",
+    "lat": 13.058172,
+    "lng": 77.624933,
+    "hiring": false,
+    "open_roles": [],
+    "tech_stack": [
+      "PostgreSQL",
+      "Python"
+    ],
+    "source": "seed"
+  },
+  {
+    "name": "Willow Cart",
+    "website_domain": "willowcart.example",
+    "description": "Willow Cart is a gaming startup building tools for customers in Bengaluru.",
+    "sector": "gaming",
+    "address": "34 Hill Top Lane, Tech Park, Bengaluru",
+    "lat": 12.968484,
+    "lng": 77.60102,
+    "hiring": false,
+    "open_roles": [],
+    "tech_stack": [
+      "Redis",
+      "Node.js",
+      "C#"
+    ],
+    "source": "seed"
+  },
+  {
+    "name": "Delta Labs",
+    "website_domain": "deltalabs.example",
+    "description": "Delta Labs is a fintech startup building tools for customers in Bengaluru.",
+    "sector": "fintech",
+    "address": "244 Old Mill Road, Industrial Estate, Bengaluru",
+    "lat": 12.959722,
+    "lng": 77.55879,
+    "hiring": true,
+    "open_roles": [
+      "Backend Engineer",
+      "Product Manager"
+    ],
+    "tech_stack": [
+      "Go",
+      "Python"
+    ],
+    "source": "seed"
+  },
+  {
+    "name": "Ripple Grow",
+    "website_domain": "ripplegrow.example",
+    "description": "Ripple Grow is a healthtech startup building tools for customers in Bengaluru.",
+    "sector": "healthtech",
+    "address": "87 Hill Top Lane, University Quarter, Bengaluru",
+    "lat": 13.055391,
+    "lng": 77.517519,
+    "hiring": true,
+    "open_roles": [
+      "Mobile Developer",
+      "Data Analyst"
+    ],
+    "tech_stack": [
+      "FHIR",
+      "Swift"
+    ],
+    "source": "seed"
+  },
+  {
+    "name": "Xenon Works",
+    "website_domain": "xenonworks.example",
+    "description": "Xenon Works is a biotech startup building tools for customers in Bengaluru.",
+    "sector": "biotech",
+    "address": "60 Canal Road, Riverside, Bengaluru",
+    "lat": 12.974356,
+    "lng": 77.590954,
+    "hiring": false,
+    "open_roles": [],
+    "tech_stack": [
+      "AWS",
+      "Python",
+      "R"
+    ],
+    "source": "seed"
+  },
+  {
+    "name": "Vertex Works",
+    "website_domain": "vertexworks.example",
+    "description": "Vertex Works is a edtech startup building tools for customers in Bengaluru.",
+    "sector": "edtech",
+    "address": "52 Hill Top Lane, University Quarter, Bengaluru",
+    "lat": 12.912494,
+    "lng": 77.628612,
+    "hiring": true,
+    "open_roles": [
+      "Content Writer",
+      "Frontend Developer"
+    ],
+    "tech_stack": [
+      "React",
+      "Firebase",
+      "Python"
+    ],
+    "source": "seed"
+  },
+  {
+    "name": "Granite Labs",
+    "website_domain": "granitelabs.example",
+    "description": "Granite Labs is a agritech startup building tools for customers in Bengaluru.",
+    "sector": "agritech",
+    "address": "234 Old Mill Road, Lakeside, Bengaluru",
+    "lat": 12.975796,
+    "lng": 77.606448,
+    "hiring": true,
+    "open_roles": [
+      "Field Operations Associate",
+      "Android Developer"
+    ],
+    "tech_stack": [
+      "IoT",
+      "Django"
+    ],
+    "source": "seed"
+  },
+  {
+    "name": "Cobalt Bio",
+    "website_domain": "cobaltbio.example",
+    "description": "Cobalt Bio is a climate startup building tools for customers in Bengaluru.",
+    "sector": "climate",
+    "address": "215 Main Road, Industrial Estate, Bengaluru",
+    "lat": 13.021328,
+    "lng": 77.603734,
+    "hiring": false,
+    "open_roles": [],
+    "tech_stack": [
+      "Python",
+      "C++"
+    ],
+    "source": "seed"
+  },
+  {
+    "name": "Bolt Labs",
+    "website_domain": "boltlabs.example",
+    "description": "Bolt Labs is a deeptech startup building tools for customers in Bengaluru.",
+    "sector": "deeptech",
+    "address": "5 Temple Street, Riverside, Bengaluru",
+    "lat": 12.924276,
+    "lng": 77.551597,
+    "hiring": false,
+    "open_roles": [],
+    "tech_stack": [
+      "C++",
+      "ROS"
+    ],
+    "source": "seed"
+  },
+  {
+    "name": "Saffron Farm",
+    "website_domain": "saffronfarm.example",
+    "description": "Saffron Farm is a saas startup building tools for customers in Bengaluru.",
+    "sector": "saas",
+    "address": "232 Church Street, East Gate, Bengaluru",
+    "lat": 12.953866,
+    "lng": 77.615327,
+    "hiring": true,
+    "open_roles": [
+      "Customer Success Associate"
+    ],
+    "tech_stack": [
+      "AWS",
+      "React",
+      "Node.js",
+      "TypeScript"
+    ],
+    "source": "seed"
+  },
+  {
+    "name": "Yonder Grid",
+    "website_domain": "yondergrid.example",
+    "description": "Yonder Grid is a ecommerce startup building tools for customers in Bengaluru.",
+    "sector": "ecommerce",
+    "address": "135 Ring Road, Tech Park, Bengaluru",
+    "lat": 13.017125,
+    "lng": 77.631191,
+    "hiring": false,
+    "open_roles": [],
+    "tech_stack": [
+      "Shopify",
+      "React",
+      "Python",
+      "Google Analytics"
+    ],
+    "source": "seed"
+  },
+  {
+    "name": "Dhruva Learn",
+    "website_domain": "dhruvalearn.example",
+    "description": "Dhruva Learn is a logistics startup building tools for customers in Bengaluru.",
+    "sector": "logistics",
+    "address": "189 Ring Road, University Quarter, Bengaluru",
+    "lat": 12.997133,
+    "lng": 77.591039,
+    "hiring": false,
+    "open_roles": [],
+    "tech_stack": [
+      "PostgreSQL",
+      "Kotlin"
+    ],
+    "source": "seed"
+  },
+  {
+    "name": "Xenon Systems",
+    "website_domain": "xenonsystems.example",
+    "description": "Xenon Systems is a mobility startup building tools for customers in Bengaluru.",
+    "sector": "mobility",
+    "address": "118 Station Road, North Hills, Bengaluru",
+    "lat": 12.990802,
+    "lng": 77.61678,
+    "hiring": false,
+    "open_roles": [],
+    "tech_stack": [
+      "C",
+      "PostgreSQL"
+    ],
+    "source": "seed"
+  },
+  {
+    "name": "Kestrel Logic",
+    "website_domain": "kestrellogic.example",
+    "description": "Kestrel Logic is a gaming startup building tools for customers in Bengaluru.",
+    "sector": "gaming",
+    "address": "200 Station Road, Industrial Estate, Bengaluru",
+    "lat": 13.012859,
+    "lng": 77.620684,
+    "hiring": true,
+    "open_roles": [
+      "Game Designer",
+      "Unity Developer"
+    ],
+    "tech_stack": [
+      "Redis",
+      "Node.js",
+      "C#"
+    ],
+    "source": "seed"
+  },
+  {
+    "name": "Monsoon Works",
+    "website_domain": "monsoonworks.example",
+    "description": "Monsoon Works is a fintech startup building tools for customers in Bengaluru.",
+    "sector": "fintech",
+    "address": "206 Market Street, Cantonment, Bengaluru",
+    "lat": 12.973996,
+    "lng": 77.547521,
+    "hiring": true,
+    "open_roles": [
+      "Risk Analyst"
+    ],
+    "tech_stack": [
+      "Go",
+      "PostgreSQL",
+      "React",
+      "Python"
+    ],
+    "source": "seed"
+  },
+  {
+    "name": "Nimbus Learn",
+    "website_domain": "nimbuslearn.example",
+    "description": "Nimbus Learn is a healthtech startup building tools for customers in Bengaluru.",
+    "sector": "healthtech",
+    "address": "234 Ring Road, East Gate, Bengaluru",
+    "lat": 13.005788,
+    "lng": 77.622679,
+    "hiring": false,
+    "open_roles": [],
+    "tech_stack": [
+      "Node.js",
+      "Kotlin",
+      "PostgreSQL"
+    ],
+    "source": "seed"
+  },
+  {
+    "name": "Rangoli Grid",
+    "website_domain": "rangoligrid.example",
+    "description": "Rangoli Grid is a biotech startup building tools for customers in Bengaluru.",
+    "sector": "biotech",
+    "address": "201 Church Street, Old Town, Bengaluru",
+    "lat": 13.013526,
+    "lng": 77.610274,
+    "hiring": false,
+    "open_roles": [],
+    "tech_stack": [
+      "Python",
+      "AWS"
+    ],
+    "source": "seed"
+  },
+  {
+    "name": "Kite Bio",
+    "website_domain": "kitebio.example",
+    "description": "Kite Bio is a edtech startup building tools for customers in Bengaluru.",
+    "sector": "edtech",
+    "address": "147 Lake View Road, Market District, Bengaluru",
+    "lat": 12.964257,
+    "lng": 77.620066,
+    "hiring": false,
+    "open_roles": [],
+    "tech_stack": [
+      "Python",
+      "Next.js",
+      "Firebase"
+    ],
+    "source": "seed"
+  },
+  {
+    "name": "Willow Logic",
+    "website_domain": "willowlogic.example",
+    "description": "Willow Logic is a agritech startup building tools for customers in Bengaluru.",
+    "sector": "agritech",
+    "address": "31 Temple Street, North Hills, Bengaluru",
+    "lat": 12.983229,
+    "lng": 77.61685,
+    "hiring": false,
+    "open_roles": [],
+    "tech_stack": [
+      "IoT",
+      "Kotlin",
+      "Python",
+      "Django"
+    ],
+    "source": "seed"
+  },
+  {
+    "name": "Zenith Labs",
+    "website_domain": "zenithlabs.example",
+    "description": "Zenith Labs is a climate startup building tools for customers in Bengaluru.",
+    "sector": "climate",
+    "address": "23 Garden Road, Industrial Estate, Bengaluru",
+    "lat": 13.020579,
+    "lng": 77.557441,
+    "hiring": true,
+    "open_roles": [
+      "Embedded Intern",
+      "Hardware Engineer"
+    ],
+    "tech_stack": [
+      "MQTT",
+      "Python",
+      "C++",
+      "Grafana"
+    ],
+    "source": "seed"
+  },
+  {
+    "name": "Cobalt Farm",
+    "website_domain": "cobaltfarm.example",
+    "description": "Cobalt Farm is a deeptech startup building tools for customers in Bengaluru.",
+    "sector": "deeptech",
+    "address": "93 Canal Road, East Gate, Bengaluru",
+    "lat": 12.980484,
+    "lng": 77.703743,
+    "hiring": true,
+    "open_roles": [
+      "Research Engineer",
+      "ML Engineer"
+    ],
+    "tech_stack": [
+      "Python",
+      "C++",
+      "PyTorch",
+      "CUDA"
+    ],
+    "source": "seed"
+  },
+  {
+    "name": "Monsoon Systems",
+    "website_domain": "monsoonsystems.example",
+    "description": "Monsoon Systems is a saas startup building tools for customers in Bengaluru.",
+    "sector": "saas",
+    "address": "225 Canal Road, East Gate, Bengaluru",
+    "lat": 12.950036,
+    "lng": 77.549543,
+    "hiring": true,
+    "open_roles": [
+      "Full Stack Developer"
+    ],
+    "tech_stack": [
+      "AWS",
+      "TypeScript",
+      "PostgreSQL"
+    ],
+    "source": "seed"
+  },
+  {
+    "name": "Granite Systems",
+    "website_domain": "granitesystems.example",
+    "description": "Granite Systems is a ecommerce startup building tools for customers in Bengaluru.",
+    "sector": "ecommerce",
+    "address": "243 Canal Road, North Hills, Bengaluru",
+    "lat": 12.964495,
+    "lng": 77.55341,
+    "hiring": true,
+    "open_roles": [
+      "Category Associate"
+    ],
+    "tech_stack": [
+      "Python",
+      "Shopify"
+    ],
+    "source": "seed"
+  },
+  {
+    "name": "Lumen Cart",
+    "website_domain": "lumencart.example",
+    "description": "Lumen Cart is a logistics startup building tools for customers in Bengaluru.",
+    "sector": "logistics",
+    "address": "237 Hill Top Lane, Old Town, Bengaluru",
+    "lat": 12.981398,
+    "lng": 77.604286,
+    "hiring": true,
+    "open_roles": [
+      "Operations Associate"
+    ],
+    "tech_stack": [
+      "Kotlin",
+      "PostgreSQL"
+    ],
+    "source": "seed"
+  },
+  {
+    "name": "Nova Farm",
+    "website_domain": "novafarm.example",
+    "description": "Nova Farm is a mobility startup building tools for customers in Bengaluru.",
+    "sector": "mobility",
+    "address": "63 Garden Road, Cantonment, Bengaluru",
+    "lat": 12.943534,
+    "lng": 77.544861,
+    "hiring": true,
+    "open_roles": [
+      "Embedded Engineer",
+      "Fleet Operations Associate"
+    ],
+    "tech_stack": [
+      "C",
+      "PostgreSQL",
+      "Python",
+      "Go"
+    ],
+    "source": "seed"
+  },
+  {
+    "name": "Cedar Works",
+    "website_domain": "cedarworks.example",
+    "description": "Cedar Works is a gaming startup building tools for customers in Bengaluru.",
+    "sector": "gaming",
+    "address": "103 Lake View Road, Industrial Estate, Bengaluru",
+    "lat": 12.961555,
+    "lng": 77.557522,
+    "hiring": true,
+    "open_roles": [
+      "Unity Developer"
+    ],
+    "tech_stack": [
+      "Redis",
+      "Unity"
+    ],
+    "source": "seed"
+  },
+  {
+    "name": "Dhruva Bio",
+    "website_domain": "dhruvabio.example",
+    "description": "Dhruva Bio is a fintech startup building tools for customers in Bengaluru.",
+    "sector": "fintech",
+    "address": "108 Old Mill Road, University Quarter, Bengaluru",
+    "lat": 12.962467,
+    "lng": 77.55499,
+    "hiring": false,
+    "open_roles": [],
+    "tech_stack": [
+      "React",
+      "PostgreSQL",
+      "Python"
+    ],
+    "source": "seed"
+  },
+  {
+    "name": "Bolt Energy",
+    "website_domain": "boltenergy.example",
+    "description": "Bolt Energy is a healthtech startup building tools for customers in Bengaluru.",
+    "sector": "healthtech",
+    "address": "62 Old Mill Road, East Gate, Bengaluru",
+    "lat": 12.949373,
+    "lng": 77.561843,
+    "hiring": true,
+    "open_roles": [
+      "Mobile Developer",
+      "Data Analyst"
+    ],
+    "tech_stack": [
+      "PostgreSQL",
+      "FHIR",
+      "Swift"
+    ],
+    "source": "seed"
+  },
+  {
+    "name": "Quill Logic",
+    "website_domain": "quilllogic.example",
+    "description": "Quill Logic is a biotech startup building tools for customers in Bengaluru.",
+    "sector": "biotech",
+    "address": "94 Station Road, Cantonment, Bengaluru",
+    "lat": 12.953944,
+    "lng": 77.558012,
+    "hiring": false,
+    "open_roles": [],
+    "tech_stack": [
+      "R",
+      "AWS"
+    ],
+    "source": "seed"
+  },
+  {
+    "name": "Tidal Systems",
+    "website_domain": "tidalsystems.example",
+    "description": "Tidal Systems is a edtech startup building tools for customers in Bengaluru.",
+    "sector": "edtech",
+    "address": "25 Tech Park Avenue, Industrial Estate, Bengaluru",
+    "lat": 12.947383,
+    "lng": 77.552454,
+    "hiring": true,
+    "open_roles": [
+      "Community Associate",
+      "Frontend Developer"
+    ],
+    "tech_stack": [
+      "Next.js",
+      "Firebase"
+    ],
+    "source": "seed"
+  },
+  {
+    "name": "Kite Grow",
+    "website_domain": "kitegrow.example",
+    "description": "Kite Grow is a agritech startup building tools for customers in Bengaluru.",
+    "sector": "agritech",
+    "address": "133 Church Street, University Quarter, Bengaluru",
+    "lat": 12.970283,
+    "lng": 77.592847,
+    "hiring": false,
+    "open_roles": [],
+    "tech_stack": [
+      "Python",
+      "IoT",
+      "Django",
+      "Kotlin"
+    ],
+    "source": "seed"
+  },
+  {
+    "name": "Cobalt Cart",
+    "website_domain": "cobaltcart.example",
+    "description": "Cobalt Cart is a climate startup building tools for customers in Bengaluru.",
+    "sector": "climate",
+    "address": "173 Market Street, Cantonment, Bengaluru",
+    "lat": 13.01386,
+    "lng": 77.617494,
+    "hiring": true,
+    "open_roles": [
+      "Embedded Intern",
+      "Hardware Engineer"
+    ],
+    "tech_stack": [
+      "Grafana",
+      "Python",
+      "C++",
+      "MQTT"
+    ],
+    "source": "seed"
+  },
+  {
+    "name": "Vertex Learn",
+    "website_domain": "vertexlearn.example",
+    "description": "Vertex Learn is a deeptech startup building tools for customers in Bengaluru.",
+    "sector": "deeptech",
+    "address": "9 Hill Top Lane, Tech Park, Bengaluru",
+    "lat": 13.019276,
+    "lng": 77.629272,
+    "hiring": false,
+    "open_roles": [],
+    "tech_stack": [
+      "Python",
+      "ROS"
+    ],
+    "source": "seed"
+  },
+  {
+    "name": "Lotus Pay",
+    "website_domain": "lotuspay.example",
+    "description": "Lotus Pay is a saas startup building tools for customers in Bengaluru.",
+    "sector": "saas",
+    "address": "187 Station Road, University Quarter, Bengaluru",
+    "lat": 12.994456,
+    "lng": 77.62361,
+    "hiring": false,
+    "open_roles": [],
+    "tech_stack": [
+      "React",
+      "Node.js",
+      "PostgreSQL",
+      "AWS"
+    ],
+    "source": "seed"
+  },
+  {
+    "name": "Saffron Logic",
+    "website_domain": "saffronlogic.example",
+    "description": "Saffron Logic is a ecommerce startup building tools for customers in Bengaluru.",
+    "sector": "ecommerce",
+    "address": "223 Main Road, North Hills, Bengaluru",
+    "lat": 12.953755,
+    "lng": 77.558048,
+    "hiring": false,
+    "open_roles": [],
+    "tech_stack": [
+      "Google Analytics",
+      "Shopify",
+      "Python",
+      "React"
+    ],
+    "source": "seed"
+  },
+  {
+    "name": "Ember Learn",
+    "website_domain": "emberlearn.example",
+    "description": "Ember Learn is a logistics startup building tools for customers in Bengaluru.",
+    "sector": "logistics",
+    "address": "123 Ring Road, Market District, Bengaluru",
+    "lat": 12.936768,
+    "lng": 77.50392,
+    "hiring": true,
+    "open_roles": [
+      "Data Engineer",
+      "Operations Associate"
+    ],
+    "tech_stack": [
+      "Kotlin",
+      "Kafka",
+      "Spring",
+      "PostgreSQL"
+    ],
+    "source": "seed"
+  },
+  {
+    "name": "Granite Farm",
+    "website_domain": "granitefarm.example",
+    "description": "Granite Farm is a mobility startup building tools for customers in Bengaluru.",
+    "sector": "mobility",
+    "address": "192 Church Street, Riverside, Bengaluru",
+    "lat": 12.981058,
+    "lng": 77.589578,
+    "hiring": false,
+    "open_roles": [],
+    "tech_stack": [
+      "Go",
+      "PostgreSQL"
+    ],
+    "source": "seed"
+  },
+  {
+    "name": "Helix Grow",
+    "website_domain": "helixgrow.example",
+    "description": "Helix Grow is a gaming startup building tools for customers in Bengaluru.",
+    "sector": "gaming",
+    "address": "14 Market Street, Cantonment, Bengaluru",
+    "lat": 12.973151,
+    "lng": 77.609408,
+    "hiring": false,
+    "open_roles": [],
+    "tech_stack": [
+      "Redis",
+      "Unity",
+      "Node.js"
+    ],
+    "source": "seed"
+  },
+  {
+    "name": "Willow Labs",
+    "website_domain": "willowlabs.example",
+    "description": "Willow Labs is a fintech startup building tools for customers in Bengaluru.",
+    "sector": "fintech",
+    "address": "247 Temple Street, Industrial Estate, Bengaluru",
+    "lat": 12.992852,
+    "lng": 77.623139,
+    "hiring": true,
+    "open_roles": [
+      "Product Manager",
+      "Backend Engineer"
+    ],
+    "tech_stack": [
+      "React",
+      "Go"
+    ],
+    "source": "seed"
+  },
+  {
+    "name": "Quanta Mobility",
+    "website_domain": "quantamobility.example",
+    "description": "Quanta Mobility is a healthtech startup building tools for customers in Bengaluru.",
+    "sector": "healthtech",
+    "address": "48 Main Road, North Hills, Bengaluru",
+    "lat": 12.975813,
+    "lng": 77.606647,
+    "hiring": false,
+    "open_roles": [],
+    "tech_stack": [
+      "Kotlin",
+      "Node.js"
+    ],
+    "source": "seed"
+  },
+  {
+    "name": "Quanta Health",
+    "website_domain": "quantahealth.example",
+    "description": "Quanta Health is a biotech startup building tools for customers in Bengaluru.",
+    "sector": "biotech",
+    "address": "130 Church Street, North Hills, Bengaluru",
+    "lat": 13.013824,
+    "lng": 77.619262,
+    "hiring": true,
+    "open_roles": [
+      "Research Associate"
+    ],
+    "tech_stack": [
+      "R",
+      "Benchling",
+      "AWS"
+    ],
+    "source": "seed"
+  },
+  {
+    "name": "Pebble Energy",
+    "website_domain": "pebbleenergy.example",
+    "description": "Pebble Energy is a edtech startup building tools for customers in Bengaluru.",
+    "sector": "edtech",
+    "address": "230 Tech Park Avenue, Cantonment, Bengaluru",
+    "lat": 12.963275,
+    "lng": 77.577019,
+    "hiring": false,
+    "open_roles": [],
+    "tech_stack": [
+      "Firebase",
+      "React",
+      "Next.js",
+      "Python"
+    ],
+    "source": "seed"
+  },
+  {
+    "name": "Ripple AI",
+    "website_domain": "rippleai.example",
+    "description": "Ripple AI is a agritech startup building tools for customers in Bengaluru.",
+    "sector": "agritech",
+    "address": "115 Temple Street, Industrial Estate, Bengaluru",
+    "lat": 12.983442,
+    "lng": 77.610009,
+    "hiring": true,
+    "open_roles": [
+      "Supply Chain Analyst",
+      "Field Operations Associate"
+    ],
+    "tech_stack": [
+      "Django",
+      "IoT",
+      "Kotlin"
+    ],
+    "source": "seed"
+  },
+  {
+    "name": "Xenon Learn",
+    "website_domain": "xenonlearn.example",
+    "description": "Xenon Learn is a climate startup building tools for customers in Bengaluru.",
+    "sector": "climate",
+    "address": "177 Market Street, North Hills, Bengaluru",
+    "lat": 13.021777,
+    "lng": 77.612299,
+    "hiring": false,
+    "open_roles": [],
+    "tech_stack": [
+      "Python",
+      "C++",
+      "MQTT"
+    ],
+    "source": "seed"
+  },
+  {
+    "name": "Prism Logic",
+    "website_domain": "prismlogic.example",
+    "description": "Prism Logic is a deeptech startup building tools for customers in Bengaluru.",
+    "sector": "deeptech",
+    "address": "121 Canal Road, Riverside, Bengaluru",
+    "lat": 12.929702,
+    "lng": 77.572652,
+    "hiring": true,
+    "open_roles": [
+      "Robotics Intern"
+    ],
+    "tech_stack": [
+      "Python",
+      "ROS",
+      "CUDA",
+      "PyTorch"
+    ],
+    "source": "seed"
+  },
+  {
+    "name": "Quill Farm",
+    "website_domain": "quillfarm.example",
+    "description": "Quill Farm is a saas startup building tools for customers in Bengaluru.",
+    "sector": "saas",
+    "address": "43 Ring Road, Market District, Bengaluru",
+    "lat": 13.007624,
+    "lng": 77.713849,
+    "hiring": true,
+    "open_roles": [
+      "Full Stack Developer",
+      "Customer Success Associate"
+    ],
+    "tech_stack": [
+      "AWS",
+      "PostgreSQL",
+      "TypeScript",
+      "React"
+    ],
+    "source": "seed"
+  },
+  {
+    "name": "Fable Labs",
+    "website_domain": "fablelabs.example",
+    "description": "Fable Labs is a ecommerce startup building tools for customers in Bengaluru.",
+    "sector": "ecommerce",
+    "address": "66 Station Road, Riverside, Bengaluru",
+    "lat": 12.998927,
+    "lng": 77.618138,
+    "hiring": true,
+    "open_roles": [
+      "Growth Marketer"
+    ],
+    "tech_stack": [
+      "Python",
+      "Google Analytics",
+      "Shopify"
+    ],
+    "source": "seed"
+  },
+  {
+    "name": "Dhruva Labs",
+    "website_domain": "dhruvalabs.example",
+    "description": "Dhruva Labs is a logistics startup building tools for customers in Bengaluru.",
+    "sector": "logistics",
+    "address": "35 Garden Road, Cantonment, Bengaluru",
+    "lat": 12.95691,
+    "lng": 77.658111,
+    "hiring": true,
+    "open_roles": [
+      "Data Engineer",
+      "Android Developer"
+    ],
+    "tech_stack": [
+      "Kafka",
+      "Java",
+      "PostgreSQL"
+    ],
+    "source": "seed"
+  },
+  {
+    "name": "Saffron Works",
+    "website_domain": "saffronworks.example",
+    "description": "Saffron Works is a mobility startup building tools for customers in Bengaluru.",
+    "sector": "mobility",
+    "address": "33 Main Road, Riverside, Bengaluru",
+    "lat": 12.987569,
+    "lng": 77.593863,
+    "hiring": true,
+    "open_roles": [
+      "Fleet Operations Associate"
+    ],
+    "tech_stack": [
+      "PostgreSQL",
+      "Go",
+      "Python"
+    ],
+    "source": "seed"
+  },
+  {
+    "name": "Prism Mobility",
+    "website_domain": "prismmobility.example",
+    "description": "Prism Mobility is a gaming startup building tools for customers in Bengaluru.",
+    "sector": "gaming",
+    "address": "196 Market Street, Old Town, Bengaluru",
+    "lat": 12.9567,
+    "lng": 77.565022,
+    "hiring": false,
+    "open_roles": [],
+    "tech_stack": [
+      "Redis",
+      "Node.js",
+      "Unity",
+      "C#"
+    ],
+    "source": "seed"
+  },
+  {
+    "name": "Umbra AI",
+    "website_domain": "umbraai.example",
+    "description": "Umbra AI is a fintech startup building tools for customers in Bengaluru.",
+    "sector": "fintech",
+    "address": "103 Church Street, Riverside, Bengaluru",
+    "lat": 13.029056,
+    "lng": 77.625539,
+    "hiring": false,
+    "open_roles": [],
+    "tech_stack": [
+      "Go",
+      "Python",
+      "Kafka",
+      "React"
+    ],
+    "source": "seed"
+  },
+  {
+    "name": "Ember Logic",
+    "website_domain": "emberlogic.example",
+    "description": "Ember Logic is a healthtech startup building tools for customers in Bengaluru.",
+    "sector": "healthtech",
+    "address": "170 Canal Road, Riverside, Bengaluru",
+    "lat": 12.980664,
+    "lng": 77.707379,
+    "hiring": false,
+    "open_roles": [],
+    "tech_stack": [
+      "Node.js",
+      "FHIR",
+      "Kotlin"
+    ],
+    "source": "seed"
+  },
+  {
+    "name": "Pebble Cart",
+    "website_domain": "pebblecart.example",
+    "description": "Pebble Cart is a biotech startup building tools for customers in Bengaluru.",
+    "sector": "biotech",
+    "address": "165 Garden Road, Cantonment, Bengaluru",
+    "lat": 13.024276,
+    "lng": 77.623843,
+    "hiring": true,
+    "open_roles": [
+      "Bioinformatics Intern",
+      "Lab Technician"
+    ],
+    "tech_stack": [
+      "R",
+      "AWS",
+      "Benchling"
+    ],
+    "source": "seed"
+  },
+  {
+    "name": "Cobalt Pay",
+    "website_domain": "cobaltpay.example",
+    "description": "Cobalt Pay is a edtech startup building tools for customers in Bengaluru.",
+    "sector": "edtech",
+    "address": "106 Tech Park Avenue, Market District, Bengaluru",
+    "lat": 12.952672,
+    "lng": 77.599196,
+    "hiring": true,
+    "open_roles": [
+      "Frontend Developer"
+    ],
+    "tech_stack": [
+      "Firebase",
+      "React"
+    ],
+    "source": "seed"
+  },
+  {
+    "name": "Kite Grid",
+    "website_domain": "kitegrid.example",
+    "description": "Kite Grid is a agritech startup building tools for customers in Bengaluru.",
+    "sector": "agritech",
+    "address": "69 Tech Park Avenue, East Gate, Bengaluru",
+    "lat": 12.969619,
+    "lng": 77.581977,
+    "hiring": true,
+    "open_roles": [
+      "Field Operations Associate"
+    ],
+    "tech_stack": [
+      "Python",
+      "IoT"
+    ],
+    "source": "seed"
+  },
+  {
+    "name": "Willow Pay",
+    "website_domain": "willowpay.example",
+    "description": "Willow Pay is a climate startup building tools for customers in Bengaluru.",
+    "sector": "climate",
+    "address": "63 Main Road, East Gate, Bengaluru",
+    "lat": 12.980624,
+    "lng": 77.609579,
+    "hiring": true,
+    "open_roles": [
+      "Energy Analyst"
+    ],
+    "tech_stack": [
+      "MQTT",
+      "Python"
+    ],
+    "source": "seed"
+  },
+  {
+    "name": "Quanta Systems",
+    "website_domain": "quantasystems.example",
+    "description": "Quanta Systems is a deeptech startup building tools for customers in Bengaluru.",
+    "sector": "deeptech",
+    "address": "120 Market Street, Lakeside, Bengaluru",
+    "lat": 12.952948,
+    "lng": 77.559369,
+    "hiring": false,
+    "open_roles": [],
+    "tech_stack": [
+      "PyTorch",
+      "CUDA",
+      "C++"
+    ],
+    "source": "seed"
+  },
+  {
+    "name": "Lotus Bio",
+    "website_domain": "lotusbio.example",
+    "description": "Lotus Bio is a saas startup building tools for customers in Bengaluru.",
+    "sector": "saas",
+    "address": "150 Hill Top Lane, Cantonment, Bengaluru",
+    "lat": 13.070963,
+    "lng": 77.605028,
+    "hiring": false,
+    "open_roles": [],
+    "tech_stack": [
+      "React",
+      "AWS",
+      "PostgreSQL"
+    ],
+    "source": "seed"
+  },
+  {
+    "name": "Kestrel Bio",
+    "website_domain": "kestrelbio.example",
+    "description": "Kestrel Bio is a ecommerce startup building tools for customers in Bengaluru.",
+    "sector": "ecommerce",
+    "address": "126 Church Street, University Quarter, Bengaluru",
+    "lat": 12.955084,
+    "lng": 77.557863,
+    "hiring": false,
+    "open_roles": [],
+    "tech_stack": [
+      "Python",
+      "Shopify",
+      "Google Analytics",
+      "React"
+    ],
+    "source": "seed"
+  },
+  {
+    "name": "Vayu Systems",
+    "website_domain": "vayusystems.example",
+    "description": "Vayu Systems is a logistics startup building tools for customers in Bengaluru.",
+    "sector": "logistics",
+    "address": "196 Station Road, Cantonment, Bengaluru",
+    "lat": 13.029164,
+    "lng": 77.591475,
+    "hiring": false,
+    "open_roles": [],
+    "tech_stack": [
+      "Spring",
+      "Java"
+    ],
+    "source": "seed"
+  },
+  {
+    "name": "Kite Logic",
+    "website_domain": "kitelogic.example",
+    "description": "Kite Logic is a mobility startup building tools for customers in Bengaluru.",
+    "sector": "mobility",
+    "address": "169 Church Street, Old Town, Bengaluru",
+    "lat": 12.970275,
+    "lng": 77.550727,
+    "hiring": false,
+    "open_roles": [],
+    "tech_stack": [
+      "PostgreSQL",
+      "C"
+    ],
+    "source": "seed"
+  },
+  {
+    "name": "Zenith Farm",
+    "website_domain": "zenithfarm.example",
+    "description": "Zenith Farm is a gaming startup building tools for customers in Bengaluru.",
+    "sector": "gaming",
+    "address": "28 Market Street, Market District, Bengaluru",
+    "lat": 13.01515,
+    "lng": 77.613379,
+    "hiring": false,
+    "open_roles": [],
+    "tech_stack": [
+      "C#",
+      "Unity"
+    ],
+    "source": "seed"
+  },
+  {
+    "name": "Cedar Labs",
+    "website_domain": "cedarlabs.example",
+    "description": "Cedar Labs is a fintech startup building tools for customers in Bengaluru.",
+    "sector": "fintech",
+    "address": "63 Main Road, Riverside, Bengaluru",
+    "lat": 12.981901,
+    "lng": 77.591836,
+    "hiring": true,
+    "open_roles": [
+      "Product Manager",
+      "Backend Engineer"
+    ],
+    "tech_stack": [
+      "Python",
+      "React",
+      "Go",
+      "PostgreSQL"
+    ],
+    "source": "seed"
+  },
+  {
+    "name": "Bolt Mobility",
+    "website_domain": "boltmobility.example",
+    "description": "Bolt Mobility is a healthtech startup building tools for customers in Bengaluru.",
+    "sector": "healthtech",
+    "address": "220 Market Street, Market District, Bengaluru",
+    "lat": 12.960222,
+    "lng": 77.591281,
+    "hiring": true,
+    "open_roles": [
+      "Mobile Developer"
+    ],
+    "tech_stack": [
+      "FHIR",
+      "PostgreSQL"
+    ],
+    "source": "seed"
+  },
+  {
+    "name": "Juniper Labs",
+    "website_domain": "juniperlabs.example",
+    "description": "Juniper Labs is a biotech startup building tools for customers in Bengaluru.",
+    "sector": "biotech",
+    "address": "9 Lake View Road, Industrial Estate, Bengaluru",
+    "lat": 12.964382,
+    "lng": 77.550268,
+    "hiring": false,
+    "open_roles": [],
+    "tech_stack": [
+      "R",
+      "Benchling"
+    ],
+    "source": "seed"
+  },
+  {
+    "name": "Juniper Cart",
+    "website_domain": "junipercart.example",
+    "description": "Juniper Cart is a edtech startup building tools for customers in Bengaluru.",
+    "sector": "edtech",
+    "address": "99 Main Road, University Quarter, Bengaluru",
+    "lat": 12.963483,
+    "lng": 77.587555,
+    "hiring": true,
+    "open_roles": [
+      "Community Associate"
+    ],
+    "tech_stack": [
+      "Firebase",
+      "React",
+      "Python",
+      "Next.js"
+    ],
+    "source": "seed"
+  },
+  {
+    "name": "Monsoon Logic",
+    "website_domain": "monsoonlogic.example",
+    "description": "Monsoon Logic is a agritech startup building tools for customers in Bengaluru.",
+    "sector": "agritech",
+    "address": "163 Temple Street, Lakeside, Bengaluru",
+    "lat": 13.023156,
+    "lng": 77.61811,
+    "hiring": true,
+    "open_roles": [
+      "Field Operations Associate",
+      "Android Developer"
+    ],
+    "tech_stack": [
+      "IoT",
+      "Python",
+      "Kotlin",
+      "Django"
+    ],
+    "source": "seed"
+  },
+  {
+    "name": "Granite Energy",
+    "website_domain": "graniteenergy.example",
+    "description": "Granite Energy is a climate startup building tools for customers in Bengaluru.",
+    "sector": "climate",
+    "address": "82 Ring Road, Tech Park, Bengaluru",
+    "lat": 12.94594,
+    "lng": 77.548906,
+    "hiring": false,
+    "open_roles": [],
+    "tech_stack": [
+      "C++",
+      "Python"
+    ],
+    "source": "seed"
+  },
+  {
+    "name": "Cobalt Grow",
+    "website_domain": "cobaltgrow.example",
+    "description": "Cobalt Grow is a deeptech startup building tools for customers in Bengaluru.",
+    "sector": "deeptech",
+    "address": "132 Tech Park Avenue, Tech Park, Bengaluru",
+    "lat": 12.958187,
+    "lng": 77.617151,
+    "hiring": false,
+    "open_roles": [],
+    "tech_stack": [
+      "Python",
+      "CUDA"
+    ],
+    "source": "seed"
+  },
+  {
+    "name": "Lotus Logic",
+    "website_domain": "lotuslogic.example",
+    "description": "Lotus Logic is a saas startup building tools for customers in Bengaluru.",
+    "sector": "saas",
+    "address": "186 Canal Road, Riverside, Bengaluru",
+    "lat": 12.952766,
+    "lng": 77.558846,
+    "hiring": false,
+    "open_roles": [],
+    "tech_stack": [
+      "AWS",
+      "React",
+      "Node.js",
+      "PostgreSQL"
+    ],
+    "source": "seed"
+  },
+  {
+    "name": "Quanta Works",
+    "website_domain": "quantaworks.example",
+    "description": "Quanta Works is a ecommerce startup building tools for customers in Bengaluru.",
+    "sector": "ecommerce",
+    "address": "71 Tech Park Avenue, North Hills, Bengaluru",
+    "lat": 13.013665,
+    "lng": 77.621542,
+    "hiring": true,
+    "open_roles": [
+      "Growth Marketer",
+      "Category Associate"
+    ],
+    "tech_stack": [
+      "React",
+      "Python",
+      "Google Analytics"
+    ],
+    "source": "seed"
+  },
+  {
+    "name": "Rangoli Pay",
+    "website_domain": "rangolipay.example",
+    "description": "Rangoli Pay is a logistics startup building tools for customers in Bengaluru.",
+    "sector": "logistics",
+    "address": "221 Ring Road, Lakeside, Bengaluru",
+    "lat": 12.961313,
+    "lng": 77.54648,
+    "hiring": true,
+    "open_roles": [
+      "Data Engineer",
+      "Operations Associate"
+    ],
+    "tech_stack": [
+      "PostgreSQL",
+      "Spring",
+      "Kafka"
+    ],
+    "source": "seed"
+  },
+  {
+    "name": "Prism Labs",
+    "website_domain": "prismlabs.example",
+    "description": "Prism Labs is a mobility startup building tools for customers in Bengaluru.",
+    "sector": "mobility",
+    "address": "148 Old Mill Road, Industrial Estate, Bengaluru",
+    "lat": 12.958287,
+    "lng": 77.556686,
+    "hiring": true,
+    "open_roles": [
+      "Embedded Engineer",
+      "Backend Engineer"
+    ],
+    "tech_stack": [
+      "C",
+      "Go",
+      "PostgreSQL"
+    ],
+    "source": "seed"
+  },
+  {
+    "name": "Umbra Farm",
+    "website_domain": "umbrafarm.example",
+    "description": "Umbra Farm is a gaming startup building tools for customers in Bengaluru.",
+    "sector": "gaming",
+    "address": "54 Church Street, North Hills, Bengaluru",
+    "lat": 12.971083,
+    "lng": 77.590916,
+    "hiring": false,
+    "open_roles": [],
+    "tech_stack": [
+      "Unity",
+      "C#",
+      "Node.js",
+      "Redis"
+    ],
+    "source": "seed"
+  },
+  {
+    "name": "Granite Learn",
+    "website_domain": "granitelearn.example",
+    "description": "Granite Learn is a fintech startup building tools for customers in Bengaluru.",
+    "sector": "fintech",
+    "address": "154 Church Street, East Gate, Bengaluru",
+    "lat": 13.012829,
+    "lng": 77.619663,
+    "hiring": true,
+    "open_roles": [
+      "Product Manager",
+      "Risk Analyst"
+    ],
+    "tech_stack": [
+      "Python",
+      "PostgreSQL",
+      "Kafka",
+      "React"
+    ],
+    "source": "seed"
+  },
+  {
+    "name": "Ember Works",
+    "website_domain": "emberworks.example",
+    "description": "Ember Works is a healthtech startup building tools for customers in Bengaluru.",
+    "sector": "healthtech",
+    "address": "103 Ring Road, Cantonment, Bengaluru",
+    "lat": 12.976516,
+    "lng": 77.609339,
+    "hiring": false,
+    "open_roles": [],
+    "tech_stack": [
+      "Kotlin",
+      "FHIR"
+    ],
+    "source": "seed"
+  },
+  {
+    "name": "Dhruva Cart",
+    "website_domain": "dhruvacart.example",
+    "description": "Dhruva Cart is a biotech startup building tools for customers in Bengaluru.",
+    "sector": "biotech",
+    "address": "198 Garden Road, East Gate, Bengaluru",
+    "lat": 12.971033,
+    "lng": 77.610707,
+    "hiring": true,
+    "open_roles": [
+      "Lab Technician"
+    ],
+    "tech_stack": [
+      "AWS",
+      "Python"
+    ],
+    "source": "seed"
+  },
+  {
+    "name": "Nova Logic",
+    "website_domain": "novalogic.example",
+    "description": "Nova Logic is a edtech startup building tools for customers in Bengaluru.",
+    "sector": "edtech",
+    "address": "201 Old Mill Road, Market District, Bengaluru",
+    "lat": 12.91461,
+    "lng": 77.676898,
+    "hiring": true,
+    "open_roles": [
+      "Frontend Developer",
+      "Community Associate"
+    ],
+    "tech_stack": [
+      "Python",
+      "Firebase"
+    ],
+    "source": "seed"
+  },
+  {
+    "name": "Juniper Logic",
+    "website_domain": "juniperlogic.example",
+    "description": "Juniper Logic is a agritech startup building tools for customers in Bengaluru.",
+    "sector": "agritech",
+    "address": "239 Main Road, Riverside, Bengaluru",
+    "lat": 13.015093,
+    "lng": 77.608096,
+    "hiring": false,
+    "open_roles": [],
+    "tech_stack": [
+      "Python",
+      "Django",
+      "Kotlin",
+      "IoT"
+    ],
+    "source": "seed"
+  },
+  {
+    "name": "Nova Energy",
+    "website_domain": "novaenergy.example",
+    "description": "Nova Energy is a climate startup building tools for customers in Bengaluru.",
+    "sector": "climate",
+    "address": "102 Station Road, East Gate, Bengaluru",
+    "lat": 13.004621,
+    "lng": 77.674817,
+    "hiring": false,
+    "open_roles": [],
+    "tech_stack": [
+      "Grafana",
+      "MQTT"
+    ],
+    "source": "seed"
+  },
+  {
+    "name": "Terra Grow",
+    "website_domain": "terragrow.example",
+    "description": "Terra Grow is a deeptech startup building tools for customers in Bengaluru.",
+    "sector": "deeptech",
+    "address": "17 Hill Top Lane, Tech Park, Bengaluru",
+    "lat": 12.953984,
+    "lng": 77.556318,
+    "hiring": false,
+    "open_roles": [],
+    "tech_stack": [
+      "PyTorch",
+      "CUDA",
+      "C++",
+      "Python"
+    ],
+    "source": "seed"
+  },
+  {
+    "name": "Fable Cart",
+    "website_domain": "fablecart.example",
+    "description": "Fable Cart is a saas startup building tools for customers in Bengaluru.",
+    "sector": "saas",
+    "address": "151 Market Street, Industrial Estate, Bengaluru",
+    "lat": 12.997151,
+    "lng": 77.609106,
+    "hiring": false,
+    "open_roles": [],
+    "tech_stack": [
+      "PostgreSQL",
+      "React",
+      "Node.js"
+    ],
+    "source": "seed"
+  },
+  {
+    "name": "Terra Cart",
+    "website_domain": "terracart.example",
+    "description": "Terra Cart is a ecommerce startup building tools for customers in Bengaluru.",
+    "sector": "ecommerce",
+    "address": "96 Main Road, University Quarter, Bengaluru",
+    "lat": 13.005879,
+    "lng": 77.603547,
+    "hiring": true,
+    "open_roles": [
+      "Category Associate",
+      "Growth Marketer"
+    ],
+    "tech_stack": [
+      "Google Analytics",
+      "React",
+      "Shopify",
+      "Python"
+    ],
+    "source": "seed"
+  },
+  {
+    "name": "Terra Works",
+    "website_domain": "terraworks.example",
+    "description": "Terra Works is a logistics startup building tools for customers in Bengaluru.",
+    "sector": "logistics",
+    "address": "92 Station Road, Lakeside, Bengaluru",
+    "lat": 12.94686,
+    "lng": 77.560426,
+    "hiring": true,
+    "open_roles": [
+      "Operations Associate"
+    ],
+    "tech_stack": [
+      "Kotlin",
+      "Kafka",
+      "Spring"
+    ],
+    "source": "seed"
+  },
+  {
+    "name": "Delta Bio",
+    "website_domain": "deltabio.example",
+    "description": "Delta Bio is a mobility startup building tools for customers in Bengaluru.",
+    "sector": "mobility",
+    "address": "57 Temple Street, Old Town, Bengaluru",
+    "lat": 12.997354,
+    "lng": 77.59643,
+    "hiring": false,
+    "open_roles": [],
+    "tech_stack": [
+      "Python",
+      "Go",
+      "PostgreSQL"
+    ],
+    "source": "seed"
+  },
+  {
+    "name": "Zephyr Learn",
+    "website_domain": "zephyrlearn.example",
+    "description": "Zephyr Learn is a gaming startup building tools for customers in Bengaluru.",
+    "sector": "gaming",
+    "address": "69 Canal Road, Industrial Estate, Bengaluru",
+    "lat": 12.905012,
+    "lng": 77.589953,
+    "hiring": false,
+    "open_roles": [],
+    "tech_stack": [
+      "Unity",
+      "Node.js",
+      "C#",
+      "Redis"
+    ],
+    "source": "seed"
+  },
+  {
+    "name": "Yonder Labs",
+    "website_domain": "yonderlabs.example",
+    "description": "Yonder Labs is a fintech startup building tools for customers in Bengaluru.",
+    "sector": "fintech",
+    "address": "116 Temple Street, Industrial Estate, Bengaluru",
+    "lat": 12.941704,
+    "lng": 77.69386,
+    "hiring": false,
+    "open_roles": [],
+    "tech_stack": [
+      "Kafka",
+      "Python"
+    ],
+    "source": "seed"
+  },
+  {
+    "name": "Xenon Grow",
+    "website_domain": "xenongrow.example",
+    "description": "Xenon Grow is a healthtech startup building tools for customers in Bengaluru.",
+    "sector": "healthtech",
+    "address": "201 Old Mill Road, Riverside, Bengaluru",
+    "lat": 12.943263,
+    "lng": 77.563429,
+    "hiring": false,
+    "open_roles": [],
+    "tech_stack": [
+      "FHIR",
+      "Node.js"
+    ],
+    "source": "seed"
+  },
+  {
+    "name": "Zenith Grid",
+    "website_domain": "zenithgrid.example",
+    "description": "Zenith Grid is a biotech startup building tools for customers in Bengaluru.",
+    "sector": "biotech",
+    "address": "220 Canal Road, Tech Park, Bengaluru",
+    "lat": 12.95049,
+    "lng": 77.572213,
+    "hiring": true,
+    "open_roles": [
+      "Lab Technician"
+    ],
+    "tech_stack": [
+      "Benchling",
+      "AWS"
+    ],
+    "source": "seed"
+  },
+  {
+    "name": "Quanta Farm",
+    "website_domain": "quantafarm.example",
+    "description": "Quanta Farm is a edtech startup building tools for customers in Bengaluru.",
+    "sector": "edtech",
+    "address": "148 Garden Road, North Hills, Bengaluru",
+    "lat": 12.94913,
+    "lng": 77.548198,
+    "hiring": true,
+    "open_roles": [
+      "Frontend Developer",
+      "Community Associate"
+    ],
+    "tech_stack": [
+      "React",
+      "Next.js"
+    ],
+    "source": "seed"
+  },
+  {
+    "name": "Willow Grow",
+    "website_domain": "willowgrow.example",
+    "description": "Willow Grow is a agritech startup building tools for customers in Bengaluru.",
+    "sector": "agritech",
+    "address": "199 Main Road, Tech Park, Bengaluru",
+    "lat": 13.003309,
+    "lng": 77.638476,
+    "hiring": true,
+    "open_roles": [
+      "Supply Chain Analyst",
+      "Android Developer"
+    ],
+    "tech_stack": [
+      "IoT",
+      "Kotlin"
+    ],
+    "source": "seed"
+  },
+  {
+    "name": "Nova Systems",
+    "website_domain": "novasystems.example",
+    "description": "Nova Systems is a climate startup building tools for customers in Bengaluru.",
+    "sector": "climate",
+    "address": "88 Garden Road, Old Town, Bengaluru",
+    "lat": 12.945476,
+    "lng": 77.554269,
+    "hiring": true,
+    "open_roles": [
+      "Hardware Engineer"
+    ],
+    "tech_stack": [
+      "Grafana",
+      "C++",
+      "MQTT",
+      "Python"
+    ],
+    "source": "seed"
+  },
+  {
+    "name": "Helix Genomics",
+    "website_domain": "helixgenomics.example",
+    "description": "Helix Genomics is a biotech startup building tools for customers in Bengaluru.",
+    "sector": "biotech",
+    "address": "123 Church Street, Tech Park, Bengaluru",
+    "lat": 12.999882,
+    "lng": 77.609174,
+    "hiring": false,
+    "open_roles": [],
+    "tech_stack": [
+      "Python",
+      "R"
+    ],
+    "source": "seed"
+  },
+  {
+    "name": "Monsoon Fields",
+    "website_domain": "monsoonfields.example",
+    "description": "Monsoon Fields is a agritech startup building tools for customers in Bengaluru.",
+    "sector": "agritech",
+    "address": "223 Main Road, Cantonment, Bengaluru",
+    "lat": 13.012333,
+    "lng": 77.481342,
+    "hiring": true,
+    "open_roles": [
+      "Field Operations Associate"
+    ],
+    "tech_stack": [
+      "Kotlin",
+      "Django",
+      "Python",
+      "IoT"
+    ],
+    "source": "seed"
+  },
+  {
+    "name": "Saffron Care",
+    "website_domain": "saffroncare.example",
+    "description": "Saffron Care is a healthtech startup building tools for customers in Bengaluru.",
+    "sector": "healthtech",
+    "address": "169 Main Road, Tech Park, Bengaluru",
+    "lat": 13.022872,
+    "lng": 77.593322,
+    "hiring": true,
+    "open_roles": [
+      "Clinical Ops Associate",
+      "Mobile Developer"
+    ],
+    "tech_stack": [
+      "Swift",
+      "Kotlin",
+      "PostgreSQL",
+      "FHIR"
+    ],
+    "source": "seed"
+  },
+  {
+    "name": "Tidewater Energy",
+    "website_domain": "tidewaterenergy.example",
+    "description": "Tidewater Energy is a climate startup building tools for customers in Bengaluru.",
+    "sector": "climate",
+    "address": "230 Garden Road, Tech Park, Bengaluru",
+    "lat": 12.970177,
+    "lng": 77.625038,
+    "hiring": true,
+    "open_roles": [
+      "Embedded Intern"
+    ],
+    "tech_stack": [
+      "Grafana",
+      "C++",
+      "Python",
+      "MQTT"
+    ],
+    "source": "seed"
+  },
+  {
+    "name": "Rangoli Academy",
+    "website_domain": "rangoliacademy.example",
+    "description": "Rangoli Academy is a edtech startup building tools for customers in Bengaluru.",
+    "sector": "edtech",
+    "address": "148 Main Road, Old Town, Bengaluru",
+    "lat": 12.988986,
+    "lng": 77.589448,
+    "hiring": false,
+    "open_roles": [],
+    "tech_stack": [
+      "React",
+      "Firebase",
+      "Python"
+    ],
+    "source": "seed"
+  },
+  {
+    "name": "Vayuvega Motors",
+    "website_domain": "vayuvegamotors.example",
+    "description": "Vayuvega Motors is a mobility startup building tools for customers in Bengaluru.",
+    "sector": "mobility",
+    "address": "177 Market Street, North Hills, Bengaluru",
+    "lat": 12.981229,
+    "lng": 77.5822,
+    "hiring": true,
+    "open_roles": [
+      "Backend Engineer",
+      "Fleet Operations Associate"
+    ],
+    "tech_stack": [
+      "Go",
+      "PostgreSQL",
+      "Python"
+    ],
+    "source": "seed"
+  }
+]
