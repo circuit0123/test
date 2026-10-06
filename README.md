@@ -8,6 +8,7 @@ Backend for Circuit, a startup ecosystem platform. It has two parts: a map where
 - Phase 2 (auth, members, startups, needs/offers, claiming): done.
 - Phase 3 (geo search): done.
 - Phase 4 (matching engine): done.
+- Phase 5 (intros, events, feedback): done.
 
 ## Prerequisites
 
@@ -78,7 +79,7 @@ Access rules:
 |---|---|
 | Level 1 (every member) | Browse members and startups. Edit their own profile, traits, needs and offers |
 | Level 2 | Add a startup, claim a startup (and get matches, from Phase 4) |
-| Level 3 | Request intros (Phase 5) |
+| Level 3 | Request intros |
 | `partner_admin` | Create members, set verification levels, review startup claims |
 | Startup team / claimer | Edit the startup and its needs |
 
@@ -136,6 +137,41 @@ For each member, the engine finds candidates, scores each pair, ranks them, writ
 
 **Embeddings:** each need and offer records which model made its vector (`embedding_model`). If you switch models, the seed loader re-embeds automatically.
 
+## Intros
+
+| Endpoint | Who | What |
+|---|---|---|
+| `POST /intros` | level 3 | Ask to meet someone, optionally `via_member` (a mutual connection of you both) |
+| `GET /intros/incoming`, `/outgoing`, `/{id}` | the people involved | Lists and details |
+| `POST /intros/{id}/accept`, `/decline` | the person asked | Answer, with an optional note. Accepting creates a connection |
+| `POST /intros/{id}/cancel` | the requester | Withdraw a pending request |
+| `POST /intros/{id}/rating` | either person | Rate an accepted intro 1-5 (outcome feedback) |
+| `GET /intros/limits` | anyone | Your current capacity |
+
+Capacity rules (settings: `INTROS__*`):
+
+- **Recipient inbox:** at most `open_intro_slots` requests can wait for someone at once. Set it to 0 to pause new requests.
+- **Requester limits:** at most 5 requests waiting at once, and 10 sent per 7 days.
+- **One pending request per pair.** No new request after an accepted intro. After a decline, wait 30 days.
+- **Expiry:** unanswered requests expire after 14 days. An hourly job marks them, and expired requests are also caught on the spot.
+- **No double-booking:** the last inbox slot can't be taken twice, because both members' rows are locked while the rules are checked.
+
+Each request records which recommendation led to it (`match_source`: local or bridge) and its score. That lets the dashboard measure acceptance by match type.
+
+## Events and the feedback loop
+
+`events` is an append-only log of what members saw and did. It is product data, separate from the debugging logs.
+
+- **Recommendations:** every match returned by `GET /matches` is recorded as `recommendation_shown`, with rank, score and source.
+- **Write actions:** every write is recorded in the same transaction as the change itself. That covers profile, needs/offers, startups, claims, intros, ratings and admin actions. The full list is in `app/services/events.py`.
+- **Frontend events:** the frontend reports what only it can see with `POST /events`: `match_clicked`, `match_dismissed`, `profile_viewed`, `startup_viewed`.
+- **Privacy:** payloads hold ids, statuses, scores and the *names* of changed fields, never free text.
+- **Admin access:** admins can browse the log with `GET /events`.
+
+**Feedback into matching:** your matches skip people you already have a pending or accepted intro with. They also skip people who declined you (or whom you declined) in the last 30 days, and people you dismissed in the last 30 days. Accepted intros become connections, which raise trust scores for future matches.
+
+Ratings, `recommendation_shown` events and the stored score components are kept so the weights can later be learned from real outcomes.
+
 ## Database and migrations
 
 The models are in `app/db/models.py`. Migrations are in `migrations/versions/` and are managed with Alembic.
@@ -189,7 +225,7 @@ app/
   ingestion/     seed file schemas + idempotent loader
   api/deps.py    auth dependencies: get_current_member, require_level, require_role
   matching/      scoring (pure), candidates (SQL), ranking, reasons
-  jobs/          APScheduler setup + match job
+  jobs/          APScheduler setup, match job (every 4h), intro expiry (hourly)
   graph/ circuits/   (later phases)
 migrations/      Alembic migrations
 seed/            reference lists, generator, generated data

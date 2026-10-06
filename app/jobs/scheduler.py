@@ -12,6 +12,7 @@ from datetime import UTC, datetime
 from apscheduler.schedulers.asyncio import AsyncIOScheduler
 
 from app.config import Settings
+from app.jobs.intros import expire_intros
 from app.jobs.matching import compute_all_matches
 from app.resources import Resources
 
@@ -28,4 +29,6 @@ def create_scheduler(resources: Resources, settings: Settings) -> AsyncIOSchedul
         coalesce=True,  # if runs were missed (e.g. laptop asleep), run once, not many times
         next_run_time=datetime.now(UTC) if settings.match_job_on_startup else None,
     )
+    scheduler.add_job(expire_intros, "interval", hours=1, args=[resources], id="expire_intros",
+                      max_instances=1, coalesce=True)
     return scheduler

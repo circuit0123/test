@@ -17,6 +17,7 @@ from app.schemas.members import (
     MemberSummary,
     MemberUpdate,
 )
+from app.services import events
 from app.services.errors import Conflict, Invalid, NotFound
 from app.services.needs import list_needs, list_offers
 from app.services.reference import trait_ids
@@ -106,10 +107,13 @@ async def update_me(session: AsyncSession, member_id: uuid.UUID, data: MemberUpd
     for key in _NOT_NULL & changes.keys():
         if changes[key] is None:
             raise Invalid(f"{key} cannot be null")
+    fields = sorted({"location" if k in ("lat", "lng") else k for k in changes})
     if "lat" in changes or "lng" in changes:
         m.location = to_point(changes.pop("lat", None), changes.pop("lng", None))
     for key, value in changes.items():
         setattr(m, key, value)
+    events.record(session, "profile_updated", actor_id=member_id, target_type="member", target_id=member_id,
+                  payload={"fields": fields})
     await session.commit()
     await session.refresh(m)  # reload what the database stored (location, updated_at)
     return await get_me(session, member_id)
@@ -119,17 +123,21 @@ async def set_traits(session: AsyncSession, member_id: uuid.UUID, slugs: list[st
     ids = await trait_ids(session, slugs)
     await session.execute(delete(MemberTrait).where(MemberTrait.member_id == member_id))
     session.add_all(MemberTrait(member_id=member_id, trait_id=t) for t in ids)
+    events.record(session, "traits_updated", actor_id=member_id, target_type="member", target_id=member_id,
+                  payload={"traits": sorted(set(slugs))})
     await session.commit()
     return await _traits(session, member_id)
 
 
-async def create_member(session: AsyncSession, data: MemberCreate) -> MemberMe:
+async def create_member(session: AsyncSession, data: MemberCreate, actor_id: uuid.UUID) -> MemberMe:
     m = Member(
-        role=data.role, display_name=data.display_name, bio=data.bio, city=data.city,
+        id=uuid.uuid4(), role=data.role, display_name=data.display_name, bio=data.bio, city=data.city,
         location=to_point(data.lat, data.lng), verification_level=data.verification_level,
         auth_subject=data.auth_subject,
     )
     session.add(m)
+    events.record(session, "member_created", actor_id=actor_id, target_type="member", target_id=m.id,
+                  payload={"role": data.role, "verification_level": data.verification_level})
     try:
         await session.commit()
     except IntegrityError as exc:
@@ -139,25 +147,37 @@ async def create_member(session: AsyncSession, data: MemberCreate) -> MemberMe:
     return await get_me(session, m.id)
 
 
-async def delete_member(session: AsyncSession, member_id: uuid.UUID) -> None:
-    await session.delete(await _get(session, member_id))
+async def delete_member(session: AsyncSession, member_id: uuid.UUID, actor_id: uuid.UUID) -> None:
+    m = await _get(session, member_id)
+    events.record(session, "member_deleted", actor_id=actor_id, target_type="member", target_id=member_id,
+                  payload={"role": m.role, "self": actor_id == member_id})
+    await session.delete(m)
     await session.commit()
 
 
-async def set_verification(session: AsyncSession, member_id: uuid.UUID, level: int) -> MemberSummary:
+async def set_verification(
+    session: AsyncSession, member_id: uuid.UUID, level: int, actor_id: uuid.UUID
+) -> MemberSummary:
     """Change a member's level. Their old tokens carry the old level, so revoke them."""
     m = await _get(session, member_id)
     if m.verification_level != level:
+        events.record(session, "verification_changed", actor_id=actor_id, target_type="member",
+                      target_id=member_id, payload={"from": m.verification_level, "to": level})
         m.verification_level = level
         m.token_version += 1
     await session.commit()
     return _summary(m)
 
 
-async def set_auth_subject(session: AsyncSession, member_id: uuid.UUID, subject: str | None) -> None:
+async def set_auth_subject(
+    session: AsyncSession, member_id: uuid.UUID, subject: str | None, actor_id: uuid.UUID
+) -> None:
     """Link (or unlink) an identity-provider account. Old tokens are revoked either way."""
     m = await _get(session, member_id)
     if m.auth_subject != subject:
+        # The provider's user id itself is not stored in the event, only whether one is linked.
+        events.record(session, "auth_account_linked", actor_id=actor_id, target_type="member",
+                      target_id=member_id, payload={"linked": subject is not None})
         m.auth_subject = subject
         m.token_version += 1
     try:
@@ -172,4 +192,5 @@ async def revoke_tokens(session: AsyncSession, member_id: uuid.UUID) -> None:
     await session.execute(
         update(Member).where(Member.id == member_id).values(token_version=Member.token_version + 1)
     )
+    events.record(session, "tokens_revoked", actor_id=member_id, target_type="member", target_id=member_id)
     await session.commit()

@@ -217,3 +217,26 @@ async def load_profiles(session: AsyncSession, member_ids: set[uuid.UUID]) -> di
         )
         for mid, role, city, slots, cross in members
     }
+
+
+async def feedback_exclusions(
+    session: AsyncSession, member_id: uuid.UUID, *, hide_declined_days: int, hide_dismissed_days: int
+) -> set[uuid.UUID]:
+    """People not to suggest, learned from what already happened (the feedback loop):
+
+    - anyone you have a pending or accepted intro with (either direction): already in motion;
+    - anyone who declined you, or whom you declined, in the last `hide_declined_days`;
+    - anyone you dismissed from your matches in the last `hide_dismissed_days`.
+    """
+    rows = await session.execute(text("""
+        SELECT CASE WHEN from_member = :me THEN to_member ELSE from_member END
+        FROM intro_requests
+        WHERE (from_member = :me OR to_member = :me)
+          AND (status IN ('pending', 'accepted')
+               OR (status = 'declined' AND responded_at > now() - make_interval(days => :declined_days)))
+        UNION
+        SELECT target_id::uuid FROM events
+        WHERE actor_id = :me AND type = 'match_dismissed' AND target_type = 'member'
+          AND created_at > now() - make_interval(days => :dismissed_days)
+    """), {"me": member_id, "declined_days": hide_declined_days, "dismissed_days": hide_dismissed_days})
+    return set(rows.scalars())

@@ -14,6 +14,7 @@ from app.services.auth import CurrentMember
 from app.db.models import Capability, Need, Offer
 from app.embeddings.base import EmbeddingProvider
 from app.schemas.needs import NeedCreate, NeedOut, NeedUpdate, OfferCreate, OfferOut, OfferUpdate
+from app.services import events
 from app.services.errors import Forbidden, Invalid, NotFound
 from app.services.permissions import can_edit_startup
 from app.services.reference import capability_id
@@ -63,14 +64,17 @@ async def list_offers(session: AsyncSession, member_id: uuid.UUID, *, only_activ
 
 
 async def create_need(
-    session: AsyncSession, embedder: EmbeddingProvider, owner_type: str, owner_id: uuid.UUID, data: NeedCreate
+    session: AsyncSession, embedder: EmbeddingProvider, owner_type: str, owner_id: uuid.UUID, data: NeedCreate,
+    actor_id: uuid.UUID,
 ) -> NeedOut:
     need = Need(
-        owner_type=owner_type, owner_id=owner_id, capability_id=await capability_id(session, data.capability),
+        id=uuid.uuid4(), owner_type=owner_type, owner_id=owner_id, capability_id=await capability_id(session, data.capability),
         text=data.text, expires_at=data.expires_at, embedding=await embed_text(embedder, data.text),
         embedding_model=embedder.model_id,
     )
     session.add(need)
+    events.record(session, "need_created", actor_id=actor_id, target_type="need", target_id=need.id,
+                  payload={"owner_type": owner_type, "owner_id": str(owner_id), "capability": data.capability})
     await session.commit()
     return _need_out(need, data.capability)
 
@@ -79,10 +83,12 @@ async def create_offer(
     session: AsyncSession, embedder: EmbeddingProvider, member_id: uuid.UUID, data: OfferCreate
 ) -> OfferOut:
     offer = Offer(
-        member_id=member_id, capability_id=await capability_id(session, data.capability),
+        id=uuid.uuid4(), member_id=member_id, capability_id=await capability_id(session, data.capability),
         text=data.text, embedding=await embed_text(embedder, data.text), embedding_model=embedder.model_id,
     )
     session.add(offer)
+    events.record(session, "offer_created", actor_id=member_id, target_type="offer", target_id=offer.id,
+                  payload={"capability": data.capability})
     await session.commit()
     return _offer_out(offer, data.capability)
 
@@ -133,6 +139,8 @@ async def update_need(
     slug = await _apply_common(session, embedder, need, changes)
     if "expires_at" in changes:
         need.expires_at = changes["expires_at"]
+    events.record(session, "need_updated", actor_id=me.id, target_type="need", target_id=need.id,
+                  payload={"fields": sorted(changes)})
     await session.commit()
     return _need_out(need, slug)
 
@@ -141,16 +149,24 @@ async def update_offer(
     session: AsyncSession, embedder: EmbeddingProvider, me: CurrentMember, offer_id: uuid.UUID, data: OfferUpdate
 ) -> OfferOut:
     offer = await _editable_offer(session, me, offer_id)
-    slug = await _apply_common(session, embedder, offer, data.model_dump(exclude_unset=True))
+    changes = data.model_dump(exclude_unset=True)
+    slug = await _apply_common(session, embedder, offer, changes)
+    events.record(session, "offer_updated", actor_id=me.id, target_type="offer", target_id=offer.id,
+                  payload={"fields": sorted(changes)})
     await session.commit()
     return _offer_out(offer, slug)
 
 
 async def delete_need(session: AsyncSession, me: CurrentMember, need_id: uuid.UUID) -> None:
-    await session.delete(await _editable_need(session, me, need_id))
+    need = await _editable_need(session, me, need_id)
+    events.record(session, "need_deleted", actor_id=me.id, target_type="need", target_id=need_id,
+                  payload={"owner_type": need.owner_type, "owner_id": str(need.owner_id)})
+    await session.delete(need)
     await session.commit()
 
 
 async def delete_offer(session: AsyncSession, me: CurrentMember, offer_id: uuid.UUID) -> None:
-    await session.delete(await _editable_offer(session, me, offer_id))
+    offer = await _editable_offer(session, me, offer_id)
+    events.record(session, "offer_deleted", actor_id=me.id, target_type="offer", target_id=offer_id)
+    await session.delete(offer)
     await session.commit()

@@ -20,12 +20,13 @@ from sqlalchemy.ext.asyncio import AsyncSession, async_sessionmaker
 
 from app.config import MatchingSettings
 from app.db.models import Capability, MatchResult, Member, Trait
-from app.matching.candidates import EXCLUDED_ROLES, find_candidates, load_profiles
+from app.matching.candidates import EXCLUDED_ROLES, feedback_exclusions, find_candidates, load_profiles
 from app.matching.ranking import RankingParams, Scored, rank
 from app.matching.reasons import build_reason
 from app.matching.scoring import MemberProfile, ScoringParams, Weights, score_pair
 from app.schemas.matches import MatchesResponse, MatchOut, MatchRow, RecomputeResult
 from app.schemas.members import MemberSummary
+from app.services import events
 
 log = structlog.get_logger("circuit.matching")
 
@@ -77,6 +78,10 @@ async def compute_for_member(
         return []
 
     found = await find_candidates(session, me, settings.bridge_neighbours_per_need)
+    skip = await feedback_exclusions(session, member_id, hide_declined_days=settings.hide_declined_days,
+                                     hide_dismissed_days=settings.hide_dismissed_days)
+    found.local -= skip
+    found.bridge -= skip
     missing = (found.local | found.bridge) - profiles.keys()
     if missing:
         profiles.update(await load_profiles(session, missing))
@@ -185,7 +190,8 @@ async def get_matches(
 
 
 async def recompute_all(
-    sessionmaker: async_sessionmaker[AsyncSession], redis: Redis, settings: MatchingSettings
+    sessionmaker: async_sessionmaker[AsyncSession], redis: Redis, settings: MatchingSettings,
+    actor_id: uuid.UUID | None = None,
 ) -> RecomputeResult:
     """The background job: matches for every member, stored and cached."""
     started = time.perf_counter()
@@ -205,8 +211,10 @@ async def recompute_all(
             await cache(redis, member_id, rows, computed_at, settings.cache_ttl_hours)
             total += len(rows)
             bridge += sum(r.source == "bridge" for r in rows)
-    result = RecomputeResult(members=len(member_ids), results=total, bridge_results=bridge,
-                             seconds=round(time.perf_counter() - started, 2))
+        result = RecomputeResult(members=len(member_ids), results=total, bridge_results=bridge,
+                                 seconds=round(time.perf_counter() - started, 2))
+        events.record(session, "matches_recomputed", actor_id=actor_id, payload=result.model_dump())
+        await session.commit()
     log.info("matches_recomputed", **result.model_dump())
     return result
 
@@ -216,3 +224,17 @@ async def invalidate(redis: Redis, member_id: uuid.UUID) -> None:
         await redis.delete(cache_key(member_id))
     except Exception as exc:
         log.warning("match_cache_delete_failed", error=type(exc).__name__)
+
+
+async def record_shown(session: AsyncSession, member_id: uuid.UUID, response: MatchesResponse) -> None:
+    """One `recommendation_shown` event per match returned, so we can later learn which
+    recommendations led to intros (and which were ignored)."""
+    await events.record_many(session, [
+        {"type": "recommendation_shown", "actor_id": member_id, "target_type": "member",
+         "target_id": item.member.id,
+         "payload": {"rank": item.rank, "score": item.score, "source": item.source,
+                     "served_from": response.served_from,
+                     "computed_at": response.computed_at.isoformat() if response.computed_at else None}}
+        for item in response.items
+    ])
+    await session.commit()

@@ -45,7 +45,7 @@ MEMBER_ROLES = ("student", "founder", "mentor", "investor", "partner_admin")
 STARTUP_SOURCES = ("seed", "crawler", "user")
 NEED_OWNER_TYPES = ("member", "startup")
 CONNECTION_SOURCES = ("mutual", "event", "intro")
-INTRO_STATUSES = ("pending", "accepted", "declined", "expired")
+INTRO_STATUSES = ("pending", "accepted", "declined", "expired", "cancelled")
 MATCH_SOURCES = ("local", "bridge")
 CIRCUIT_STATUSES = ("proposed", "active", "completed", "dissolved")
 CONSENT_STATES = ("pending", "accepted", "declined")
@@ -307,8 +307,14 @@ class IntroRequest(Base):
     __table_args__ = (
         CheckConstraint(_in("status", INTRO_STATUSES), name="ck_intro_requests_status"),
         CheckConstraint("from_member <> to_member", name="ck_intro_requests_not_self"),
+        CheckConstraint(_in("match_source", MATCH_SOURCES), name="ck_intro_requests_match_source"),
+        CheckConstraint("from_rating IS NULL OR from_rating BETWEEN 1 AND 5", name="ck_intro_requests_from_rating"),
+        CheckConstraint("to_rating IS NULL OR to_rating BETWEEN 1 AND 5", name="ck_intro_requests_to_rating"),
         Index("ix_intro_requests_to_status", "to_member", "status"),
         Index("ix_intro_requests_from_created", "from_member", "created_at"),
+        # At most one open request from one member to another.
+        Index("uq_intro_requests_one_pending", "from_member", "to_member", unique=True,
+              postgresql_where=sql_text("status = 'pending'")),
     )
 
     id: Mapped[uuid.UUID] = mapped_column(UUID(as_uuid=True), primary_key=True, default=uuid.uuid4)
@@ -327,6 +333,14 @@ class IntroRequest(Base):
         DateTime(timezone=True), server_default=func.now(), nullable=False
     )
     responded_at: Mapped[datetime | None] = mapped_column(DateTime(timezone=True))
+    response_note: Mapped[str | None] = mapped_column(Text)  # optional message with accept/decline
+    # Which recommendation led to this request (copied from match_results, if any),
+    # so we can measure acceptance for local vs bridge matches.
+    match_source: Mapped[str | None] = mapped_column(String(10))
+    match_score: Mapped[float | None] = mapped_column(Float)
+    # Outcome feedback after an accepted intro: each side rates it 1-5.
+    from_rating: Mapped[int | None] = mapped_column(SmallInteger)
+    to_rating: Mapped[int | None] = mapped_column(SmallInteger)
 
 
 class MatchResult(Base):

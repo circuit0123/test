@@ -27,3 +27,9 @@ class Conflict(ServiceError):
 
 class Invalid(ServiceError):
     status_code = 422
+
+
+class TooMany(ServiceError):
+    """A rate limit was hit (HTTP 429 Too Many Requests)."""
+
+    status_code = 429
