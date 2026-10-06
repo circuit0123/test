@@ -7,7 +7,7 @@ import structlog
 from fastapi import FastAPI, Request
 from fastapi.responses import JSONResponse
 
-from app.api import auth, geo, health, members, needs, reference, startups
+from app.api import auth, geo, health, matches, members, needs, reference, startups
 from app.config import get_settings
 from app.logging import RequestLoggingMiddleware, configure_logging
 from app.resources import Resources
@@ -21,10 +21,18 @@ async def lifespan(app: FastAPI) -> AsyncIterator[None]:
     # Runs once at startup (before `yield`) and once at shutdown (after it).
     settings = get_settings()
     app.state.resources = Resources.from_settings(settings)
-    log.info("startup", env=settings.env)
+    scheduler = None
+    if settings.scheduler_enabled:
+        from app.jobs.scheduler import create_scheduler
+
+        scheduler = create_scheduler(app.state.resources, settings)
+        scheduler.start()
+    log.info("startup", env=settings.env, scheduler=settings.scheduler_enabled)
     try:
         yield
     finally:
+        if scheduler is not None:
+            scheduler.shutdown(wait=False)
         await app.state.resources.close()
         log.info("shutdown")
 
@@ -53,6 +61,7 @@ def create_app() -> FastAPI:
     app.include_router(needs.router)
     app.include_router(startups.router)
     app.include_router(geo.router)
+    app.include_router(matches.router)
     return app
 
 

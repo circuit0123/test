@@ -11,6 +11,7 @@ import uuid
 
 import httpx
 import pytest
+from redis.asyncio import Redis
 from alembic.config import Config
 from sqlalchemy import create_engine as create_sync_engine
 from sqlalchemy import insert, make_url, select, text
@@ -100,6 +101,7 @@ async def engine(migrated_db: str) -> AsyncEngine:
 # ---------------------------------------------------------------- API fixtures
 
 DEV_SECRET = "test-dev-secret-that-is-long-enough-123"
+TEST_REDIS_URL = "redis://localhost:6379/15"  # a separate Redis database, wiped around each test
 
 
 @pytest.fixture(scope="session")
@@ -115,6 +117,7 @@ def api_settings(migrated_db, idp, monkeypatch):
     env = {
         "ENV": "test", "DATABASE_URL": migrated_db, "DEV_AUTH": "true", "DEV_AUTH_SECRET": DEV_SECRET,
         "EMBEDDING_PROVIDER": "fake", "JWKS_URL": idp.jwks_url, "JWT_ISSUER": ISSUER, "JWT_AUDIENCE": AUDIENCE,
+        "REDIS_URL": TEST_REDIS_URL, "SCHEDULER_ENABLED": "false",
     }
     for key, value in env.items():
         monkeypatch.setenv(key, value)
@@ -127,10 +130,14 @@ def api_settings(migrated_db, idp, monkeypatch):
 async def api(engine, api_settings):
     """An HTTP client talking to the app in-process (no real network)."""
     app = create_app()
+    redis = Redis.from_url(TEST_REDIS_URL)
+    await redis.flushdb()
     async with app.router.lifespan_context(app):  # run startup/shutdown like a real server
         transport = httpx.ASGITransport(app=app)
         async with httpx.AsyncClient(transport=transport, base_url="http://test") as client:
             yield client
+    await redis.flushdb()
+    await redis.aclose()
 
 
 class Factory:

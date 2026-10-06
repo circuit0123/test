@@ -17,6 +17,7 @@ _WORD = re.compile(r"[a-z0-9]+")
 class FakeEmbeddingProvider:
     def __init__(self, dim: int = EMBEDDING_DIM) -> None:
         self.dim = dim
+        self.model_id = f"fake-hash-v1-{dim}"
 
     def embed(self, texts: list[str]) -> list[list[float]]:
         return [self._embed_one(t) for t in texts]

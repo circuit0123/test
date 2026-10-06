@@ -7,7 +7,8 @@ Idempotent: running it twice leaves the database exactly as after one run.
 - startups upsert on website_domain (the crawler's natural key)
 - members, needs and offers upsert on the fixed ids in the seed files
 - link tables (traits, team) are replaced for each loaded owner
-- embeddings are only computed for new texts or texts that changed
+- embeddings are only computed for new or changed texts, or ones made by a
+  different embedding model than the one in use
 
 "Upsert" = INSERT ... ON CONFLICT DO UPDATE: insert the row, or update it if a
 row with the same key already exists. Everything runs in one transaction, so a
@@ -169,19 +170,19 @@ async def load_profiles(
 
 
 async def _texts_needing_embeddings(
-    conn: AsyncConnection, model: type[m.Need] | type[m.Offer], rows: list[dict[str, Any]]
+    conn: AsyncConnection, model: type[m.Need] | type[m.Offer], rows: list[dict[str, Any]], model_id: str
 ) -> set[uuid.UUID]:
-    """Ids whose text is new, changed, or has no embedding yet."""
+    """Ids whose text is new or changed, or whose vector is missing or from another model."""
     ids = [r["id"] for r in rows]
-    existing: dict[uuid.UUID, tuple[str, bool]] = {}
+    existing: dict[uuid.UUID, tuple[str, str | None]] = {}
     for part in range(0, len(ids), CHUNK):
         result = await conn.execute(
-            select(model.id, model.text, model.embedding.is_(None)).where(model.id.in_(ids[part : part + CHUNK]))
+            select(model.id, model.text, model.embedding_model).where(model.id.in_(ids[part : part + CHUNK]))
         )
         existing.update({row[0]: (row[1], row[2]) for row in result})
     return {
         r["id"] for r in rows
-        if r["id"] not in existing or existing[r["id"]][0] != r["text"] or existing[r["id"]][1]
+        if r["id"] not in existing or existing[r["id"]] != (r["text"], model_id)
     }
 
 
@@ -204,17 +205,18 @@ async def load_needs_offers(
 
     embedded = 0
     for model, rows in ((m.Need, needs), (m.Offer, offers)):
-        to_embed = await _texts_needing_embeddings(conn, model, rows)
+        to_embed = await _texts_needing_embeddings(conn, model, rows, embedder.model_id)
         pending = [r for r in rows if r["id"] in to_embed]
         if pending:
             vectors = embedder.embed([r["text"] for r in pending])
             for row, vec in zip(pending, vectors, strict=True):
                 row["embedding"] = vec
+                row["embedding_model"] = embedder.model_id
             embedded += len(pending)
         # Rows whose text is unchanged keep their stored embedding: we only write
         # the embedding column for rows we just embedded.
         update_cols = [c for c in rows[0] if c != "id"] if rows else []
-        await upsert(conn, model, pending, ["id"], update_cols + ["embedding"])
+        await upsert(conn, model, pending, ["id"], update_cols + ["embedding", "embedding_model"])
         unchanged = [r for r in rows if r["id"] not in to_embed]
         await upsert(conn, model, unchanged, ["id"], update_cols)
     return {"needs": len(needs), "offers": len(offers), "embedded": embedded}

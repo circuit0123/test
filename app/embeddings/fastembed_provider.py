@@ -13,6 +13,7 @@ class FastEmbedProvider:
         from fastembed import TextEmbedding  # imported lazily: slow to import
 
         self.dim = EMBEDDING_DIM
+        self.model_id = model_name
         self._model = TextEmbedding(model_name=model_name, cache_dir=cache_dir)
 
     def embed(self, texts: list[str]) -> list[list[float]]:

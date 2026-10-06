@@ -7,6 +7,7 @@ Backend for Circuit, a startup ecosystem platform. It has two parts: a map where
 - Phase 1 (data model, migrations, seed data): done.
 - Phase 2 (auth, members, startups, needs/offers, claiming): done.
 - Phase 3 (geo search): done.
+- Phase 4 (matching engine): done.
 
 ## Prerequisites
 
@@ -27,6 +28,7 @@ docker compose up -d --build  # Postgres (PostGIS + pgvector), Neo4j, Redis
 docker compose ps             # wait until all three show "healthy"
 uv run alembic upgrade head   # create/upgrade the database tables
 uv run python -m app.ingestion.seed_loader   # load seed data (downloads the embedding model once)
+uv run python -m app.jobs.matching           # compute everyone's matches (the scheduler also does this)
 uv run uvicorn app.main:app --reload
 ```
 
@@ -100,6 +102,40 @@ Role and level are always read fresh from the database. When an admin changes so
 - **Map viewports** that cross the 180° meridian must be sent as two requests.
 - **Performance:** both queries use the GIST index on `startups.location`. Nearby uses `ST_DWithin` plus `<->` (nearest-neighbour ordering). The viewport query uses `&&` followed by an exact lat/lng check.
 
+## Matching
+
+For each member, the engine finds candidates, scores each pair, ranks them, writes a one-line reason, and stores the results.
+
+**1. Candidates** (`app/matching/candidates.py`) come from two sources:
+- **Local funnel:** people in the same city who also share a trait or are within 2 hops in the connection graph. A recursive SQL query walks the graph.
+- **Bridge search:** anyone whose offers meet your needs, or whose needs your offers meet, regardless of sector or place. It uses exact capability matches plus nearest neighbours by embedding (pgvector HNSW). It only runs between members who are both `open_to_cross_sector`.
+- A founder is matched on their startup's needs too. Founders of hiring startups count as offering internships.
+
+**2. Score** (`app/matching/scoring.py`, pure functions):
+
+`score = w1*complementarity + w2*affinity + w3*trust_path + w4*timing - w5*load_penalty`
+
+- Complementarity is computed in both directions ("they can help you" and "you can help them") and combined.
+- Weights and thresholds live in `MatchingSettings` in `app/config.py`. Override them as `MATCHING__<NAME>` in `.env`.
+
+**3. Rank** (`app/matching/ranking.py`):
+- 25% of each member's slots are reserved for bridge matches.
+- A small penalty for repeating the same capability keeps results diverse.
+- At most half the results come from one role.
+- Each person can appear in at most `MAX_APPEARANCES_PER_CANDIDATE` lists, so one popular mentor isn't flooded with requests.
+
+**4. Reasons** (`app/matching/reasons.py`) are template-based, built only from the score components.
+
+**5. Storage:** `match_results` is the source of truth. It keeps every component for later explanation and learning. Redis caches each member's list.
+
+- `GET /matches` (level 2) reads from Redis, then falls back to `match_results`, then computes on the spot for a brand-new member. `?refresh=true` recomputes now.
+- An APScheduler job recomputes everyone every `MATCHING__JOB_INTERVAL_HOURS` (default 4). An admin can trigger it with `POST /matches/recompute`.
+- If you run more than one API process, set `SCHEDULER_ENABLED=false` on all but one.
+
+**Evaluation:** `tests/eval/pairs.json` holds 49 hand-labelled good and bad pairs from the seed data. Run `uv run python -m tests.eval.run_eval` to see how often the scorer agrees. See `tests/eval/README.md`.
+
+**Embeddings:** each need and offer records which model made its vector (`embedding_model`). If you switch models, the seed loader re-embeds automatically.
+
 ## Database and migrations
 
 The models are in `app/db/models.py`. Migrations are in `migrations/versions/` and are managed with Alembic.
@@ -152,7 +188,9 @@ app/
   embeddings/    EmbeddingProvider interface, fastembed + fake implementations
   ingestion/     seed file schemas + idempotent loader
   api/deps.py    auth dependencies: get_current_member, require_level, require_role
-  graph/ matching/ circuits/ jobs/   (later phases)
+  matching/      scoring (pure), candidates (SQL), ranking, reasons
+  jobs/          APScheduler setup + match job
+  graph/ circuits/   (later phases)
 migrations/      Alembic migrations
 seed/            reference lists, generator, generated data
 docker/postgres/ Postgres image + first-run SQL

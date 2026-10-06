@@ -68,6 +68,7 @@ async def create_need(
     need = Need(
         owner_type=owner_type, owner_id=owner_id, capability_id=await capability_id(session, data.capability),
         text=data.text, expires_at=data.expires_at, embedding=await embed_text(embedder, data.text),
+        embedding_model=embedder.model_id,
     )
     session.add(need)
     await session.commit()
@@ -79,7 +80,7 @@ async def create_offer(
 ) -> OfferOut:
     offer = Offer(
         member_id=member_id, capability_id=await capability_id(session, data.capability),
-        text=data.text, embedding=await embed_text(embedder, data.text),
+        text=data.text, embedding=await embed_text(embedder, data.text), embedding_model=embedder.model_id,
     )
     session.add(offer)
     await session.commit()
@@ -118,6 +119,7 @@ async def _apply_common(session, embedder, row: Need | Offer, changes: dict) -> 
     if "text" in changes and changes["text"] != row.text:
         row.text = changes["text"]
         row.embedding = await embed_text(embedder, row.text)
+        row.embedding_model = embedder.model_id
     if "active" in changes:
         row.active = changes["active"]
     return await session.scalar(select(Capability.slug).where(Capability.id == row.capability_id))
