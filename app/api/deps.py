@@ -9,6 +9,7 @@ passed in as an argument. Example:
 If the caller has no valid token -> 401. Valid token but not allowed -> 403.
 """
 
+import uuid
 from collections.abc import Callable, Coroutine
 from typing import Any
 
@@ -58,24 +59,30 @@ async def get_current_member(
     if credentials is None:
         raise _unauthorized("missing bearer token")
     try:
-        claims = await verify_token(credentials.credentials, settings, resources.jwks_client)
+        verified = await verify_token(credentials.credentials, settings, resources.jwks_client)
     except AuthError as exc:
         log.info("auth_rejected", reason=str(exc))  # never log the token itself
         raise _unauthorized(str(exc)) from exc
+    claims = verified.claims
 
+    # Which member is this? Provider tokens: look up the linked account.
+    # Dev tokens: "sub" is our member id.
+    if verified.is_dev:
+        try:
+            who = Member.id == uuid.UUID(claims.sub)
+        except ValueError as exc:
+            raise _unauthorized("invalid token claims") from exc
+    else:
+        who = Member.auth_subject == claims.sub
     row = (
-        await session.execute(
-            select(Member.id, Member.role, Member.verification_level, Member.token_version).where(
-                Member.id == claims.sub
-            )
-        )
+        await session.execute(select(Member.id, Member.role, Member.verification_level, Member.token_version).where(who))
     ).one_or_none()
     if row is None:
-        raise _unauthorized("unknown member")
+        raise _unauthorized("no member is linked to this account")
     # token_version is bumped on logout-everywhere or a role/level change, which
     # instantly invalidates every token issued before.
     if row.token_version != claims.token_version:
-        log.info("auth_rejected", reason="token_version mismatch", member_id=str(claims.sub))
+        log.info("auth_rejected", reason="token_version mismatch", member_id=str(row.id))
         raise _unauthorized("token revoked")
 
     request.state.user_id = str(row.id)  # picked up by the request log line

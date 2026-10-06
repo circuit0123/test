@@ -70,6 +70,15 @@ class MemberCreate(_LatLngPair):
     bio: str | None = Field(None, max_length=2000)
     city: str | None = Field(None, max_length=100)
     verification_level: int = Field(1, ge=1, le=4)
+    auth_subject: str | None = Field(
+        None, min_length=1, max_length=255, description="The identity provider's user id to link, if known."
+    )
+
+
+class AuthSubjectUpdate(BaseModel):
+    auth_subject: str | None = Field(
+        min_length=1, max_length=255, description="Identity provider user id (JWT 'sub'); null to unlink."
+    )
 
 
 class TraitsUpdate(BaseModel):

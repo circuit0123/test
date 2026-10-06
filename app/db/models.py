@@ -81,6 +81,8 @@ class Member(TimestampMixin, Base):
         Index("ix_members_location", "location", postgresql_using="gist"),
         Index("ix_members_city", "city"),
         Index("ix_members_role", "role"),
+        # One member per identity-provider account (NULLs allowed: seeded members).
+        Index("uq_members_auth_subject", "auth_subject", unique=True),
     )
 
     id: Mapped[uuid.UUID] = mapped_column(UUID(as_uuid=True), primary_key=True, default=uuid.uuid4)
@@ -93,6 +95,9 @@ class Member(TimestampMixin, Base):
     open_intro_slots: Mapped[int] = mapped_column(Integer, nullable=False, server_default="3")
     circuits_opt_in: Mapped[bool] = mapped_column(Boolean, nullable=False, server_default=sql_text("false"))
     open_to_cross_sector: Mapped[bool] = mapped_column(Boolean, nullable=False, server_default=sql_text("true"))
+    # The identity provider's user id (the JWT "sub" from Clerk/Supabase), linking
+    # their account to this member. Null until linked; dev tokens use `id` instead.
+    auth_subject: Mapped[str | None] = mapped_column(String(255))
     # Bumped to invalidate every JWT already issued to this member (Phase 2).
     token_version: Mapped[int] = mapped_column(Integer, nullable=False, server_default="0")
 

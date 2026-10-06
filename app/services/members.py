@@ -3,6 +3,7 @@
 import uuid
 
 from sqlalchemy import delete, func, select, update
+from sqlalchemy.exc import IntegrityError
 from sqlalchemy.ext.asyncio import AsyncSession
 
 from app.db.geo import from_point, to_point
@@ -16,7 +17,7 @@ from app.schemas.members import (
     MemberSummary,
     MemberUpdate,
 )
-from app.services.errors import Invalid, NotFound
+from app.services.errors import Conflict, Invalid, NotFound
 from app.services.needs import list_needs, list_offers
 from app.services.reference import trait_ids
 
@@ -126,9 +127,14 @@ async def create_member(session: AsyncSession, data: MemberCreate) -> MemberMe:
     m = Member(
         role=data.role, display_name=data.display_name, bio=data.bio, city=data.city,
         location=to_point(data.lat, data.lng), verification_level=data.verification_level,
+        auth_subject=data.auth_subject,
     )
     session.add(m)
-    await session.commit()
+    try:
+        await session.commit()
+    except IntegrityError as exc:
+        await session.rollback()
+        raise Conflict("that identity-provider account is already linked to another member") from exc
     await session.refresh(m)
     return await get_me(session, m.id)
 
@@ -146,6 +152,19 @@ async def set_verification(session: AsyncSession, member_id: uuid.UUID, level: i
         m.token_version += 1
     await session.commit()
     return _summary(m)
+
+
+async def set_auth_subject(session: AsyncSession, member_id: uuid.UUID, subject: str | None) -> None:
+    """Link (or unlink) an identity-provider account. Old tokens are revoked either way."""
+    m = await _get(session, member_id)
+    if m.auth_subject != subject:
+        m.auth_subject = subject
+        m.token_version += 1
+    try:
+        await session.commit()
+    except IntegrityError as exc:
+        await session.rollback()
+        raise Conflict("that identity-provider account is already linked to another member") from exc
 
 
 async def revoke_tokens(session: AsyncSession, member_id: uuid.UUID) -> None:

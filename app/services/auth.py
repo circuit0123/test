@@ -18,7 +18,7 @@ from datetime import UTC, datetime, timedelta
 
 import jwt
 import structlog
-from pydantic import BaseModel, ValidationError
+from pydantic import BaseModel, Field, ValidationError
 
 from app.config import Settings
 
@@ -47,7 +47,9 @@ class CurrentMember:
 
 
 class TokenClaims(BaseModel):
-    sub: uuid.UUID  # the member id
+    # Provider tokens: the provider's user id (matched to members.auth_subject).
+    # Dev tokens: our member id.
+    sub: str = Field(min_length=1, max_length=255)
     role: str
     verification_level: int
     token_version: int
@@ -61,14 +63,22 @@ def create_jwks_client(settings: Settings) -> jwt.PyJWKClient | None:
     return jwt.PyJWKClient(settings.jwks_url, cache_jwk_set=True, lifespan=settings.jwks_cache_seconds)
 
 
-async def verify_token(token: str, settings: Settings, jwks_client: jwt.PyJWKClient | None) -> TokenClaims:
+@dataclass(frozen=True)
+class VerifiedToken:
+    claims: TokenClaims
+    # Decided by which key verified the signature, never by anything inside the token.
+    is_dev: bool
+
+
+async def verify_token(token: str, settings: Settings, jwks_client: jwt.PyJWKClient | None) -> VerifiedToken:
     try:
         header = jwt.get_unverified_header(token)
     except jwt.PyJWTError as exc:
         raise AuthError("malformed token") from exc
 
+    is_dev = header.get("alg") == DEV_ALGORITHM
     try:
-        if header.get("alg") == DEV_ALGORITHM:
+        if is_dev:
             payload = _decode_dev(token, settings)
         else:
             payload = await _decode_jwks(token, settings, jwks_client)
@@ -82,7 +92,7 @@ async def verify_token(token: str, settings: Settings, jwks_client: jwt.PyJWKCli
         raise AuthError("invalid token") from exc
 
     try:
-        return TokenClaims.model_validate(payload)
+        return VerifiedToken(claims=TokenClaims.model_validate(payload), is_dev=is_dev)
     except ValidationError as exc:
         raise AuthError("invalid token claims") from exc
 

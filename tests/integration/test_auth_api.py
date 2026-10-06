@@ -25,18 +25,53 @@ async def test_dev_token_validation(api, factory):
     assert (await api.post("/auth/dev/token", json={"role": "investor"})).status_code == 404
 
 
-async def test_jwks_token_works_end_to_end(api, factory, idp):
-    member = await factory.member("investor", level=3)
-    token = idp.token(member, role="investor", verification_level=3)
-    r = await api.get("/auth/me", headers={"Authorization": f"Bearer {token}"})
+def bearer(token: str) -> dict[str, str]:
+    return {"Authorization": f"Bearer {token}"}
+
+
+async def test_provider_token_finds_member_by_linked_account(api, factory, idp):
+    member = await factory.member("investor", level=3, auth_subject="user_2abc")
+    r = await api.get("/auth/me", headers=bearer(idp.token("user_2abc", role="investor", verification_level=3)))
     assert r.status_code == 200 and r.json()["id"] == str(member)
 
 
-async def test_unknown_member_is_rejected(api, factory, idp):
-    import uuid
+async def test_unlinked_provider_account_is_rejected(api, factory, idp):
+    r = await api.get("/auth/me", headers=bearer(idp.token("user_nobody")))
+    assert r.status_code == 401 and "no member is linked" in r.json()["detail"]
 
-    r = await api.get("/auth/me", headers={"Authorization": f"Bearer {idp.token(uuid.uuid4())}"})
-    assert r.status_code == 401 and "unknown member" in r.json()["detail"]
+
+async def test_provider_sub_is_never_treated_as_a_member_id(api, factory, idp):
+    # A provider user whose id happens to equal one of our member ids must NOT
+    # log in as that member: provider tokens only match on auth_subject.
+    member = await factory.member("partner_admin", level=4)
+    r = await api.get("/auth/me", headers=bearer(idp.token(str(member), role="partner_admin", verification_level=4)))
+    assert r.status_code == 401
+
+
+async def test_admin_links_account_and_relinking_revokes(api, factory, idp):
+    admin = await factory.headers(await factory.member("partner_admin", level=4))
+    member = await factory.member("founder")
+    await factory.member("founder", auth_subject="user_taken")
+
+    r = await api.put(f"/members/{member}/auth-subject", headers=admin, json={"auth_subject": "user_new"})
+    assert r.status_code == 204
+    token = idp.token("user_new", token_version=1)  # linking bumped token_version 0 -> 1
+    assert (await api.get("/auth/me", headers=bearer(token))).json()["id"] == str(member)
+
+    r = await api.put(f"/members/{member}/auth-subject", headers=admin, json={"auth_subject": "user_taken"})
+    assert r.status_code == 409
+    r = await api.put(f"/members/{member}/auth-subject", headers=admin, json={"auth_subject": None})
+    assert r.status_code == 204
+    assert (await api.get("/auth/me", headers=bearer(token))).status_code == 401
+
+
+async def test_admin_can_create_member_with_linked_account(api, factory, idp):
+    admin = await factory.headers(await factory.member("partner_admin", level=4))
+    body = {"role": "mentor", "display_name": "Linked", "auth_subject": "user_fresh"}
+    r = await api.post("/members", headers=admin, json=body)
+    assert r.status_code == 201
+    assert (await api.get("/auth/me", headers=bearer(idp.token("user_fresh")))).json()["id"] == r.json()["id"]
+    assert (await api.post("/members", headers=admin, json=body)).status_code == 409
 
 
 async def test_revoke_tokens_invalidates_old_tokens(api, factory):

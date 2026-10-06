@@ -8,6 +8,7 @@ from app.db.session import get_session
 from app.resources import Resources
 from app.schemas.common import Page, Pagination, pagination
 from app.schemas.members import (
+    AuthSubjectUpdate,
     MemberCreate,
     MemberMe,
     MemberProfile,
@@ -139,3 +140,15 @@ async def set_verification(member_id: uuid.UUID, body: VerificationUpdate,
                            _: CurrentMember = Depends(require_admin),
                            session: AsyncSession = Depends(get_session)) -> MemberSummary:
     return await members.set_verification(session, member_id, body.verification_level)
+
+
+@router.put("/{member_id}/auth-subject", status_code=status.HTTP_204_NO_CONTENT,
+            summary="Link an identity-provider account (admin)",
+            description="partner_admin only. Links the provider's user id (the JWT 'sub' from Clerk/Supabase) to "
+                        "this member, or unlinks it with null. Revokes the member's existing tokens. "
+                        "409 if that account is already linked to someone else.")
+async def set_auth_subject(member_id: uuid.UUID, body: AuthSubjectUpdate,
+                           _: CurrentMember = Depends(require_admin),
+                           session: AsyncSession = Depends(get_session)) -> Response:
+    await members.set_auth_subject(session, member_id, body.auth_subject)
+    return Response(status_code=status.HTTP_204_NO_CONTENT)
