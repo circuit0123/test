@@ -1,0 +1,102 @@
+[
+  {
+    "slug": "first-time-founder",
+    "name": "First-time founder"
+  },
+  {
+    "slug": "repeat-founder",
+    "name": "Repeat founder"
+  },
+  {
+    "slug": "technical",
+    "name": "Technical"
+  },
+  {
+    "slug": "non-technical",
+    "name": "Non-technical"
+  },
+  {
+    "slug": "design-minded",
+    "name": "Design-minded"
+  },
+  {
+    "slug": "data-driven",
+    "name": "Data-driven"
+  },
+  {
+    "slug": "bootstrapped",
+    "name": "Bootstrapped"
+  },
+  {
+    "slug": "vc-backed",
+    "name": "VC-backed"
+  },
+  {
+    "slug": "remote-friendly",
+    "name": "Remote-friendly"
+  },
+  {
+    "slug": "social-impact",
+    "name": "Social impact"
+  },
+  {
+    "slug": "climate-focused",
+    "name": "Climate-focused"
+  },
+  {
+    "slug": "women-led",
+    "name": "Women-led"
+  },
+  {
+    "slug": "tier-2-3-college",
+    "name": "From a tier 2/3 college"
+  },
+  {
+    "slug": "first-generation-graduate",
+    "name": "First-generation graduate"
+  },
+  {
+    "slug": "open-source",
+    "name": "Open source contributor"
+  },
+  {
+    "slug": "hardware",
+    "name": "Hardware"
+  },
+  {
+    "slug": "b2b",
+    "name": "B2B"
+  },
+  {
+    "slug": "b2c",
+    "name": "B2C"
+  },
+  {
+    "slug": "deep-tech",
+    "name": "Deep tech"
+  },
+  {
+    "slug": "vernacular-first",
+    "name": "Vernacular / local-language first"
+  },
+  {
+    "slug": "rural-markets",
+    "name": "Rural markets"
+  },
+  {
+    "slug": "research-background",
+    "name": "Research background"
+  },
+  {
+    "slug": "hackathon-regular",
+    "name": "Hackathon regular"
+  },
+  {
+    "slug": "public-speaker",
+    "name": "Public speaker"
+  },
+  {
+    "slug": "early-adopter",
+    "name": "Early adopter"
+  }
+]

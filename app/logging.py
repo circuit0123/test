@@ -42,7 +42,11 @@ def configure_logging(level: str = "INFO") -> None:
         foreign_pre_chain=shared,
         processors=[
             structlog.stdlib.ProcessorFormatter.remove_processors_meta,
-            structlog.processors.dict_tracebacks,  # stack traces as structured JSON
+            # Stack traces as structured JSON. show_locals=False is essential: frame
+            # locals include request headers, i.e. bearer tokens, which must never be logged.
+            structlog.processors.ExceptionRenderer(
+                structlog.tracebacks.ExceptionDictTransformer(show_locals=False)
+            ),
             structlog.processors.JSONRenderer(),
         ],
     )

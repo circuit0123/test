@@ -2,7 +2,10 @@
 
 Backend for Circuit, a startup ecosystem platform. It has two parts: a map where students find nearby startups that are hiring, and a matching network for founders, mentors and investors. See `CLAUDE.md` for the full build spec.
 
-**Status:** Phase 0 (scaffold) is done: the FastAPI app, config, JSON logging, the docker compose services and health checks.
+**Status:**
+- Phase 0 (scaffold): done.
+- Phase 1 (data model, migrations, seed data): done.
+- Phase 2 (auth, members, startups, needs/offers, claiming): done.
 
 ## Prerequisites
 
@@ -21,6 +24,8 @@ cp .env.example .env          # local settings; never commit .env
 uv sync                       # create .venv and install dependencies
 docker compose up -d --build  # Postgres (PostGIS + pgvector), Neo4j, Redis
 docker compose ps             # wait until all three show "healthy"
+uv run alembic upgrade head   # create/upgrade the database tables
+uv run python -m app.ingestion.seed_loader   # load seed data (downloads the embedding model once)
 uv run uvicorn app.main:app --reload
 ```
 
@@ -38,6 +43,8 @@ uv run pytest                    # everything; live tests skip if services are d
 uv run pytest -m "not integration"   # unit tests only, no Docker needed
 ```
 
+Integration tests use a separate `circuit_test` database. They wipe it and rebuild it from the migrations on every run, so your development data is never touched.
+
 ## Services
 
 | Service  | Image                                   | Role                                                   |
@@ -47,6 +54,69 @@ uv run pytest -m "not integration"   # unit tests only, no Docker needed
 | Redis    | `redis:7-alpine`                        | Cache for match results. Safe to wipe                  |
 
 The Postgres image is `postgres:16-bookworm` with `postgresql-16-postgis-3` and `postgresql-16-pgvector` installed from the PGDG apt repository. `docker/postgres/initdb/` runs only the first time the data volume is created. It enables both extensions and creates a separate `circuit_test` database. To start from a clean slate, run `docker compose down -v`, which deletes all local data.
+
+## Authentication
+
+The API accepts `Authorization: Bearer <JWT>` tokens. A token carries the claims `sub` (the member id), `role`, `verification_level`, `token_version` and `exp`.
+
+- **Production:** tokens are checked against your identity provider's public keys at `JWKS_URL`, plus `JWT_ISSUER` and `JWT_AUDIENCE` when set. Switching between Clerk and Supabase only changes these settings.
+- **Local development (`DEV_AUTH=true`):** `POST /auth/dev/token` issues a token for any seeded member. The app refuses to start with `DEV_AUTH=true` when `ENV=production`.
+
+```bash
+curl -X POST localhost:8000/auth/dev/token -H 'content-type: application/json' -d '{"role": "founder"}'
+# or {"member_id": "<uuid>"}; then click "Authorize" on /docs and paste the access_token
+```
+
+Access rules:
+
+| Who | Can |
+|---|---|
+| Level 1 (every member) | Browse members and startups. Edit their own profile, traits, needs and offers |
+| Level 2 | Add a startup, claim a startup (and get matches, from Phase 4) |
+| Level 3 | Request intros (Phase 5) |
+| `partner_admin` | Create members, set verification levels, review startup claims |
+| Startup team / claimer | Edit the startup and its needs |
+
+Role and level are always read fresh from the database. When an admin changes someone's level, or someone calls `POST /members/me/revoke-tokens`, their `token_version` goes up. Every token they already hold then stops working.
+
+**Claiming a startup:**
+
+1. A level 2+ member sends `POST /startups/{id}/claims` with evidence that they work there.
+2. A `partner_admin` reviews it under `GET /startups/claims`.
+3. The admin approves or rejects it. Approval makes the member the owner and adds them to the team. Any other pending claims for that startup are rejected.
+
+## Database and migrations
+
+The models are in `app/db/models.py`. Migrations are in `migrations/versions/` and are managed with Alembic.
+
+```bash
+uv run alembic upgrade head                      # apply all migrations
+uv run alembic revision --autogenerate -m "..."  # after changing a model: draft a migration, then review it
+uv run alembic check                             # confirms the models and migrations agree
+uv run alembic downgrade -1                      # undo the latest migration
+```
+
+Notes on the schema:
+
+- Locations use PostGIS `geography` points with GIST indexes. Embeddings use pgvector `vector(384)` with HNSW indexes.
+- `events` is append-only. A database trigger rejects every `UPDATE` and `DELETE`.
+
+## Seed data
+
+- `seed/reference/` holds the fixed lists of 60 capabilities and 25 traits.
+- `seed/generate.py` builds deterministic fake data around `CITY_CENTER_LAT`/`CITY_CENTER_LNG` and writes it to `seed/data/`:
+  - `startups.json` uses exactly the future crawler schema (name, website_domain, description, sector, address, lat, lng, hiring, open_roles, tech_stack, source).
+  - `startup_profiles.json` holds what founders would add after claiming a profile.
+  - The other files hold members, connections, 6 cross-sector "bridge" cases and 2 three-person exchange loops.
+- Domains end in `.example`, a reserved name, so no real website is ever referenced.
+
+```bash
+uv run python -m seed.generate             # regenerate seed/data (commit the result)
+uv run python -m app.ingestion.seed_loader # load it; safe to run repeatedly
+uv run python -m app.ingestion.seed_loader --embeddings fake  # quick, offline, no model download
+```
+
+The loader is idempotent. Startups upsert on `website_domain`; members, needs and offers upsert on fixed ids. Embeddings are recomputed only for new or changed text.
 
 ## Logging
 
@@ -63,7 +133,13 @@ app/
   api/           HTTP routers (thin)
   services/      business logic
   schemas/       Pydantic request/response models
-  db/ graph/ matching/ circuits/ jobs/ embeddings/ ingestion/
+  db/            engine, sessions, ORM models, Redis client
+  embeddings/    EmbeddingProvider interface, fastembed + fake implementations
+  ingestion/     seed file schemas + idempotent loader
+  api/deps.py    auth dependencies: get_current_member, require_level, require_role
+  graph/ matching/ circuits/ jobs/   (later phases)
+migrations/      Alembic migrations
+seed/            reference lists, generator, generated data
 docker/postgres/ Postgres image + first-run SQL
 tests/
 ```

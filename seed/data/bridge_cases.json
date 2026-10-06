@@ -1,0 +1,62 @@
+[
+  {
+    "startup_domain": "helixgenomics.example",
+    "startup_sector": "biotech",
+    "founder_id": "c858b433-5d18-56bd-ba6e-58da1071b9c7",
+    "need_id": "eca39b37-e790-54a7-9d52-1e392289fd2e",
+    "helper_id": "413a279c-e724-5fe9-a3fb-2382e68607c3",
+    "helper_sector": "deeptech",
+    "offer_id": "695670b1-4536-53de-bc9e-efcb96e1935c",
+    "capability": "marketing-strategy"
+  },
+  {
+    "startup_domain": "monsoonfields.example",
+    "startup_sector": "agritech",
+    "founder_id": "1a2ea664-288a-5815-9286-9f6b672982dc",
+    "need_id": "ea1844c8-1e99-52fa-9a65-15b2e985caee",
+    "helper_id": "ac4fa7e9-2636-53f9-9d51-408e834a28b1",
+    "helper_sector": "fintech",
+    "offer_id": "787828f3-e54c-5230-a989-388b14d39e8d",
+    "capability": "machine-learning"
+  },
+  {
+    "startup_domain": "saffroncare.example",
+    "startup_sector": "healthtech",
+    "founder_id": "70f2d671-437a-56b7-89f1-2a3a215f9a7b",
+    "need_id": "9715ca6b-36d5-597e-977a-54bc9b0004c5",
+    "helper_id": "2cfcbe7c-37db-5a45-a500-b26f2e71abf9",
+    "helper_sector": "fintech",
+    "offer_id": "03b31cf8-f941-5d6d-b2b2-bfd9c39537d6",
+    "capability": "regulatory-compliance"
+  },
+  {
+    "startup_domain": "tidewaterenergy.example",
+    "startup_sector": "climate",
+    "founder_id": "b8e3aaa2-5651-5b6d-af9a-12299fc7da15",
+    "need_id": "4c4c9d65-7e66-587c-9488-862896032e6f",
+    "helper_id": "0b69447f-ef6b-58f1-841f-25dc829b2aeb",
+    "helper_sector": "saas",
+    "offer_id": "fc1618d4-0f34-5bea-ba63-449677b6b87c",
+    "capability": "b2b-sales"
+  },
+  {
+    "startup_domain": "rangoliacademy.example",
+    "startup_sector": "edtech",
+    "founder_id": "a0ea2331-96e0-5122-9118-7e215cf8c9b8",
+    "need_id": "002d3b64-a959-5a16-90f0-b5a480eb80ea",
+    "helper_id": "263418c0-95d8-5705-b353-520bef242c63",
+    "helper_sector": "gaming",
+    "offer_id": "1b6b9414-190d-5214-a7a5-2eb36018a230",
+    "capability": "community-building"
+  },
+  {
+    "startup_domain": "vayuvegamotors.example",
+    "startup_sector": "mobility",
+    "founder_id": "3e4d64a8-4550-56ca-b139-4c6725bbee92",
+    "need_id": "679a4d2b-3db8-51c1-88f0-56784cbeadf9",
+    "helper_id": "751ccb5e-8015-5493-a96a-55322fb6e005",
+    "helper_sector": "ecommerce",
+    "offer_id": "3d9634b6-b1a7-5103-aac7-d03aeda96ea1",
+    "capability": "supply-chain"
+  }
+]
