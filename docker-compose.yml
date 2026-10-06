@@ -1,0 +1,55 @@
+# Local backing services. The API itself runs on your machine with `uv run`.
+# Every image here is multi-arch (linux/amd64 + linux/arm64).
+# Ports are bound to 127.0.0.1 so they are not exposed to your network.
+name: circuit
+
+services:
+  postgres:
+    build: ./docker/postgres
+    image: circuit-postgres:16
+    environment:
+      POSTGRES_USER: ${POSTGRES_USER:-circuit}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-circuit}
+      POSTGRES_DB: ${POSTGRES_DB:-circuit}
+    ports:
+      - "127.0.0.1:5432:5432"
+    volumes:
+      - postgres-data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U $${POSTGRES_USER} -d $${POSTGRES_DB}"]
+      interval: 5s
+      timeout: 3s
+      retries: 20
+
+  neo4j:
+    image: neo4j:5-community
+    environment:
+      NEO4J_AUTH: neo4j/${NEO4J_PASSWORD:-circuit-dev-password}
+      # Keep memory modest for laptops.
+      NEO4J_server_memory_heap_initial__size: 512m
+      NEO4J_server_memory_heap_max__size: 512m
+      NEO4J_server_memory_pagecache_size: 256m
+    ports:
+      - "127.0.0.1:7474:7474"  # browser UI: http://localhost:7474
+      - "127.0.0.1:7687:7687"  # bolt protocol (used by the Python driver)
+    volumes:
+      - neo4j-data:/data
+    healthcheck:
+      test: ["CMD-SHELL", "wget -q --spider http://localhost:7474 || exit 1"]
+      interval: 5s
+      timeout: 3s
+      retries: 30
+
+  redis:
+    image: redis:7-alpine
+    ports:
+      - "127.0.0.1:6379:6379"
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 5s
+      timeout: 3s
+      retries: 20
+
+volumes:
+  postgres-data:
+  neo4j-data:
