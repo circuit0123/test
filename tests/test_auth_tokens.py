@@ -38,8 +38,15 @@ async def check(token: str, s: Settings):
 
 
 async def test_valid_jwks_token(idp):
-    claims = await check(idp.token(MEMBER, role="mentor", verification_level=3, token_version=2), settings(idp))
-    assert (claims.sub, claims.role, claims.verification_level, claims.token_version) == (MEMBER, "mentor", 3, 2)
+    verified = await check(idp.token("user_2abc", role="mentor", verification_level=3, token_version=2), settings(idp))
+    c = verified.claims
+    assert (c.sub, c.role, c.verification_level, c.token_version) == ("user_2abc", "mentor", 3, 2)
+    assert verified.is_dev is False
+
+
+async def test_is_dev_cannot_be_set_from_inside_the_token(idp):
+    verified = await check(idp.token("user_2abc", is_dev=True), settings(idp))
+    assert verified.is_dev is False
 
 
 @pytest.mark.parametrize(
@@ -49,10 +56,10 @@ async def test_valid_jwks_token(idp):
         (lambda idp: idp.token(MEMBER, iss="https://evil.test"), "invalid token"),
         (lambda idp: idp.token(MEMBER, aud="someone-else"), "invalid token"),
         (lambda idp: idp.token(MEMBER, drop=("token_version",)), "invalid token"),
-        (lambda idp: idp.token(MEMBER, sub="not-a-uuid"), "invalid token claims"),
+        (lambda idp: idp.token(MEMBER, sub=""), "invalid token claims"),
         (lambda idp: "not.a.jwt", "malformed"),
     ],
-    ids=["expired", "wrong-issuer", "wrong-audience", "missing-claim", "bad-sub", "garbage"],
+    ids=["expired", "wrong-issuer", "wrong-audience", "missing-claim", "empty-sub", "garbage"],
 )
 async def test_rejected_jwks_tokens(idp, make, reason):
     with pytest.raises(AuthError, match=reason):
@@ -95,7 +102,8 @@ async def test_no_jwks_configured(idp):
 async def test_dev_token_accepted_only_when_dev_auth_is_on(idp):
     dev = settings(idp, dev_auth=True, dev_auth_secret=DEV_SECRET)
     token, _ = issue_dev_token(member_id=MEMBER, role="student", verification_level=1, token_version=0, settings=dev)
-    assert (await check(token, dev)).sub == MEMBER
+    verified = await check(token, dev)
+    assert verified.claims.sub == str(MEMBER) and verified.is_dev is True
     # Same token, server running with DEV_AUTH off (e.g. production): rejected.
     with pytest.raises(AuthError, match="disabled"):
         await check(token, settings(idp))

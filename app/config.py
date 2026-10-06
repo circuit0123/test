@@ -37,6 +37,12 @@ class Settings(BaseSettings):
     city_center_lng: float = 77.5946
     city_name: str = "Bengaluru"
 
+    # Geo search. Students always get a radius ("distance is a hard filter"):
+    # the default if they don't ask, never more than the max.
+    student_default_radius_km: float = 10.0
+    student_max_radius_km: float = 25.0
+    nearby_max_radius_km: float = 200.0
+
     # Embeddings: "fastembed" (real local model) or "fake" (deterministic, for tests).
     embedding_provider: Literal["fastembed", "fake"] = "fastembed"
     embedding_model: str = "BAAI/bge-small-en-v1.5"

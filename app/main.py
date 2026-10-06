@@ -7,7 +7,7 @@ import structlog
 from fastapi import FastAPI, Request
 from fastapi.responses import JSONResponse
 
-from app.api import auth, health, members, needs, reference, startups
+from app.api import auth, geo, health, members, needs, reference, startups
 from app.config import get_settings
 from app.logging import RequestLoggingMiddleware, configure_logging
 from app.resources import Resources
@@ -52,6 +52,7 @@ def create_app() -> FastAPI:
     app.include_router(members.router)
     app.include_router(needs.router)
     app.include_router(startups.router)
+    app.include_router(geo.router)
     return app
 
 
