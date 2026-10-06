@@ -6,6 +6,7 @@ Backend for Circuit, a startup ecosystem platform. It has two parts: a map where
 - Phase 0 (scaffold): done.
 - Phase 1 (data model, migrations, seed data): done.
 - Phase 2 (auth, members, startups, needs/offers, claiming): done.
+- Phase 3 (geo search): done.
 
 ## Prerequisites
 
@@ -60,6 +61,8 @@ The Postgres image is `postgres:16-bookworm` with `postgresql-16-postgis-3` and 
 The API accepts `Authorization: Bearer <JWT>` tokens. A token carries the claims `sub` (the member id), `role`, `verification_level`, `token_version` and `exp`.
 
 - **Production:** tokens are checked against your identity provider's public keys at `JWKS_URL`, plus `JWT_ISSUER` and `JWT_AUDIENCE` when set. Switching between Clerk and Supabase only changes these settings.
+  - A provider token's `sub` is the provider's own user id. It is matched against `members.auth_subject`, never against our member id.
+  - An admin links an account with `PUT /members/{id}/auth-subject`, or sets `auth_subject` when creating the member.
 - **Local development (`DEV_AUTH=true`):** `POST /auth/dev/token` issues a token for any seeded member. The app refuses to start with `DEV_AUTH=true` when `ENV=production`.
 
 ```bash
@@ -84,6 +87,18 @@ Role and level are always read fresh from the database. When an admin changes so
 1. A level 2+ member sends `POST /startups/{id}/claims` with evidence that they work there.
 2. A `partner_admin` reviews it under `GET /startups/claims`.
 3. The admin approves or rejects it. Approval makes the member the owner and adds them to the team. Any other pending claims for that startup are rejected.
+
+## Geo search
+
+| Endpoint | What it does |
+|---|---|
+| `GET /geo/startups/nearby?lat&lng&radius_km&hiring&capability&limit` | Startups nearest first, each with `distance_km`. Without `lat`/`lng`, uses your saved location. |
+| `GET /geo/startups/bbox?min_lat&min_lng&max_lat&max_lng&hiring&limit` | Lightweight pins for a map viewport. Sets `truncated: true` if more than `limit` are in view. |
+
+- **Students:** distance is a hard filter. The radius defaults to `STUDENT_DEFAULT_RADIUS_KM` (10) and is capped at `STUDENT_MAX_RADIUS_KM` (25). The response reports the radius used and whether it was capped. Other roles may leave the radius out and search everywhere.
+- **The `capability` filter** finds startups with a live need for that capability. For example, a student can pass their own skill.
+- **Map viewports** that cross the 180° meridian must be sent as two requests.
+- **Performance:** both queries use the GIST index on `startups.location`. Nearby uses `ST_DWithin` plus `<->` (nearest-neighbour ordering). The viewport query uses `&&` followed by an exact lat/lng check.
 
 ## Database and migrations
 
