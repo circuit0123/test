@@ -13,6 +13,9 @@ EMBEDDING_DIM = 384
 
 class EmbeddingProvider(Protocol):
     dim: int
+    # Stored next to every vector. Vectors from different models are not
+    # comparable, so a model change means re-embedding.
+    model_id: str
 
     def embed(self, texts: list[str]) -> list[list[float]]:
         """Return one L2-normalised vector of length `dim` per input text."""

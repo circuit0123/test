@@ -107,7 +107,8 @@ STUDENT_SKILLS = ["frontend-development", "backend-development", "mobile-develop
 MENTOR_SKILLS = ["marketing-strategy", "growth-marketing", "b2b-sales", "product-management", "technical-architecture",
                  "hr-recruiting", "legal-incorporation", "financial-modelling", "pitch-coaching", "leadership-coaching",
                  "public-relations", "devops-cloud", "machine-learning", "ux-design", "operations", "partnerships",
-                 "regulatory-compliance", "ip-patents", "accounting-tax", "data-privacy", "brand-design", "seo"]
+                 "regulatory-compliance", "ip-patents", "accounting-tax", "data-privacy", "brand-design", "seo",
+                 "mentorship", "career-guidance", "mentorship", "career-guidance"]  # listed twice: common offers
 INVESTOR_SKILLS = ["angel-investment", "venture-capital", "fundraising", "financial-modelling", "pitch-coaching"]
 INVESTOR_NEEDS = ["market-research", "technical-architecture", "healthcare-domain", "climate-energy", "fintech-domain"]
 MENTOR_NEEDS = ["user-testing", "community-building", "international-expansion", "market-research", "content-marketing"]

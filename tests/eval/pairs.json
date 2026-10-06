@@ -1,0 +1,296 @@
+[
+  {
+    "a": "c858b433-5d18-56bd-ba6e-58da1071b9c7",
+    "b": "413a279c-e724-5fe9-a3fb-2382e68607c3",
+    "label": "good",
+    "note": "bridge case: biotech startup needs marketing-strategy; deeptech mentor offers it"
+  },
+  {
+    "a": "1a2ea664-288a-5815-9286-9f6b672982dc",
+    "b": "ac4fa7e9-2636-53f9-9d51-408e834a28b1",
+    "label": "good",
+    "note": "bridge case: agritech startup needs machine-learning; fintech mentor offers it"
+  },
+  {
+    "a": "70f2d671-437a-56b7-89f1-2a3a215f9a7b",
+    "b": "2cfcbe7c-37db-5a45-a500-b26f2e71abf9",
+    "label": "good",
+    "note": "bridge case: healthtech startup needs regulatory-compliance; fintech mentor offers it"
+  },
+  {
+    "a": "b8e3aaa2-5651-5b6d-af9a-12299fc7da15",
+    "b": "0b69447f-ef6b-58f1-841f-25dc829b2aeb",
+    "label": "good",
+    "note": "bridge case: climate startup needs b2b-sales; saas mentor offers it"
+  },
+  {
+    "a": "a0ea2331-96e0-5122-9118-7e215cf8c9b8",
+    "b": "263418c0-95d8-5705-b353-520bef242c63",
+    "label": "good",
+    "note": "bridge case: edtech startup needs community-building; gaming mentor offers it"
+  },
+  {
+    "a": "3e4d64a8-4550-56ca-b139-4c6725bbee92",
+    "b": "751ccb5e-8015-5493-a96a-55322fb6e005",
+    "label": "good",
+    "note": "bridge case: mobility startup needs supply-chain; ecommerce mentor offers it"
+  },
+  {
+    "a": "c2f54fbc-2ce5-5b83-b435-4bebd88a8de7",
+    "b": "5428c64a-e0ca-5de3-b0d1-09d9b421a923",
+    "label": "good",
+    "note": "circuit leg: receiver needs ux-design, giver offers it"
+  },
+  {
+    "a": "cf4475c9-4311-5abb-83fc-70e0a6748580",
+    "b": "c2f54fbc-2ce5-5b83-b435-4bebd88a8de7",
+    "label": "good",
+    "note": "circuit leg: receiver needs fundraising, giver offers it"
+  },
+  {
+    "a": "5428c64a-e0ca-5de3-b0d1-09d9b421a923",
+    "b": "cf4475c9-4311-5abb-83fc-70e0a6748580",
+    "label": "good",
+    "note": "circuit leg: receiver needs market-research, giver offers it"
+  },
+  {
+    "a": "58534cbc-cb36-559a-acd3-aea77b59f57d",
+    "b": "f1fb2329-3978-5ea8-9ff5-65aca7cffe5e",
+    "label": "good",
+    "note": "circuit leg: receiver needs legal-incorporation, giver offers it"
+  },
+  {
+    "a": "b7c21bec-0a2f-555e-b64e-331453615143",
+    "b": "58534cbc-cb36-559a-acd3-aea77b59f57d",
+    "label": "good",
+    "note": "circuit leg: receiver needs growth-marketing, giver offers it"
+  },
+  {
+    "a": "f1fb2329-3978-5ea8-9ff5-65aca7cffe5e",
+    "b": "b7c21bec-0a2f-555e-b64e-331453615143",
+    "label": "good",
+    "note": "circuit leg: receiver needs technical-architecture, giver offers it"
+  },
+  {
+    "a": "ae5898ca-5390-5ff4-a018-36f7ad13e3a8",
+    "b": "ffffa063-b77d-5d73-b84d-0633dd049c5d",
+    "label": "good",
+    "note": "founder needs mobility-domain; mentor offers mobility-domain"
+  },
+  {
+    "a": "45f38d69-9dcf-53b2-8e40-32f520eb4443",
+    "b": "41a12f17-d898-59b5-82ed-57791c0627d0",
+    "label": "good",
+    "note": "founder needs devops-cloud; mentor offers devops-cloud"
+  },
+  {
+    "a": "0266f44c-6419-554e-bb8f-9a9c37a3abd2",
+    "b": "6836a089-88db-5767-bd85-73a10ec3e384",
+    "label": "good",
+    "note": "founder needs financial-modelling; mentor offers financial-modelling"
+  },
+  {
+    "a": "fbe5aa32-64ef-5be8-a99c-68a24561606f",
+    "b": "054c28c6-3ac7-56fa-9b3c-2873f38af48f",
+    "label": "good",
+    "note": "founder needs growth-marketing; mentor offers growth-marketing"
+  },
+  {
+    "a": "496a2359-39e2-5a95-a8b4-c89cf5e20f14",
+    "b": "e0d4e4b3-9449-5e31-9963-3f8b7843e257",
+    "label": "good",
+    "note": "founder needs social-media; student offers social-media"
+  },
+  {
+    "a": "89a92e78-760f-5a83-957f-61c9c4f14e49",
+    "b": "bb7c487b-bc7b-5b93-91ff-de9450653ee1",
+    "label": "good",
+    "note": "founder needs mobile-development; student offers mobile-development"
+  },
+  {
+    "a": "2b5fbc6f-9470-5929-bb10-de9a08cb6492",
+    "b": "057f5856-5e64-5c03-8694-d68f4be5d017",
+    "label": "good",
+    "note": "founder needs machine-learning; student offers machine-learning"
+  },
+  {
+    "a": "6941844d-b649-55a5-9723-aed5508d7450",
+    "b": "3d20da12-89e6-546b-9302-79059e946431",
+    "label": "good",
+    "note": "student needs career-guidance; mentor offers career-guidance"
+  },
+  {
+    "a": "a55824dc-ba6b-5060-873c-362087223aea",
+    "b": "3835acad-abcc-5e9a-b46c-cc6ba0a0f94a",
+    "label": "good",
+    "note": "student needs mentorship; mentor offers mentorship"
+  },
+  {
+    "a": "6e0036e0-fa27-5611-b4be-fd826f8acb7f",
+    "b": "a2d5967a-519d-5ce3-b5cc-04b7e753e758",
+    "label": "good",
+    "note": "student needs career-guidance; mentor offers career-guidance"
+  },
+  {
+    "a": "b4b4be22-83a7-5a02-a66a-f830bc217d5a",
+    "b": "275f1bec-6c0c-56a8-92cf-9c94975b3386",
+    "label": "good",
+    "note": "founder needs fundraising; investor offers fundraising"
+  },
+  {
+    "a": "997e0654-2959-58cb-8f8f-8103d6eb2434",
+    "b": "2ee4571e-ab46-53a8-ac34-df264b3a944f",
+    "label": "good",
+    "note": "founder needs fundraising; investor offers fundraising"
+  },
+  {
+    "a": "df8c33f5-4994-57ca-b6d7-80b6d17f0c70",
+    "b": "70f2d671-437a-56b7-89f1-2a3a215f9a7b",
+    "label": "good",
+    "note": "investor needs healthcare-domain; founder offers healthcare-domain"
+  },
+  {
+    "a": "2b97fb9a-9691-53c9-b8b0-e229b602f594",
+    "b": "14abd33f-c375-5b45-8c4d-575f463d390c",
+    "label": "good",
+    "note": "student needs an internship; founder's startup is hiring"
+  },
+  {
+    "a": "62000a23-d149-5b7b-ae53-4fa51a58f25c",
+    "b": "e074731e-1252-5186-8844-d8673aa811cb",
+    "label": "bad",
+    "note": "hard negative: connected and share traits, but neither can help the other"
+  },
+  {
+    "a": "210a45c8-9aa5-5010-973a-e9ada5b3acb4",
+    "b": "400c7367-6660-5578-baec-1b61f8f7b56f",
+    "label": "bad",
+    "note": "hard negative: connected and share traits, but neither can help the other"
+  },
+  {
+    "a": "0ebcb2f8-610d-577d-83f9-332c69b739cb",
+    "b": "db8952c1-5675-5701-a6cd-43bd3bc818b5",
+    "label": "bad",
+    "note": "hard negative: connected and share traits, but neither can help the other"
+  },
+  {
+    "a": "651bfad8-7037-5323-b9e0-644f9c82a212",
+    "b": "781791f2-86de-57da-92cb-562e8b2bc92b",
+    "label": "bad",
+    "note": "hard negative: connected and share traits, but neither can help the other"
+  },
+  {
+    "a": "8efd9c88-af16-5d13-99d8-5266956ea217",
+    "b": "d71a1986-0c68-5689-b12c-eb2cfa6e1dc0",
+    "label": "bad",
+    "note": "hard negative: classmates, connected, both need internships; no overlap"
+  },
+  {
+    "a": "22743017-edf0-5f41-9c72-6d7a579de8c1",
+    "b": "ca25a3f3-3fcc-5316-ae8f-afd3b2b4006e",
+    "label": "bad",
+    "note": "hard negative: classmates, connected, both need internships; no overlap"
+  },
+  {
+    "a": "31982daf-6d1b-514e-8c0a-68cde1a56ab0",
+    "b": "394b14dc-eaaf-543d-a7f5-7f48f3bd7aab",
+    "label": "bad",
+    "note": "hard negative: classmates, connected, both need internships; no overlap"
+  },
+  {
+    "a": "8af7bde1-37dd-5570-97d8-1c80d6e402ff",
+    "b": "a2bf4c31-b419-5819-9300-4e5184265770",
+    "label": "bad",
+    "note": "student and investor: no need/offer overlap"
+  },
+  {
+    "a": "030a3008-1afd-568c-9020-422940f603ab",
+    "b": "58f3f031-c009-55ca-bc4e-f70707926502",
+    "label": "bad",
+    "note": "student and investor: no need/offer overlap"
+  },
+  {
+    "a": "394b14dc-eaaf-543d-a7f5-7f48f3bd7aab",
+    "b": "80638e35-68e2-559f-850a-dcba886df333",
+    "label": "bad",
+    "note": "student and investor: no need/offer overlap"
+  },
+  {
+    "a": "0b5c693e-ae54-5936-8af1-60e4ac57f1a6",
+    "b": "a55824dc-ba6b-5060-873c-362087223aea",
+    "label": "bad",
+    "note": "student and investor: no need/offer overlap"
+  },
+  {
+    "a": "496a2359-39e2-5a95-a8b4-c89cf5e20f14",
+    "b": "7010c90c-7621-53bb-9a2f-64935a2ab83e",
+    "label": "bad",
+    "note": "founders sharing traits, no need/offer overlap"
+  },
+  {
+    "a": "0d920e9c-1935-5dc9-b7f1-93d874e3ec4d",
+    "b": "b43308a1-6169-54d2-a70f-60a8986c7e93",
+    "label": "bad",
+    "note": "founders sharing traits, no need/offer overlap"
+  },
+  {
+    "a": "b5a9cf73-c70b-5179-a21b-e34c57136832",
+    "b": "c858b433-5d18-56bd-ba6e-58da1071b9c7",
+    "label": "bad",
+    "note": "founders sharing traits, no need/offer overlap"
+  },
+  {
+    "a": "0e035d0f-774b-5bec-8873-f846ca2f10e0",
+    "b": "9bc520ce-649c-5428-a25a-37d169f19dbc",
+    "label": "bad",
+    "note": "founders sharing traits, no need/offer overlap"
+  },
+  {
+    "a": "2658f178-129d-5aba-adcc-be6a435fa404",
+    "b": "94bf52e1-4c6e-53b9-85df-1a5420d47074",
+    "label": "bad",
+    "note": "two mentors, no need/offer overlap"
+  },
+  {
+    "a": "751ccb5e-8015-5493-a96a-55322fb6e005",
+    "b": "77f3ec7e-c38b-5003-aef9-727bbf540672",
+    "label": "bad",
+    "note": "two mentors, no need/offer overlap"
+  },
+  {
+    "a": "911ad1ce-e9fd-5877-ad43-ba8f479ac14f",
+    "b": "9f305013-7136-5240-8e95-5f2c1f305825",
+    "label": "bad",
+    "note": "two mentors, no need/offer overlap"
+  },
+  {
+    "a": "c35f2ff9-4102-5f2f-84fe-fb9ec9306a22",
+    "b": "d6f80202-3bd5-52f9-a7c0-35d0e2002932",
+    "label": "bad",
+    "note": "two mentors, no need/offer overlap"
+  },
+  {
+    "a": "8af7bde1-37dd-5570-97d8-1c80d6e402ff",
+    "b": "b4c7de76-0f80-575b-8f13-a35d1a2c81e7",
+    "label": "bad",
+    "note": "two investors, no need/offer overlap"
+  },
+  {
+    "a": "0b5c693e-ae54-5936-8af1-60e4ac57f1a6",
+    "b": "92172ec5-2daf-52de-b14b-64ac7fe7e481",
+    "label": "bad",
+    "note": "two investors, no need/offer overlap"
+  },
+  {
+    "a": "2ef2360f-7b07-5162-b1f6-5c814190f4bf",
+    "b": "92172ec5-2daf-52de-b14b-64ac7fe7e481",
+    "label": "bad",
+    "note": "two investors, no need/offer overlap"
+  },
+  {
+    "a": "9f4c0597-5e9f-54b5-90c7-48fa598ea1ef",
+    "b": "f1fb2329-3978-5ea8-9ff5-65aca7cffe5e",
+    "label": "bad",
+    "note": "mentor and student with no need/offer overlap"
+  }
+]

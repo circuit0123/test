@@ -8,12 +8,45 @@ CITY_CENTER_LAT=abc fails fast instead of breaking later.
 from functools import lru_cache
 from typing import Literal
 
-from pydantic import SecretStr, model_validator
+from pydantic import BaseModel, SecretStr, model_validator
 from pydantic_settings import BaseSettings, SettingsConfigDict
 
 
+class MatchingSettings(BaseModel):
+    """Matching engine knobs. Override in .env as MATCHING__<NAME>, e.g. MATCHING__W_TIMING=0.2."""
+
+    # score = w1*complementarity + w2*affinity + w3*trust_path + w4*timing - w5*load_penalty
+    w_complementarity: float = 0.5
+    w_affinity: float = 0.15
+    w_trust_path: float = 0.15
+    w_timing: float = 0.1
+    w_load_penalty: float = 0.2
+
+    # Need->offer fit = capability_weight * [same capability] + (1 - capability_weight) * similarity,
+    # where similarity is cosine rescaled from [sim_floor, sim_ceiling] to [0, 1]. The embedding
+    # model rates even unrelated texts ~0.55-0.6, so raw cosine would barely separate pairs.
+    capability_weight: float = 0.6
+    sim_floor: float = 0.55
+    sim_ceiling: float = 0.85
+    # Complementarity = (1 - mutual_weight) * stronger direction + mutual_weight * weaker direction.
+    mutual_weight: float = 0.25
+
+    min_complementarity: float = 0.3  # below this a pair is not a match at all
+    results_per_member: int = 20
+    bridge_share: float = 0.25  # share of each member's results reserved for bridge matches
+    diversity_penalty: float = 0.05  # per already-picked result about the same capability
+    role_cap_share: float = 0.5  # at most this share of results from one role
+    max_appearances_per_candidate: int = 40  # stops one popular person flooding every list
+    bridge_neighbours_per_need: int = 10  # nearest offers by embedding, per need
+
+    cache_ttl_hours: float = 12
+    job_interval_hours: float = 4
+
+
 class Settings(BaseSettings):
-    model_config = SettingsConfigDict(env_file=".env", env_file_encoding="utf-8", extra="ignore")
+    model_config = SettingsConfigDict(
+        env_file=".env", env_file_encoding="utf-8", extra="ignore", env_nested_delimiter="__"
+    )
 
     env: Literal["development", "test", "production"] = "development"
     log_level: str = "INFO"
@@ -42,6 +75,11 @@ class Settings(BaseSettings):
     student_default_radius_km: float = 10.0
     student_max_radius_km: float = 25.0
     nearby_max_radius_km: float = 200.0
+
+    matching: MatchingSettings = MatchingSettings()
+    # Background jobs (APScheduler) run inside the API process. Off in tests.
+    scheduler_enabled: bool = True
+    match_job_on_startup: bool = False  # also compute matches right after startup
 
     # Embeddings: "fastembed" (real local model) or "fake" (deterministic, for tests).
     embedding_provider: Literal["fastembed", "fake"] = "fastembed"

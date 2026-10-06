@@ -1,4 +1,8 @@
 import logging
+import os
+
+# Never start background jobs during tests (set before the app reads settings).
+os.environ["SCHEDULER_ENABLED"] = "false"
 
 import pytest
 from fastapi import FastAPI

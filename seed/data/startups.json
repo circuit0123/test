@@ -2737,14 +2737,14 @@
     "website_domain": "helixgenomics.example",
     "description": "Helix Genomics is a biotech startup building tools for customers in Bengaluru.",
     "sector": "biotech",
-    "address": "123 Church Street, Tech Park, Bengaluru",
-    "lat": 12.999882,
-    "lng": 77.609174,
+    "address": "116 Hill Top Lane, Riverside, Bengaluru",
+    "lat": 13.015526,
+    "lng": 77.626629,
     "hiring": false,
     "open_roles": [],
     "tech_stack": [
-      "Python",
-      "R"
+      "R",
+      "Python"
     ],
     "source": "seed"
   },
@@ -2753,18 +2753,18 @@
     "website_domain": "monsoonfields.example",
     "description": "Monsoon Fields is a agritech startup building tools for customers in Bengaluru.",
     "sector": "agritech",
-    "address": "223 Main Road, Cantonment, Bengaluru",
-    "lat": 13.012333,
-    "lng": 77.481342,
+    "address": "2 Tech Park Avenue, East Gate, Bengaluru",
+    "lat": 13.008036,
+    "lng": 77.601848,
     "hiring": true,
     "open_roles": [
-      "Field Operations Associate"
+      "Android Developer",
+      "Supply Chain Analyst"
     ],
     "tech_stack": [
-      "Kotlin",
-      "Django",
+      "IoT",
       "Python",
-      "IoT"
+      "Django"
     ],
     "source": "seed"
   },
@@ -2773,19 +2773,16 @@
     "website_domain": "saffroncare.example",
     "description": "Saffron Care is a healthtech startup building tools for customers in Bengaluru.",
     "sector": "healthtech",
-    "address": "169 Main Road, Tech Park, Bengaluru",
-    "lat": 13.022872,
-    "lng": 77.593322,
-    "hiring": true,
-    "open_roles": [
-      "Clinical Ops Associate",
-      "Mobile Developer"
-    ],
+    "address": "242 Ring Road, Old Town, Bengaluru",
+    "lat": 12.985395,
+    "lng": 77.609825,
+    "hiring": false,
+    "open_roles": [],
     "tech_stack": [
-      "Swift",
+      "Node.js",
       "Kotlin",
-      "PostgreSQL",
-      "FHIR"
+      "FHIR",
+      "Swift"
     ],
     "source": "seed"
   },
@@ -2794,18 +2791,16 @@
     "website_domain": "tidewaterenergy.example",
     "description": "Tidewater Energy is a climate startup building tools for customers in Bengaluru.",
     "sector": "climate",
-    "address": "230 Garden Road, Tech Park, Bengaluru",
-    "lat": 12.970177,
-    "lng": 77.625038,
-    "hiring": true,
-    "open_roles": [
-      "Embedded Intern"
-    ],
+    "address": "245 Market Street, Lakeside, Bengaluru",
+    "lat": 12.841459,
+    "lng": 77.622867,
+    "hiring": false,
+    "open_roles": [],
     "tech_stack": [
-      "Grafana",
-      "C++",
       "Python",
-      "MQTT"
+      "C++",
+      "MQTT",
+      "Grafana"
     ],
     "source": "seed"
   },
@@ -2814,15 +2809,16 @@
     "website_domain": "rangoliacademy.example",
     "description": "Rangoli Academy is a edtech startup building tools for customers in Bengaluru.",
     "sector": "edtech",
-    "address": "148 Main Road, Old Town, Bengaluru",
-    "lat": 12.988986,
-    "lng": 77.589448,
+    "address": "97 Main Road, Cantonment, Bengaluru",
+    "lat": 12.88832,
+    "lng": 77.53195,
     "hiring": false,
     "open_roles": [],
     "tech_stack": [
+      "Python",
       "React",
       "Firebase",
-      "Python"
+      "Next.js"
     ],
     "source": "seed"
   },
@@ -2831,18 +2827,16 @@
     "website_domain": "vayuvegamotors.example",
     "description": "Vayuvega Motors is a mobility startup building tools for customers in Bengaluru.",
     "sector": "mobility",
-    "address": "177 Market Street, North Hills, Bengaluru",
-    "lat": 12.981229,
-    "lng": 77.5822,
+    "address": "219 Church Street, Industrial Estate, Bengaluru",
+    "lat": 12.983303,
+    "lng": 77.617088,
     "hiring": true,
     "open_roles": [
-      "Backend Engineer",
-      "Fleet Operations Associate"
+      "Embedded Engineer"
     ],
     "tech_stack": [
-      "Go",
       "PostgreSQL",
-      "Python"
+      "Go"
     ],
     "source": "seed"
   }

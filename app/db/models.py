@@ -228,6 +228,7 @@ class Need(Base):
     capability_id: Mapped[int] = mapped_column(ForeignKey("capabilities.id"), nullable=False)
     text: Mapped[str] = mapped_column(Text, nullable=False)
     embedding: Mapped[Any | None] = mapped_column(Vector(EMBEDDING_DIM))
+    embedding_model: Mapped[str | None] = mapped_column(String(100))  # which model made `embedding`
     active: Mapped[bool] = mapped_column(Boolean, nullable=False, server_default=sql_text("true"))
     expires_at: Mapped[datetime | None] = mapped_column(DateTime(timezone=True))
 
@@ -253,6 +254,7 @@ class Offer(Base):
     capability_id: Mapped[int] = mapped_column(ForeignKey("capabilities.id"), nullable=False)
     text: Mapped[str] = mapped_column(Text, nullable=False)
     embedding: Mapped[Any | None] = mapped_column(Vector(EMBEDDING_DIM))
+    embedding_model: Mapped[str | None] = mapped_column(String(100))  # which model made `embedding`
     active: Mapped[bool] = mapped_column(Boolean, nullable=False, server_default=sql_text("true"))
 
 
